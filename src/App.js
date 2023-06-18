@@ -1,9 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+/** @jsxImportSource @emotion/react */
+import { jsx, Global, css } from '@emotion/react'
+
+import MenuBar from './components/MenuBar';
+import Homepage from './pages/Homepage';
 
 function App() {
+
+  const globalStyles = css`
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  `;
+  const contentCss = css`
+    margin-top: 78px;
+  `
   return (
-    <div className="App">
+    <div>
+      <Global styles={globalStyles}/>
+      <MenuBar />
+      <div css={contentCss}>
+        <Homepage />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+/*
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p className='gyro'>GYROTONIC®</p>
@@ -21,11 +49,9 @@ The holistic approach of Gyrotonic is one of the main pillars of this discipline
           <li>Global Well-being</li>
         </ul>
       </header>
-    </div>
-  );
-}
 
-export default App;
+*/
+
 
 // ReportVitals?
 // No border radius, Fede doesn't like it ;)
