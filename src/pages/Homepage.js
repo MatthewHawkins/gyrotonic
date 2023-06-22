@@ -84,10 +84,13 @@ export default function Homepage() {
         </AutoplaySlider>
       </div>
       <div css={sectionTwoStyles}>
-        
+        Methodology
       </div>
       <div>
-
+        Equipment
+      </div>
+      <div>
+        Studio
       </div>
     </div>
   )
