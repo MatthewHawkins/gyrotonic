@@ -1,8 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { jsx, Global, css } from '@emotion/react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import MenuBar from './components/MenuBar';
 import Homepage from './pages/Homepage';
+import ContactHours from './pages/ContactHours';
 
 function App() {
 
@@ -17,13 +19,17 @@ function App() {
     margin-top: 78px;
   `
   return (
-    <div>
+    <Router>
       <Global styles={globalStyles}/>
       <MenuBar />
       <div css={contentCss}>
-        <Homepage />
+        <Routes>
+        <Route path='/homepage' element={<Homepage />} />
+        <Route path='/contact' element={<ContactHours />} />
+        <Route path='*' element={<Homepage />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
