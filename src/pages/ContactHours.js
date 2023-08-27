@@ -2,10 +2,11 @@
 import { jsx, css } from '@emotion/react'
 import React, { useRef, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import image from '../assets/images/DSC01923.png';
+import image from '../assets/images/keep1.png';
 import { ContactPage } from '@mui/icons-material';
 
 import AnimatedButton from '../components/AnimatedButton';
+import Gyrotonic from '../components/Gyrotonic';
 
 
 export default function ContactHours() {
@@ -48,7 +49,7 @@ export default function ContactHours() {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 65vh;
+  height: 85vh;
   `;
 
   const hoursTitle = css`
@@ -176,7 +177,7 @@ const formData = useRef();
             width: 55%;
             height: 50px;
             border: hidden;
-            border-bottom: 1px solid black;
+            /* border-bottom: 1px solid black; */
             margin: 10px 0px;
             font-size: 1em;
             padding-left: 10px;
@@ -187,10 +188,11 @@ const formData = useRef();
             margin: 20px 0px;
             font-size: 1em;
             padding-left: 10px;
+            border: hidden;
         }
         button{
             border: hidden;
-            background-color: white;
+            background-color: #F6F5E8;
         }
 
         @media screen and (max-width: 480px) {
@@ -234,6 +236,18 @@ const formData = useRef();
           <p css={hoursText}>You guys tell me when the hours are :)
           </p>
         </div>
+        <div css={infoStyles}>
+          <h2 css={hoursTitle}>Prices</h2>
+          <p css={hoursText}>
+          Training dates can be chosen according to openings in the trainers' schedules. 
+          There are four training options:
+            Single lesson - 50
+            Three Introductory Lessons - 135
+            Six Lesson Package - 270
+            Ten Lesson Package - 450
+        Registration is done by phone , e-mail or personally in the studio. 
+          </p>
+        </div>
       </div>
       <div id='contact' css={bodyStyles}>
             <div css={contactBackgroundStyles}></div>
@@ -242,10 +256,10 @@ const formData = useRef();
                     <h1 css={contactTitleStyles}> Feel free to get in touch</h1>
                     <div css={contactInfoStyles}>
                         <div css={contactItemStyles}>
-                            Your Phone
+                            Example Phone Number (Icon too)
                         </div>
                         <div css={contactItemStyles}>
-                            Your Email
+                            Example Email (Icon too)
                         </div>
                     </div>
                 </div>
@@ -263,6 +277,7 @@ const formData = useRef();
                 </div>
             </div>
         </div>
+        {/* <div><Gyrotonic /> is a registered trademark of Gyrotonic Sales Corp and is used with their permission.</div> */}
     </div>
   )
 }

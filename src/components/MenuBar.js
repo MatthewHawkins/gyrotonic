@@ -2,13 +2,8 @@
 import { jsx, css } from '@emotion/react'
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import logo2 from '../assets/images/2017-Logo-PNG-Transparent-Backround.png';
 
-import HomeIcon from '@mui/icons-material/Home';
-import SportsGymnasticsIcon from '@mui/icons-material/SportsGymnastics';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import ImportContactsIcon from '@mui/icons-material/ImportContacts';
-import ScheduleIcon from '@mui/icons-material/Schedule';
-import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 
 export default function MenuBar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -40,7 +35,8 @@ const listItemStyles = css`
   margin-right: 20px;
   
   &:last-child {
-    margin-right: 0;
+    margin-right: 0px;
+    /* margin-left: auto; */
   }
   `;
 
@@ -56,6 +52,16 @@ const linkStyles = css`
   gap: 5px;
 `;
 
+const logoStyles = css`
+margin-left: auto;
+margin-top: 20px;
+width: 100%;
+height: 1.2em;
+/* border-radius: 50%; */
+/* overflow: hidden; */
+object-fit: cover;
+object-position: center;
+`
 
 
   useEffect(() => {
@@ -74,13 +80,15 @@ const linkStyles = css`
     <div css={menuBarStyles}>
       <nav>
         <ul css={listStyles}>
-          <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}><HomeIcon /> Home</Link></li>
-          <li css={listItemStyles}><Link to="/homepage#methodology" css={linkStyles}><SportsGymnasticsIcon /> Methodology</Link></li>
-          <li css={listItemStyles}><Link to="/homepage#equipment" css={linkStyles}><FitnessCenterIcon /> Equipment</Link></li>
-          <li css={listItemStyles}><Link to="/homepage#team" css={linkStyles}><ImportContactsIcon /> Team</Link></li>
+          <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Home</Link></li>
+          {/* <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Our Studio</Link></li> */}
+          <li css={listItemStyles}><Link to="/homepage#methodology" css={linkStyles}> Methodology</Link></li>
+          <li css={listItemStyles}><Link to="/homepage#equipment" css={linkStyles}> Equipment</Link></li>
+          <li css={listItemStyles}><Link to="/homepage#team" css={linkStyles}> Team</Link></li>
           {/* <li css={listItemStyles}><a to="#studio" css={linkStyles}>Studio</a></li> */}
-          <li css={listItemStyles}><Link to="/contact#hours-and-prices" css={linkStyles}><ScheduleIcon /> Hours and Prices</Link></li>
-          <li css={listItemStyles}><Link to="/contact#contact" css={linkStyles}><ConnectWithoutContactIcon /> Contact</Link></li>
+          <li css={listItemStyles}><Link to="/contact#hours-and-prices" css={linkStyles}> Hours and Prices</Link></li>
+          <li css={listItemStyles}><Link to="/contact#contact" css={linkStyles}> Contact</Link></li>
+          {/* <li css={listItemStyles}><img src={logo2} css={logoStyles}></img></li> */}
         </ul>
       </nav>
     </div>
