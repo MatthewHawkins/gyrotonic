@@ -77,7 +77,7 @@ export default function Homepage() {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 75vh;
+    /* height: 75vh; */
     opacity: ${showContent ? '1' : '0'};
     transition: opacity 2s ease;
   `;
@@ -88,7 +88,7 @@ export default function Homepage() {
     width: 50%;
     font-family: 'Cormorant Garamond', serif;
     /* width: 60vw; */
-    max-height: 75vh;
+    /* max-height: 75vh; */
     overflow: scroll;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -130,7 +130,6 @@ const introStyles = css`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100vh;
   overflow: scroll;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
