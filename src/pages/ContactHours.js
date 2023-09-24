@@ -225,7 +225,9 @@ const formData = useRef();
     `;
 
 
-
+/* 
+Use something like this for tables? This would be needed in the hours section and prices.
+*/
 
 
   return (
@@ -238,15 +240,17 @@ const formData = useRef();
         </div>
         <div css={infoStyles}>
           <h2 css={hoursTitle}>Prices</h2>
-          <p css={hoursText}>
+          <div css={hoursText}>
           Training dates can be chosen according to openings in the trainers' schedules. 
           There are four training options:
-            Single lesson - 50
-            Three Introductory Lessons - 135
-            Six Lesson Package - 270
-            Ten Lesson Package - 450
+          <ul>
+            <li>Single lesson - €50</li>
+            <li>Three Introductory Lessons - €135</li>
+            <li>Six Lesson Package - €270</li>
+            <li>Ten Lesson Package - €450</li>
+          </ul>
         Registration is done by phone , e-mail or personally in the studio. 
-          </p>
+          </div>
         </div>
       </div>
       <div id='contact' css={bodyStyles}>

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MenuBar from './components/MenuBar';
 import Homepage from './pages/Homepage';
 import ContactHours from './pages/ContactHours';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -29,12 +30,22 @@ function App() {
         <Route path='*' element={<Homepage />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }
 
 export default App;
 
+
+/* 
+
+Still need to do the media queries
+The Hours and prices section needs a bit of a facelift
+Their contact form needs to work
+Updated text, will need to touch base with Fede to see if he has any other specific pieces of feedback that he wants me to add.
+
+*/
 
 /*
 
