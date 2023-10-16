@@ -4,15 +4,6 @@ import React, { useRef, useState } from 'react';
 
 import { css, keyframes } from '@emotion/react';
 
-// // https://www.emailjs.com/
-// import emailjs from 'emailjs-com'
-
-// import AnimatedButton from '../AnimatedButton';
-
-// import phone from '../../images/phone_logo.png'
-// import email from '../../images/email_logo.png'
-// import discord from '../../images/discord_logo.png'
-
 export default function Contact(props) {
 
     const formData = useRef();

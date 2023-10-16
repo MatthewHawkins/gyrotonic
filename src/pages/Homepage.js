@@ -56,8 +56,8 @@ export default function Homepage() {
     background-color: #f0e6da;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     width: 100%;
+    padding-bottom: 35px;
   `;
 
   const headshotStyles = css`
@@ -106,7 +106,7 @@ const sectionOneTitle = css`
     `;
 
   const sectionOneText = css`
-    font-size: 1.45em;
+    font-size: 1.25em;
     padding: 0 5%;
     `
 
