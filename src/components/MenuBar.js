@@ -6,8 +6,8 @@ import logo2 from '../assets/images/2017-Logo-PNG-Transparent-Backround.png';
 
 
 export default function MenuBar() {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
+
+  const [isAtTop, setIsAtTop] = useState(true);
   
   const menuBarStyles = css`
   position: fixed;
@@ -16,33 +16,37 @@ export default function MenuBar() {
   width: 100%;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2em;
-  background-color: #F6F5E8;
-  padding: 30px;
+  background-color: transparent;
+  padding: ${isAtTop ? '45px 30px 45px 30px' : '30px'}; /* Adjust padding values as needed */
   transition: top 0.3s;
   z-index: 9999;
-  ${visible ? 'top: 0;' : 'top: -100px;'}
-`;
+  ${isAtTop ? 'background-color: transparent' : 'background-color: #F6F5E8'};
 
-const listStyles = css`
+  transition: background-color 0.3s, padding 0.3s; /* Add a transition for color and padding */
+  `;
+  
+  const listStyles = css`
+  display: flex;
+  flex-direction: row;
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 10px;
-`;
+  `;
 
 const listItemStyles = css`
   margin-right: 20px;
   
   &:last-child {
     margin-right: 0px;
-    /* margin-left: auto; */
   }
   `;
 
 const linkStyles = css`
   transition: color 0.5s;
-  color: #333;
+  color: rgba(208, 208, 209, 0.65);
+  ${isAtTop ? 'color: rgba(208, 208, 209, 0.65)' : 'color: #333'};
   text-decoration: none;
   font-weight: bold;
   &:hover {
@@ -63,18 +67,21 @@ object-fit: cover;
 object-position: center;
 `
 
-
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
+      const scrollValue = window.scrollY;
+      const scrollThreshold = 0.3 * window.innerHeight; // Adjust as needed
 
-      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
-      setPrevScrollPos(currentScrollPos);
+      if (scrollValue <= scrollThreshold) {
+        setIsAtTop(true);
+      } else {
+        setIsAtTop(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos]);
+  }, []);
 
   return (
     <div css={menuBarStyles}>

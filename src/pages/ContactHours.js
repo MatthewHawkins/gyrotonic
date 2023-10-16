@@ -38,6 +38,7 @@ export default function ContactHours() {
     font-family: 'Cormorant Garamond', serif;
     padding: 10px 30px 10px 10px;
     width: 100%;
+    font-size: 1.15em;
   `;
 
   const hoursStyles = css`
@@ -50,6 +51,7 @@ export default function ContactHours() {
   flex-direction: row;
   align-items: center;
   height: 85vh;
+  font-size: 1.15em;
   `;
 
   const hoursTitle = css`
@@ -260,10 +262,12 @@ Use something like this for tables? This would be needed in the hours section an
                     <h1 css={contactTitleStyles}> Feel free to get in touch</h1>
                     <div css={contactInfoStyles}>
                         <div css={contactItemStyles}>
-                            Example Phone Number (Icon too)
+                            +49 178 614 5467 (phone)<br />
+                            +39 351 789 5709 (whatsapp)<br />
+                            +43 660 916 3118 (whatsapp)
                         </div>
                         <div css={contactItemStyles}>
-                            Example Email (Icon too)
+                            therootsstudio.gyrotonic@gmail.com (email)
                         </div>
                     </div>
                 </div>

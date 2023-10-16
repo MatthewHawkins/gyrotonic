@@ -17,6 +17,7 @@ import logo2 from '../assets/images/2017-Logo-PNG-Transparent-Backround.png';
 import Gyrotonic from '../components/Gyrotonic';
 import Monotype from '../assets/fonts/MTCORSVA.TTF'
 import methodPicture from '../assets/images/method.jpeg'
+import logo from '../assets/images/logo.png'
 
 import fede from '../assets/images/fede.png'
 import nico from '../assets/images/nico.png'
@@ -62,7 +63,7 @@ export default function Homepage() {
 
   const headshotStyles = css`
   border-radius: 50%;
-  height: 350px;
+  height: 320px;
   width: 315px;
 `
   const logoStyles = css`
@@ -77,6 +78,7 @@ export default function Homepage() {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     /* height: 75vh; */
     opacity: ${showContent ? '1' : '0'};
     transition: opacity 2s ease;
@@ -113,8 +115,9 @@ const sectionOneTitle = css`
 const sliderStyles = css`
     width: 50vw !important;
     height: 85% !important;
-    margin: 10px;
-    margin-top: -10px;
+    margin: 20px;
+    margin-top: -20px;
+    padding: 40px 0 40px 0;
     `;
 
 const introStyles = css`
@@ -174,10 +177,12 @@ const sectionThreeStyles = css`
 
 const sectionThreeTitle = css`
       font-size: 3rem;
+      margin-left: 5%;
       `
 
 const sectionThreeText = css`
-    font-size: 1.25em;
+    font-size: 1.45em;
+    margin-left: 5%;
     `
 
 const imageThreeStyles = css`
@@ -214,21 +219,28 @@ const artofStyles = css`
     <div css={bodyStyles}>
       <div css={sectionOneContainer}>
         <div css={sectionOneStyles} id="home">
+          {/* <img src={logo}></img> */}
           <div css={sectionOneLayout}>
             <h2 css={sectionOneTitle}>Our Studio</h2>
             <p css={sectionOneText}>
 
-              <Gyrotonic /> is a unique movement method that combines elements of yoga, dance, gymnastics,
-              tai chi, and swimming. It was created by Juliu Horvath, a former ballet dancer, in the 1980s.
-              Gyrotonic exercises are performed on specialized equipment, such as the Gyrotonic Expansion System,
-              which consists of a pulley tower combination unit and rotational discs. These machines are designed to support
-              and enhance the movement patterns of the human body.<br></br><br></br>
-              The Gyrotonic method emphasizes flowing, circular, and spiraling movements that aim to
-              increase strength, flexibility, and coordination. It focuses on the body's natural movement
-              patterns and seeks to promote a sense of balance, freedom, and alignment.
-              Gyrotonic is suitable for people of various fitness levels, ages, and body types. It can be
-              used for general fitness, rehabilitation, and performance enhancement. The method is often practiced
-              in specialized Gyrotonic studios under the guidance of certified instructors who provide individualized instruction and support.
+            “The Roots" was born from the meeting of two dancers who discovered Gyrotonic, 
+            a transformative method that significantly impacted their lives. Gyrotonic, known 
+            for its circular and fluid movements, helped them alleviate back problems that had 
+            troubled them for years. Thus, the studio was founded with the aim of raising awareness 
+            about this revolutionary yet lesser-known method. By sharing their own experience 
+            and the benefits they gained from Gyrotonic, the founders hope to introduce more people 
+            to this transformative practice and its potential to improve physical well-being.
+            <br /><br />
+            "The Roots Gyrotonic Studio" likely chose its name to symbolize the fundamental connection 
+            between individuals and their bodies. Just as roots provide stability and nourishment to a 
+            plant, Gyrotonic exercises, with their circular and flowing movements, establish a deep 
+            connection within the body, enhancing stability, flexibility, and overall well-being. The name 
+            "Roots" emphasizes the foundational nature of the Gyrotonic method, signifying a return to 
+            the core, both physically and metaphorically, fostering a sense of grounding, strength, 
+            and growth for those who engage in the practice.
+
+            <br /><br />
             </p>
           </div>
           <AutoplaySlider
@@ -301,8 +313,8 @@ const artofStyles = css`
               </li>
             </ol> */}
             <br></br>
-            <img src={logo2} css={logoStyles}></img>
-            <p css={[globalStyles, artofStyles]}>The Art of Exercising and Beyond&reg;</p>
+            {/* <img src={logo2} css={logoStyles}></img> */}
+            
 
           </div>
         </div>
@@ -314,7 +326,7 @@ const artofStyles = css`
             Our studio features the Gyrotonic Pulley Tower Combination Unit, a versatile and sophisticated machine that serves as the centerpiece of our training sessions. This machine combines elements of the pulley tower and rotational discs, providing a comprehensive and multidimensional workout experience.
           </p>
         </div>
-        <img src={image9} css={imageThreeStyles}></img>
+        <img src={methodPicture} css={imageThreeStyles}></img>
       </div>
       <div css={sectionFourStyles} id="team">
 
@@ -335,4 +347,6 @@ const artofStyles = css`
       </div>
     </div>
   )
+
+  // <p css={[globalStyles, artofStyles]}>The Art of Exercising and Beyond&reg;</p>
 }

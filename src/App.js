@@ -6,6 +6,7 @@ import MenuBar from './components/MenuBar';
 import Homepage from './pages/Homepage';
 import ContactHours from './pages/ContactHours';
 import Footer from './components/Footer';
+import TopSection from './sections/TopSection';
 
 function App() {
 
@@ -17,18 +18,19 @@ function App() {
   }
   `;
   const contentCss = css`
-    margin-top: 78px;
+    /* margin-top: 78px; */
   `
   return (
     <Router>
       <Global styles={globalStyles}/>
       <MenuBar />
       <div css={contentCss}>
-        <Routes>
+        {/* <Routes>
         <Route path='/homepage' element={<Homepage />} />
         <Route path='/contact' element={<ContactHours />} />
         <Route path='*' element={<Homepage />} />
-        </Routes>
+        </Routes> */}
+        <TopSection />
       </div>
       <Footer />
     </Router>
