@@ -17,11 +17,11 @@ export default function MenuBar() {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2em;
   background-color: transparent;
-  padding: ${isAtTop ? '45px 30px 45px 30px' : '30px'}; /* Adjust padding values as needed */
   transition: top 0.3s;
   z-index: 9999;
+  padding: ${isAtTop ? '45px 30px 45px 30px' : '30px'}; /* Adjust padding values as needed */
+  box-shadow: ${isAtTop ? 'none' : '0 0 30px -5px rgba(0, 0, 0, 0.1)'};
   ${isAtTop ? 'background-color: transparent' : 'background-color: #F6F5E8'};
-
   transition: background-color 0.3s, padding 0.3s; /* Add a transition for color and padding */
   `;
   

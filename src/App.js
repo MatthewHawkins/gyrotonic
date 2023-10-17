@@ -24,13 +24,13 @@ function App() {
     <Router>
       <Global styles={globalStyles}/>
       <MenuBar />
+      <TopSection />
       <div css={contentCss}>
-        {/* <Routes>
+        <Routes>
         <Route path='/homepage' element={<Homepage />} />
         <Route path='/contact' element={<ContactHours />} />
         <Route path='*' element={<Homepage />} />
-        </Routes> */}
-        <TopSection />
+        </Routes>
       </div>
       <Footer />
     </Router>
