@@ -79,7 +79,7 @@ const sliderStyles = css`
 
   return (
     <div css={sectionOneContainer}>
-    <div css={sectionOneStyles} id="home">
+    <div css={sectionOneStyles}>
       {/* <img src={logo}></img> */}
       <div css={sectionOneLayout}>
         <h2 css={sectionOneTitle}>Our Studio</h2>

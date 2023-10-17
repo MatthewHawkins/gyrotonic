@@ -61,7 +61,7 @@ width: 315px;
             </div>
             <div css={css`width: 50%;`}>
               <img src={nico} css={headshotStyles}></img>
-              <p css={sectionThreeText}>Dedicated Gyrotonic teacher with a background in dance and a passion for promoting holistic wellness and fitness through the Gyrotonic method. Leveraging training from the Accademia Teatro alla Scala in Milan and experience with renowned dance companies like Bavarian State Ballet and Saarland State Ballet, I aim to inspire individuals to achieve physical strength, flexibility, and overall well-being.</p>
+              <p css={sectionThreeText}>Nicola Strada is a dedicated Gyrotonic teacher with a background in dance and a passion for promoting holistic wellness and fitness through the Gyrotonic method. Leveraging training from the Accademia Teatro alla Scala in Milan and experience with renowned dance companies like Bavarian State Ballet and Saarland State Ballet, he aims to inspire individuals to achieve physical strength, flexibility, and overall well-being.</p>
             </div>
           </div>
         </div>

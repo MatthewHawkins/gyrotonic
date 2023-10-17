@@ -57,7 +57,7 @@ export default function TopSection() {
   }, []);
 
   return (
-    <div css={containerStyles}>
+    <div css={containerStyles} id='home'>
       <div
         css={backgroundStyles}
         className="background-image"
