@@ -17,7 +17,7 @@ export default function Biography() {
   `;
 
 const sectionFourStyles = css`
-background-color: #F6F5E8;
+background-color: #f0e6da;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -25,8 +25,25 @@ min-height: 100vh;
 `;
   
 const sectionThreeTitle = css`
+  position: relative;
 font-size: 3rem;
 margin-left: 5%;
+`
+const underlineStyles = css`
+
+  ::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 110px;
+    background-color: #000000;
+    bottom: -2px;
+    /* margin-left: 20px; */
+  }
+
+  ::before{
+    left: 0;
+  }
 `
 
 const sectionThreeText = css`
@@ -52,7 +69,9 @@ width: 315px;
     <div css={sectionFourStyles} id="team">
 
         <div css={introStyles} style={{ width: '80%' }}>
-          <h2 css={sectionThreeTitle}>About Us</h2>
+            <h2 css={sectionThreeTitle}>About Us
+              <span css={underlineStyles} />
+            </h2>
           <div css={bioStyles}>
             <div css={css`width: 50%;`}>
               <img src={fede} css={headshotStyles}></img>

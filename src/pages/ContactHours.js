@@ -7,6 +7,7 @@ import { ContactPage } from '@mui/icons-material';
 
 import AnimatedButton from '../components/AnimatedButton';
 import Gyrotonic from '../components/Gyrotonic';
+import Lessons from '../sections/Lessons';
 
 
 export default function ContactHours() {
@@ -97,7 +98,7 @@ const formData = useRef();
       };
 
     const bodyStyles = css`
-        background-color: #F6F5E8;
+        background-color: #f0e6da;
         display: flex;
         height: 100vh;
         position: relative;
@@ -234,7 +235,7 @@ Use something like this for tables? This would be needed in the hours section an
 
   return (
     <div css={pageStyles}>
-      <div css={hoursStyles} id="hours-and-prices">
+      {/* <div css={hoursStyles} id="hours-and-prices">
         <div css={infoStyles}>
           <h2 css={hoursTitle}>Hours</h2>
           <p css={hoursText}>You guys tell me when the hours are :)
@@ -254,7 +255,8 @@ Use something like this for tables? This would be needed in the hours section an
         Registration is done by phone , e-mail or personally in the studio. 
           </div>
         </div>
-      </div>
+      </div> */}
+      <Lessons />
       <div id='contact' css={bodyStyles}>
             <div css={contactBackgroundStyles}></div>
             <div css={contactWrapperStyles}>

@@ -10,7 +10,7 @@ export default function () {
   const mainStyles = css`
   display: flex;
   flex-direction: column;
-  background-color: #f0e6da;
+  background-color: #F6F5E8;
   `;
 
   const logoContainerStyles = css`
@@ -21,8 +21,8 @@ export default function () {
   `;
 
   const logoStyles = css`
-    height:200px;
-    width:200px;
+    height:100px;
+    width:100px;
   ` ;
   const infoStyles = css`
     display: flex;
@@ -32,12 +32,12 @@ export default function () {
 
   return (
     <div css={mainStyles}>
-      <div css={logoContainerStyles}>
-        <img src={gyroLogo} css={logoStyles}></img>
-      </div>
       <div css={infoStyles}>
         <p><b>GYROTONIC®, GYROTONIC® & Logo, GYROTONIC EXPANSION SYSTEM®, <p>The Art of Exercising and Beyond&reg;</p></b> are registered trademarks and are trademarks of Gyrotonic Sales Corp.</p>
         <p>More info here</p>
+      </div>
+      <div css={logoContainerStyles}>
+        <img src={gyroLogo} css={logoStyles}></img>
       </div>
     </div>
   )

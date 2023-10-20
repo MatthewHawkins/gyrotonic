@@ -36,13 +36,32 @@ transition: opacity 2s ease;
 const introStyles = css`
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-family: 'Cormorant Garamond', serif;
     padding: 10px 30px 10px 10px;
     width: 70vw;
   `;
 
 const sectionTwoTitle = css`
+  position: relative;
   font-size: 3rem;
+`
+
+const underlineStyles = css`
+
+  ::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 110px;
+    background-color: #000000;
+    bottom: -2px;
+    margin-left: 25%;
+  }
+
+  ::before{
+    left: 0;
+  }
 `
 
 const imageTwoStyles = css`
@@ -61,7 +80,9 @@ const sectionTwoText = css`
     <div css={sectionTwoStyles} id="methodology">
     <img css={imageTwoStyles} src={methodPicture}></img>
     <div css={introStyles}>
-      <h2 css={sectionTwoTitle}>Methodology</h2>
+      <h2 css={sectionTwoTitle}>Methodology
+      <span css={underlineStyles}/>
+      </h2>
       <div css={sectionTwoText}>
         <Gyrotonic /> is a unique movement method that combines elements of yoga, dance, gymnastics,
         tai chi, and swimming. It was created by Juliu Horvath, a former ballet dancer, in the 1980s.

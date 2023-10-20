@@ -15,7 +15,7 @@ export default function Equipment() {
     width: 60vw;
   `;
 const sectionThreeStyles = css`
-  background-color: #F6F5E8;
+  background-color: #f0e6da;
   display: flex;
   flex-direction: row;
   align-items: center;

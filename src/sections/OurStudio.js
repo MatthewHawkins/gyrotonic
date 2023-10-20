@@ -21,21 +21,12 @@ export default function OurStudio() {
     setShowContent(true);
   }, []);
 
-  const sectionOneContainer = css`
-  background-color: #f0e6da;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-bottom: 35px;
-`;
-
 const sectionOneStyles = css`
   background-color: #f0e6da;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* height: 75vh; */
   opacity: ${showContent ? '1' : '0'};
   transition: opacity 2s ease;
 `;
@@ -45,8 +36,6 @@ const sectionOneLayout = css`
   flex-direction: column;
   width: 50%;
   font-family: 'Cormorant Garamond', serif;
-  /* width: 60vw; */
-  /* max-height: 75vh; */
   overflow: scroll;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -58,10 +47,27 @@ const sectionOneLayout = css`
 
 const sectionOneTitle = css`
   font-size: 3rem;
+  position: relative;
   align-self: flex-start;
   padding-left: 5%;
-  margin: 0px;
+  padding-bottom: 0.5rem;
 `;
+
+const underlineStyles = css`
+  ::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 110px;
+    background-color: #000000;
+    bottom: -2px;
+    margin-left: 20%; 
+  }
+
+  ::before{
+    left: 0;
+  }
+`
 
 const sectionOneText = css`
   font-size: 1.25em;
@@ -74,15 +80,19 @@ const sliderStyles = css`
   margin: 20px;
   margin-top: -20px;
   padding: 40px 0 40px 0;
+
+  .awssld__bullets{
+    bottom: -10px !important;
+  }
 `;
 
 
   return (
-    <div css={sectionOneContainer}>
     <div css={sectionOneStyles}>
-      {/* <img src={logo}></img> */}
       <div css={sectionOneLayout}>
-        <h2 css={sectionOneTitle}>Our Studio</h2>
+        <h2 css={sectionOneTitle}>Our Studio
+        <span css={underlineStyles}/>
+        </h2>
         <p css={sectionOneText}>
 
         “The Roots" was born from the meeting of two dancers who discovered Gyrotonic, 
@@ -110,6 +120,5 @@ const sliderStyles = css`
         <div data-src={image6}></div>
       </AutoplaySlider>
     </div>
-  </div>
   )
 }
