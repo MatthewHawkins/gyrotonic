@@ -15,7 +15,6 @@ function App() {
   body {
     margin: 0;
     padding: 0;
-    width: 100vw;
   }
   `;
   const contentCss = css`
@@ -49,6 +48,7 @@ export default App;
   6) Menu bar good?
   7) Maybe make the text more concise?
   8) Add citations for icons
+  9) Add a "reviews" section in the hours and prices spot
 
   Later==
   1) Add a location section

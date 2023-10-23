@@ -9,13 +9,15 @@ export default function LessonCard({ title, cost, description}) {
   const cardStyles = css`
 
 
-min-height: 45vh;
+min-height: 50vh;
 padding: 10px;
+gap: 20px;
 position: relative;
 display: flex;
 flex-direction: column;
-justify-content: space-around;
+justify-content: flex-start;
 align-items: center;
+background-color: #F6F5E8;
 
 text-align: center;
 
@@ -32,15 +34,15 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
     @media (min-width: 768px){
-      flex: 0 0 45%;
-      max-width: 50%;
+      flex: 0 0 40%;
+      max-width: 40%;
     }
     
-    @media (min-width: 992px){
-      flex: 0 0 16%;
+    @media (min-width: 1200px){
+      flex: 0 0 15%;
       max-width: 25%;
     }
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -60,6 +62,10 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     h3, h2, p {
       position: relative;
       z-index: 2;
+    }
+
+    h3{
+      margin-top: 50px;
     }
 
     &:hover::before {

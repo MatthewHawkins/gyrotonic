@@ -29,6 +29,7 @@ export default function Methodology() {
   ::-webkit-scrollbar{ /* Chrome and Safari */
   display: none;
 }
+min-height: 90vh;
 opacity: ${showContent ? '1' : '0'};
 transition: opacity 2s ease;
 `;

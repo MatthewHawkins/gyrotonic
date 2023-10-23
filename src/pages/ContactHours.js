@@ -187,7 +187,6 @@ const formData = useRef();
             width: 55%;
             height: 50px;
             border: hidden;
-            /* border-bottom: 1px solid black; */
             margin: 10px 0px;
             font-size: 1em;
             padding-left: 10px;
@@ -202,7 +201,7 @@ const formData = useRef();
         }
         button{
             border: hidden;
-            background-color: #F6F5E8;
+            background-color: transparent;
         }
 
         @media screen and (max-width: 480px) {
