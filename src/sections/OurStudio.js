@@ -36,12 +36,9 @@ const sectionOneLayout = css`
   flex-direction: column;
   width: 50%;
   font-family: 'Cormorant Garamond', serif;
-  overflow: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  ::-webkit-scrollbar{ /* Chrome and Safari */
-  display: none;
-  } 
+  @media (max-width: 768px){
+    width: 90%;
+  }
 `;
 
 
@@ -83,6 +80,10 @@ const sliderStyles = css`
 
   .awssld__bullets{
     bottom: -10px !important;
+  }
+
+  @media (max-width: 768px){
+      display: none;
   }
 `;
 

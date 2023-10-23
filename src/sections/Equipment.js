@@ -13,6 +13,9 @@ export default function Equipment() {
     font-family: 'Cormorant Garamond', serif;
     padding: 10px 30px 10px 10px;
     width: 60vw;
+    @media (max-width: 768px){
+    width: 90%;
+  }
   `;
 const sectionThreeStyles = css`
   background-color: #f0e6da;
@@ -31,8 +34,11 @@ const sectionThreeText = css`
     margin-left: 5%;
     `
 const imageThreeStyles = css`
-padding-right: 30px;
-height: 70%;
+  padding-right: 30px;
+  height: 70%;
+  @media (max-width: 768px){
+      display: none;
+  }
 `
 
   return (

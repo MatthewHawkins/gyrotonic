@@ -98,7 +98,14 @@ const formData = useRef();
       };
 
     const bodyStyles = css`
-        background-color: #f0e6da;
+        /* background-color: #f0e6da; */
+
+        background-image: linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.6)), url(${image});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+
         display: flex;
         height: 100vh;
         position: relative;

@@ -40,6 +40,9 @@ const introStyles = css`
     font-family: 'Cormorant Garamond', serif;
     padding: 10px 30px 10px 10px;
     width: 70vw;
+    @media (max-width: 768px){
+      width: 90%;
+    }
   `;
 
 const sectionTwoTitle = css`
@@ -70,6 +73,9 @@ const imageTwoStyles = css`
     max-width: 45%;
     width: 450px;
     padding-left: 100px;
+    @media (max-width: 768px){
+      display: none;
+    }
     `
 
 const sectionTwoText = css`

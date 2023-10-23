@@ -15,6 +15,7 @@ function App() {
   body {
     margin: 0;
     padding: 0;
+    width: 100vw;
   }
   `;
   const contentCss = css`
@@ -41,13 +42,13 @@ export default App;
 
 /*
   Before Launch==
-  1) Replace equipment page with video section
-  2) Finish Lesson cards, and then use them to finish lesson section
+  1) Replace equipment page with video section - switch with Methodology
   3) Finish footer
   4) Finish the get in touch section, need to get a form submission tool that works
   5) Responsivness :(
   6) Menu bar good?
   7) Maybe make the text more concise?
+  8) Add citations for icons
 
   Later==
   1) Add a location section

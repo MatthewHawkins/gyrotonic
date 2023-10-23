@@ -31,7 +31,6 @@ export default function Homepage() {
 
   const bodyStyles = css`
     background-color: #E0E0E0;
-    width: 100%;
   `;
 
 const globalStyles = css`
