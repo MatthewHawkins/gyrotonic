@@ -27,8 +27,8 @@ export default function () {
   `;
 
   const logoStyles = css`
-    height:100px;
-    width:100px;
+    height: 100px;
+    width: 100px;
   ` ;
   const infoStyles = css`
     display: flex;
@@ -55,7 +55,12 @@ export default function () {
     <div css={mainStyles}>
       <div css={infoStyles}>
       <img src={gyroLogo} css={logoStyles}></img>
-        <p><b>GYROTONIC®, GYROTONIC® & Logo, <br></br>GYROTONIC EXPANSION SYSTEM®, The Art of Exercising and Beyond</b> &reg; <br></br> are registered trademarks and are trademarks of Gyrotonic Sales Corp.</p>
+        <p><b>GYROTONIC®, GYROTONIC® & Logo, 
+          <br></br>GYROTONIC EXPANSION SYSTEM®, The Art of Exercising and Beyond
+          </b> &reg; <br></br> are registered trademarks and are trademarks of Gyrotonic Sales Corp.
+          <br></br><br></br>
+          Icons from MaterialIcon and <a href='flaticon.com'>FlatIcon</a></p>
+
         <div css={iconDisplayStyles}>
         <FacebookIcon css={iconStyles}/>
         <InstagramIcon css={iconStyles}/>

@@ -49,7 +49,7 @@ const listItemStyles = css`
 
 const linkStyles = css`
   transition: color 0.5s;
-  ${isAtTop ? 'color: rgba(208, 208, 209, 0.65)' : 'color: #333'};
+  ${isAtTop ? 'color: rgba(308, 308, 309, 0.65)' : 'color: #333'};
   text-decoration: none;
   font-weight: bold;
   &:hover {

@@ -42,13 +42,13 @@ export default App;
 /*
   Before Launch==
   1) Replace equipment page with video section - switch with Methodology
-  3) Finish footer
-  4) Finish the get in touch section, need to get a form submission tool that works
-  5) Responsivness :(
-  6) Menu bar good?
-  7) Maybe make the text more concise?
-  8) Add citations for icons
-  9) Add a "reviews" section in the hours and prices spot
+  2) Finish footer
+  3) Finish the get in touch section, need to get a form submission tool that works
+  4) Responsivness :(
+  5) Menu bar good/burger menu?
+  6) Maybe make the text more concise?
+  7) Add citations for icons
+  8) Add a "reviews" section in the hours and prices spot
 
   Later==
   1) Add a location section
