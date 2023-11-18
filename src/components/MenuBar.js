@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 import logo2 from '../assets/images/2017-Logo-PNG-Transparent-Backround.png';
 
@@ -29,7 +29,7 @@ export default function MenuBar() {
   z-index: 9999;
   padding: ${isAtTop ? '45px 0' : '30px 0'}; 
   box-shadow: ${isAtTop ? 'none' : '0 0 30px -5px rgba(0, 0, 0, 0.1)'};
-  ${isAtTop ? 'background-color: transparent' : 'background-color: #F6F5E8'};
+  ${isAtTop ? 'background-color: transparent' : 'background-color: #DCD9D0'};
   transition: background-color 0.3s, padding 0.3s;
   `;
   
@@ -109,7 +109,7 @@ const iconStyles = css`
       <div css={iconDisplayStyles}>
         <FacebookIcon css={iconStyles}/>
         <InstagramIcon css={iconStyles}/>
-        <TwitterIcon css={iconStyles}/>
+        <MailOutlineIcon css={iconStyles}/>
       </div>
     </div>
   );

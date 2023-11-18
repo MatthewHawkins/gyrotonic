@@ -18,7 +18,7 @@ export default function Equipment() {
   }
   `;
 const sectionThreeStyles = css`
-  background-color: #f0e6da;
+  background-color: #DFE0DE;
   display: flex;
   flex-direction: row;
   align-items: center;

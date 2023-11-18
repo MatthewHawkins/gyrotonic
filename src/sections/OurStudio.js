@@ -22,7 +22,7 @@ export default function OurStudio() {
   }, []);
 
 const sectionOneStyles = css`
-  background-color: #f0e6da;
+  background-color: #DFE0DE;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -96,7 +96,7 @@ const sliderStyles = css`
         </h2>
         <p css={sectionOneText}>
 
-        “The Roots" was born from the meeting of two dancers who discovered Gyrotonic, 
+        <b>The Roots Studio</b> was born from the meeting of two dancers who discovered Gyrotonic, 
         a transformative method that significantly impacted their lives. Gyrotonic, known 
         for its circular and fluid movements, helped them alleviate back problems that had 
         troubled them for years. Thus, the studio was founded with the aim of raising awareness 

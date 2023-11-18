@@ -7,6 +7,7 @@ import IconCard from './IconCard'
 import stones from '../assets/icons/stones.png'
 import exercise from '../assets/icons/exercise.png'
 import strength from '../assets/icons/strength.png'
+import lotus from '../assets/icons/lotus.png'
 
 
 export default function IconDisplay() {
@@ -33,9 +34,9 @@ export default function IconDisplay() {
         text='Trains strength, flexibility and stretching, mobilizes and strengthens the spine to prevent and rehabilitate injuries'
       />
       <IconCard 
-        imagePath={strength}
+        imagePath={lotus}
         title='Well-being'
-        text='Releases stress and enhances regeneration, and improves overall wellbeing'
+        text='Releases stress and enhances regeneration, and improves overall well-being'
       />
     </div>
   )

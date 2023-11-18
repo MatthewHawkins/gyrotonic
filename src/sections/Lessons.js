@@ -10,7 +10,7 @@ export default function Lessons() {
 
   const hoursStyles = css`
   /* background-image: linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.6)), url(${image}); */
-  background-color: #f0e6da;
+  background-color: #DFE0DE;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -59,10 +59,10 @@ const hoursText = css`
 `
 
 const cards = [
-  <LessonCard title="New Client Trial Lessons" cost='$50' description='Come in for an introductory lesson, get to know us and our methods!'/>,
+  <LessonCard title="New Client Trial Lessons" cost='$50' description='Come in for an introductory lesson, and get to know us!'/>,
   <LessonCard title="Three Lesson Package" cost='$135' description='Three class package which can be scheduled with us over times that work for you.'/>,
   <LessonCard title="Six Lesson Package" cost='$270' description='Six class package, ideal for individuals or couples, which can be schedules with us over times that work for you.'/>,
-  <LessonCard title="Ten Lesson Package" cost='$450' description='Ten class package which can be schedules with us over times that work for you.'/>
+  <LessonCard title="Ten Lesson Package" cost='$450' description='Ten class package which can be schedules with us over times that work for you. Perfect for understanding the various movement sequences.'/>
 ];
 
 

@@ -98,7 +98,7 @@ const formData = useRef();
       };
 
     const bodyStyles = css`
-        /* background-color: #f0e6da; */
+        /* background-color: #DFE0DE; */
 
         background-image: linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.6)), url(${image});
         background-size: cover;
@@ -153,7 +153,8 @@ const formData = useRef();
         display: flex;
         align-items: center;
         margin: 50px 0px;
-        font-weight: 300px;
+        font-weight: bold;
+        font-size: 1.45em;
 
         @media screen and (max-width: 480px) {
             margin: 20px 0px;
@@ -275,7 +276,7 @@ Use something like this for tables? This would be needed in the hours section an
                             +43 660 916 3118 (whatsapp)
                         </div>
                         <div css={contactItemStyles}>
-                            therootsstudio.gyrotonic@gmail.com (email)
+                            theroots.exercise@gmail.com (email)
                         </div>
                     </div>
                 </div>

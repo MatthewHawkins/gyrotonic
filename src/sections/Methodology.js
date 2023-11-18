@@ -19,7 +19,7 @@ export default function Methodology() {
 
 
   const sectionTwoStyles = css`
-  background-color: #F6F5E8;
+  background-color: #DCD9D0;
   display: flex;
   flex-direction: row;
   align-items: center;

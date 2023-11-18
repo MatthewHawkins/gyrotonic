@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useRef, useState } from 'react'
 import { css } from '@emotion/react';
-import image from '../assets/images/image2.png';
+// import image from '../assets/images/image2.png';
+import image from '../assets/images/hallowin.jpeg';
 import logo from '../assets/images/image.png';
 
 const containerStyles = css`
@@ -12,7 +13,7 @@ const containerStyles = css`
 `;
 
 const backgroundStyles = css`
-  background-image: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url(${image}); /* Set your image path */
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(${image}); /* Set your image path */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

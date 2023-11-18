@@ -2,7 +2,10 @@
 import React from 'react'
 import { css } from '@emotion/react'
 
-import methodPicture from '../assets/images/method.jpeg'
+import photo1 from '../assets/images/mirror-mirror-onthewall.jpeg'
+import photo2 from '../assets/images/tricep-man.jpeg'
+import photo3 from '../assets/images/smile.jpeg'
+import methodPicture from '../assets/images/worth.jpeg'
 
 export default function LessonCard({ title, cost, description}) {
 
@@ -17,7 +20,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
-background-color: #F6F5E8;
+background-color: #DCD9D0;
 
 text-align: center;
 

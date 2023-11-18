@@ -6,7 +6,7 @@ import gyroLogo from '../assets/images/gyrotonic_sb.png'
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 export default function () {
 
@@ -15,7 +15,7 @@ export default function () {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #F6F5E8;
+  background-color: #DCD9D0;
   min-height: 30vh;
   `;
 
@@ -59,12 +59,16 @@ export default function () {
           <br></br>GYROTONIC EXPANSION SYSTEM®, The Art of Exercising and Beyond
           </b> &reg; <br></br> are registered trademarks and are trademarks of Gyrotonic Sales Corp.
           <br></br><br></br>
-          Icons from MaterialIcon and <a href='flaticon.com'>FlatIcon</a></p>
+          Icons from MaterialIcon and <a href='flaticon.com'>FlatIcon</a>
+          <br></br><br></br>
+          Photos and videos by Colin Jacobs
+          <br></br><br></br>
+          Website by Matthew Hawkins</p>
 
         <div css={iconDisplayStyles}>
         <FacebookIcon css={iconStyles}/>
         <InstagramIcon css={iconStyles}/>
-        <TwitterIcon css={iconStyles}/>
+        <MailOutlineIcon css={iconStyles}/>
       </div>
       </div>
       <div css={logoContainerStyles}>

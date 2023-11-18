@@ -47,9 +47,15 @@ export default App;
   4) Responsivness :(
   5) Menu bar good/burger menu?
   6) Maybe make the text more concise?
-  7) Add citations for icons
   8) Add a "reviews" section in the hours and prices spot
 
   Later==
   1) Add a location section
+
+
+
+  ====
+  Change the photo at the top so that the logo and the text has "trainer" and not studio.
+
+
 */
