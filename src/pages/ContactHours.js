@@ -57,11 +57,11 @@ const formData = useRef();
         //       console.log(error.text);
         //     }
         //   );
-        // setName("")
-        // setSubject("")
-        // setFormEmail("")
-        // setMessage("")
-        // alert("Email sent - thank you!")
+        setName("")
+        setSubject("")
+        setFormEmail("")
+        setMessage("")
+        alert("Email sent - thank you!")
       };
 
     const bodyStyles = css`
