@@ -2,13 +2,15 @@
 import { jsx, css } from '@emotion/react'
 import React, { useRef, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import image from '../assets/images/keep1.png';
+import image from '../assets/images/background1.jpeg';
 import { ContactPage } from '@mui/icons-material';
 
 import AnimatedButton from '../components/AnimatedButton';
 import Gyrotonic from '../components/Gyrotonic';
 import Lessons from '../sections/Lessons';
-
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import EmailIcon from '@mui/icons-material/Email';
 
 export default function ContactHours() {
 
@@ -31,41 +33,6 @@ export default function ContactHours() {
     flex-direction: column;
     font-family: 'Cormorant Garamond', serif;
   `;
-
-  const infoStyles = css`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Cormorant Garamond', serif;
-    padding: 10px 30px 10px 10px;
-    width: 100%;
-    font-size: 1.15em;
-  `;
-
-  const hoursStyles = css`
-  background-image: linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.6)), url(${image});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 85vh;
-  font-size: 1.15em;
-  `;
-
-  const hoursTitle = css`
-      font-size: 3rem;
-  `
-
-  const hoursText = css`
-    font-size: 1.2em;
-    font-weight: 500;
-  `
-
-
-
 
 const formData = useRef();
     const [name, setName] = useState();
@@ -107,7 +74,7 @@ const formData = useRef();
         background-attachment: fixed;
 
         display: flex;
-        height: 100vh;
+        min-height: 100vh;
         position: relative;
         align-items: center;
         @media screen and (max-width: 480px) {
@@ -133,7 +100,8 @@ const formData = useRef();
     `;
 
     const leftStyles = css`
-        flex: 1;
+      margin-left: 3em;
+      flex: 1;
     `;
 
     const contactTitleStyles = css`
@@ -151,7 +119,9 @@ const formData = useRef();
 
     const contactItemStyles = css`
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        /* align-items: center; */
         margin: 50px 0px;
         font-weight: bold;
         font-size: 1.45em;
@@ -161,17 +131,11 @@ const formData = useRef();
             width: 100%;
         }
     `;
-
     const contactIconStyles = css`
-        height: 30px;
-        width: 30px;
-        margin-right: 20px;
+      /* height: 30px; */
+      /* margin-right: 2px; */
+      margin-bottom: -8px;
     `;
-
-
-
-
-
 
     const rightStyles = css`
         flex: 1;
@@ -226,7 +190,7 @@ const formData = useRef();
     `;
 
     const contactDescriptionStyles = css`
-        font-size: 1.15em;
+        font-size: 1.45em;
         font-weight: 200px;
 
         @media screen and (max-width: 480px) {
@@ -235,34 +199,9 @@ const formData = useRef();
     `;
 
 
-/* 
-Use something like this for tables? This would be needed in the hours section and prices.
-*/
-
 
   return (
     <div css={pageStyles}>
-      {/* <div css={hoursStyles} id="hours-and-prices">
-        <div css={infoStyles}>
-          <h2 css={hoursTitle}>Hours</h2>
-          <p css={hoursText}>You guys tell me when the hours are :)
-          </p>
-        </div>
-        <div css={infoStyles}>
-          <h2 css={hoursTitle}>Prices</h2>
-          <div css={hoursText}>
-          Training dates can be chosen according to openings in the trainers' schedules. 
-          There are four training options:
-          <ul>
-            <li>Single lesson - €50</li>
-            <li>Three Introductory Lessons - €135</li>
-            <li>Six Lesson Package - €270</li>
-            <li>Ten Lesson Package - €450</li>
-          </ul>
-        Registration is done by phone , e-mail or personally in the studio. 
-          </div>
-        </div>
-      </div> */}
       <Lessons />
       <div id='contact' css={bodyStyles}>
             <div css={contactBackgroundStyles}></div>
@@ -271,12 +210,10 @@ Use something like this for tables? This would be needed in the hours section an
                     <h1 css={contactTitleStyles}> Feel free to get in touch</h1>
                     <div css={contactInfoStyles}>
                         <div css={contactItemStyles}>
-                            +49 178 614 5467 (phone)<br />
-                            +39 351 789 5709 (whatsapp)<br />
-                            +43 660 916 3118 (whatsapp)
-                        </div>
-                        <div css={contactItemStyles}>
-                            theroots.exercise@gmail.com (email)
+                            <div><LocalPhoneIcon css={contactIconStyles}/> &nbsp;+49 178 614 5467 </div>
+                            <div><WhatsAppIcon css={contactIconStyles}/> +39 351 789 5709 </div>
+                            <div><WhatsAppIcon css={contactIconStyles}/> +43 660 916 3118 </div>
+                            <div ><EmailIcon css={contactIconStyles}/> theroots.exercise@gmail.com</div>
                         </div>
                     </div>
                 </div>

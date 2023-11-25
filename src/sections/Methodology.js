@@ -19,7 +19,7 @@ export default function Methodology() {
 
 
   const sectionTwoStyles = css`
-  background-color: #DCD9D0;
+  background-color: var(--background-color-secondary);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -28,6 +28,7 @@ export default function Methodology() {
   scrollbar-width: none;  /* Firefox */
   ::-webkit-scrollbar{ /* Chrome and Safari */
   display: none;
+  
 }
 min-height: 90vh;
 opacity: ${showContent ? '1' : '0'};
@@ -39,7 +40,7 @@ const introStyles = css`
     flex-direction: column;
     align-items: center;
     font-family: 'Cormorant Garamond', serif;
-    padding: 10px 30px 10px 10px;
+    padding: 1em 3em 1em 3em;
     width: 70vw;
     @media (max-width: 768px){
       width: 90%;
@@ -80,7 +81,7 @@ const imageTwoStyles = css`
     `
 
 const sectionTwoText = css`
-  font-size: 1.25em;
+  font-size: 1.45em;
   padding: 0 5%;
 `   
   return (

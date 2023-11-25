@@ -1,4 +1,11 @@
 :root{
   margin: 0px;
   padding: 0px;
+
+  --background-color-primary: #ffffff;
+  --background-color-secondary :#F8F9FA;
+  /* --background-color-primary: #f1eee4;
+  --background-color-secondary :#DCD9D0; */
+
+
 }

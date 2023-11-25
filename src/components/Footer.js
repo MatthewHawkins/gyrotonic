@@ -15,7 +15,7 @@ export default function () {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #DCD9D0;
+  background-color: var(--background-color-secondary);
   min-height: 30vh;
   `;
 
@@ -30,6 +30,16 @@ export default function () {
     height: 100px;
     width: 100px;
   ` ;
+
+  const col1Styles = css`
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    margin-top: 1em;
+  `
+
+
   const infoStyles = css`
     display: flex;
     justify-content: space-around;
@@ -54,16 +64,16 @@ export default function () {
   return (
     <div css={mainStyles}>
       <div css={infoStyles}>
-      <img src={gyroLogo} css={logoStyles}></img>
-        <p><b>GYROTONIC®, GYROTONIC® & Logo, 
-          <br></br>GYROTONIC EXPANSION SYSTEM®, The Art of Exercising and Beyond
-          </b> &reg; <br></br> are registered trademarks and are trademarks of Gyrotonic Sales Corp.
+      <div css={col1Styles}>
+        <img src={gyroLogo} css={logoStyles}></img>
+        <p><b>GYROTONIC®, GYROTONIC® & Logo, GYROTONIC EXPANSION SYSTEM®, 
+        <br></br><br></br>The Art of Exercising and Beyond&reg;</b> are registered trademarks and are trademarks of <br></br><br></br>Gyrotonic Sales Corp.</p>
+      </div>
+        <p>
           <br></br><br></br>
           Icons from MaterialIcon and <a href='flaticon.com'>FlatIcon</a>
           <br></br><br></br>
-          Photos and videos by Colin Jacobs
-          <br></br><br></br>
-          Website by Matthew Hawkins</p>
+          Photos and videos by Colin Jacobs</p>
 
         <div css={iconDisplayStyles}>
         <FacebookIcon css={iconStyles}/>

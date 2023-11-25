@@ -17,7 +17,7 @@ export default function Biography() {
   `;
 
 const sectionFourStyles = css`
-background-color: #DFE0DE;
+background-color: var(--background-color-primary);
 display: flex;
 flex-direction: column;
 align-items: center;

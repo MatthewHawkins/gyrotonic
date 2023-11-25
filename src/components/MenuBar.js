@@ -23,13 +23,13 @@ export default function MenuBar() {
   top: 0;
   left: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2em;
+  font-size: 1.4em;
   background-color: transparent;
   transition: top 0.3s;
   z-index: 9999;
   padding: ${isAtTop ? '45px 0' : '30px 0'}; 
   box-shadow: ${isAtTop ? 'none' : '0 0 30px -5px rgba(0, 0, 0, 0.1)'};
-  ${isAtTop ? 'background-color: transparent' : 'background-color: #DCD9D0'};
+  ${isAtTop ? 'background-color: transparent' : 'background-color: var(--background-color-secondary)'};
   transition: background-color 0.3s, padding 0.3s;
   `;
   

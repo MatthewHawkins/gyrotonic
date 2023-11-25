@@ -22,7 +22,7 @@ export default function OurStudio() {
   }, []);
 
 const sectionOneStyles = css`
-  background-color: #DFE0DE;
+  background-color: var(--background-color-primary);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,6 +36,7 @@ const sectionOneLayout = css`
   flex-direction: column;
   width: 50%;
   font-family: 'Cormorant Garamond', serif;
+  padding: 0 2em 0 2em;
   @media (max-width: 768px){
     width: 90%;
   }
@@ -67,7 +68,7 @@ const underlineStyles = css`
 `
 
 const sectionOneText = css`
-  font-size: 1.25em;
+  font-size: 1.45em;
   padding: 0 5%;
 `
 

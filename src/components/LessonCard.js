@@ -7,7 +7,7 @@ import photo2 from '../assets/images/tricep-man.jpeg'
 import photo3 from '../assets/images/smile.jpeg'
 import methodPicture from '../assets/images/worth.jpeg'
 
-export default function LessonCard({ title, cost, description}) {
+export default function LessonCard({ title, cost, description, photo}) {
 
   const cardStyles = css`
 
@@ -20,7 +20,8 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
-background-color: #DCD9D0;
+background-color: #FFFFFF;
+/* background-color: #F6F6F6; */
 
 text-align: center;
 
@@ -53,7 +54,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)), url(${methodPicture});
+      background-image: linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)), url(${photo});
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
