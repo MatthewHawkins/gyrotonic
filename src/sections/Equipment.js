@@ -22,7 +22,6 @@ const sectionThreeStyles = css`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100vh;
   `;
 const sectionThreeTitle = css`
       font-size: 3rem;
@@ -34,8 +33,8 @@ const sectionThreeText = css`
     margin-left: 5%;
     `
 const imageThreeStyles = css`
-  padding-right: 30px;
-  height: 70%;
+  padding: 5em 3em 0 0;
+  height: 650px;
   @media (max-width: 768px){
       display: none;
   }

@@ -101,7 +101,9 @@ const sliderStyles = css`
         a transformative method that significantly impacted their lives. Gyrotonic, known 
         for its circular and fluid movements, helped them alleviate back problems that had 
         troubled them for years. Thus, the studio was founded with the aim of raising awareness 
-        about this revolutionary yet lesser-known method. The name "Roots" emphasizes the foundational nature of 
+        about this revolutionary yet lesser-known method. 
+        
+        <br></br><br></br>The name "Roots" emphasizes the foundational nature of 
         the Gyrotonic method, signifying a return to the core, both physically and metaphorically, 
         fostering a sense of grounding, strength, and growth for those who engage in the practice.
         By sharing their own experience, and the benefits they gained from Gyrotonic, the founders hope to 

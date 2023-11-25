@@ -77,9 +77,6 @@ const formData = useRef();
         min-height: 100vh;
         position: relative;
         align-items: center;
-        @media screen and (max-width: 480px) {
-            margin-top: 400px;
-        }
     `;
 
     const contactBackgroundStyles = css`
@@ -93,7 +90,7 @@ const formData = useRef();
         padding: 50px;
         display: flex;
 
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 768px) {
             flex-direction: column;
             padding: 0px 50px;
         }
@@ -108,7 +105,7 @@ const formData = useRef();
         font-size: 4em;
         width: 60%;
 
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 768px) {
             font-size: 30px;
         }
     `;
@@ -126,7 +123,7 @@ const formData = useRef();
         font-weight: bold;
         font-size: 1.45em;
 
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 768px) {
             margin: 20px 0px;
             width: 100%;
         }
@@ -169,7 +166,7 @@ const formData = useRef();
             background-color: transparent;
         }
 
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 768px) {
             form {
                 margin-top: 0px;
                 display: flex;
@@ -193,7 +190,7 @@ const formData = useRef();
         font-size: 1.45em;
         font-weight: 200px;
 
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 768px) {
             display: none;
         }
     `;
@@ -210,7 +207,7 @@ const formData = useRef();
                     <h1 css={contactTitleStyles}> Feel free to get in touch</h1>
                     <div css={contactInfoStyles}>
                         <div css={contactItemStyles}>
-                            <div><LocalPhoneIcon css={contactIconStyles}/> &nbsp;+49 178 614 5467 </div>
+                            <div><LocalPhoneIcon css={contactIconStyles}/> +49 178 614 5467 </div>
                             <div><WhatsAppIcon css={contactIconStyles}/> +39 351 789 5709 </div>
                             <div><WhatsAppIcon css={contactIconStyles}/> +43 660 916 3118 </div>
                             <div ><EmailIcon css={contactIconStyles}/> theroots.exercise@gmail.com</div>

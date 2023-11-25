@@ -31,6 +31,7 @@ export default function MenuBar() {
   box-shadow: ${isAtTop ? 'none' : '0 0 30px -5px rgba(0, 0, 0, 0.1)'};
   ${isAtTop ? 'background-color: transparent' : 'background-color: var(--background-color-secondary)'};
   transition: background-color 0.3s, padding 0.3s;
+
   `;
   
   const listStyles = css`
@@ -41,6 +42,10 @@ export default function MenuBar() {
   padding: 0;
   display: flex;
   gap: 10px;
+  
+  @media (max-width: 768px){
+      flex-direction: column;
+    }
   `;
 
 const listItemStyles = css`
