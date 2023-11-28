@@ -141,11 +141,14 @@ const formData = useRef();
         justify-content: space;
         flex-direction: column;
         
-        form{
+        * {
+          font-family: 'Cormorant Garamond', serif;
+        }
+        form {
             margin-top: 20px;
             outline: none;
         }
-        input{
+        input {
             width: 55%;
             height: 50px;
             border: hidden;
@@ -154,14 +157,14 @@ const formData = useRef();
             padding-left: 10px;
             outline: none;
         }
-        textarea{
+        textarea {
             width: 100%;
             margin: 20px 0px;
             font-size: 1em;
             padding-left: 10px;
             border: hidden;
         }
-        button{
+        button {
             border: hidden;
             background-color: transparent;
         }

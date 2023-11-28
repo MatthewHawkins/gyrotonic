@@ -4,6 +4,7 @@ import React from 'react'
 
 import methodPicture from '../assets/images/method.jpeg'
 
+/* TODO */
 
 export default function Equipment() {
 

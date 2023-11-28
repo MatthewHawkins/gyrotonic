@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import { css } from '@emotion/react';
 // import image from '../assets/images/image2.png';
 import image from '../assets/images/hallowin.jpeg';
-import logo from '../assets/images/image.png';
+import logo from '../assets/images/logo-new.png';
+// import logo from '../assets/images/image.png';
 
 const containerStyles = css`
   height: calc(105vh);

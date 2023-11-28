@@ -9,7 +9,5 @@
 ## TODO Solo
 
 1) Equipment section into video section
-2) Footer
-3) Fix the logo with the work "trainer" instead of studio
 4) Hook up contact form
 5) Menu bar responsive
