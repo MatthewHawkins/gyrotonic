@@ -2,7 +2,7 @@
 import { jsx, css } from '@emotion/react'
 import React, { useState, useEffect } from 'react';
 
-import gyroLogo from '../assets/images/gyrotonic_sb.png'
+import gyroLogo from '../assets/images/logo_small.png'
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -17,6 +17,7 @@ export default function () {
   justify-content: center;
   background-color: var(--background-color-secondary);
   min-height: 30vh;
+  padding: 0 1em;
   `;
 
   const logoContainerStyles = css`
@@ -66,8 +67,8 @@ export default function () {
       <div css={infoStyles}>
       <div css={col1Styles}>
         <img src={gyroLogo} css={logoStyles}></img>
-        <p><b>GYROTONIC®, GYROTONIC® & Logo, GYROTONIC EXPANSION SYSTEM®, 
-        <br></br><br></br>The Art of Exercising and Beyond&reg;</b> are registered trademarks and are trademarks of <br></br><br></br>Gyrotonic Sales Corp.</p>
+        <p><b>GYROTONIC®, GYROTONIC® Logo, GYROTONIC EXPANSION SYSTEM®, and GYROKINESIS® 
+        <br></br><br></br>The Art of Exercising and Beyond&reg;</b> are registered trademarks and are trademarks of Gyrotonic Sales Corp.</p>
       </div>
         <p>
           <br></br><br></br>

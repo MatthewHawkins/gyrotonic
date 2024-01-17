@@ -11,6 +11,6 @@ export default function Gyrotonic( {size} ) {
 
   return (
     <span css={gyroStyles}>GYROTONIC&reg;</span>
-    // <span css={gyroStyles}>GYROTONIC®</span>
+    // <span css={gyroStyles}>GYROTONIC®</span> 
   )
 }
