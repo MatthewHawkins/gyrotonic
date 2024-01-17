@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/gyrotonic/static/css/main.20aa9e8d.css",
+    "main.js": "/gyrotonic/static/js/main.3916e868.js",
+    "static/media/keep1.png": "/gyrotonic/static/media/keep1.0031b9dd2068dc375b3c.png",
+    "static/media/smile.jpeg": "/gyrotonic/static/media/smile.fb3ebb65d2b6e39a4a2c.jpeg",
+    "static/media/background1.jpeg": "/gyrotonic/static/media/background1.d4b422460d1642035a2b.jpeg",
+    "static/media/caro_1.jpeg": "/gyrotonic/static/media/caro_1.326365b3a9f0e598809f.jpeg",
+    "static/media/method.jpeg": "/gyrotonic/static/media/method.a773ee4ad54b78a42882.jpeg",
+    "static/media/caro_5.jpeg": "/gyrotonic/static/media/caro_5.e3b4f2e68f952c6ee3af.jpeg",
+    "static/media/caro_3.jpeg": "/gyrotonic/static/media/caro_3.f3cedb82ee72f0b0d5ac.jpeg",
+    "static/media/worth.jpeg": "/gyrotonic/static/media/worth.a6f7dc8454eb66db9abc.jpeg",
+    "static/media/mirror-mirror-onthewall.jpeg": "/gyrotonic/static/media/mirror-mirror-onthewall.091c057df5f538bd19bb.jpeg",
+    "static/media/caro_2.jpeg": "/gyrotonic/static/media/caro_2.eae132a0d6dc463f3807.jpeg",
+    "static/media/caro_4.jpeg": "/gyrotonic/static/media/caro_4.97e98d24268e872b2cca.jpeg",
+    "static/media/hallowin.jpeg": "/gyrotonic/static/media/hallowin.c579ed0fa6d04417a827.jpeg",
+    "static/media/caro_6.jpeg": "/gyrotonic/static/media/caro_6.4e09b58d4d757dbca2c0.jpeg",
+    "static/media/tricep-man.jpeg": "/gyrotonic/static/media/tricep-man.18543d4b0cc31f37640f.jpeg",
+    "static/media/fede.png": "/gyrotonic/static/media/fede.04d5eb133b1857031490.png",
+    "static/media/nico-modified.png": "/gyrotonic/static/media/nico-modified.c2bf8ae08845697a6159.png",
+    "static/media/MTCORSVA.TTF": "/gyrotonic/static/media/MTCORSVA.f11c44269babbad8d69b.TTF",
+    "static/media/logo-new.png": "/gyrotonic/static/media/logo-new.a2994e88a9093bb7a03e.png",
+    "static/media/2017-Logo-PNG-Transparent-Backround.png": "/gyrotonic/static/media/2017-Logo-PNG-Transparent-Backround.37c7720e5e4e86533ff5.png",
+    "static/media/logo_small.png": "/gyrotonic/static/media/logo_small.2bd5b68491d5203135d1.png",
+    "index.html": "/gyrotonic/index.html",
+    "main.20aa9e8d.css.map": "/gyrotonic/static/css/main.20aa9e8d.css.map",
+    "main.3916e868.js.map": "/gyrotonic/static/js/main.3916e868.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20aa9e8d.css",
+    "static/js/main.3916e868.js"
+  ]
+}
