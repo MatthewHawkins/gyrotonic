@@ -57,6 +57,10 @@ export default function () {
   color: #333;
   transition: color 0.5s;
 
+  :visited{
+    color: #333;
+  }
+
   :hover{
   color: #999;
   }
@@ -77,7 +81,7 @@ export default function () {
           <br></br><br></br>
           Photos and videos by Colin Jacobs
           <br></br><br></br>
-          <Link to='/data-security'>Data Protection Declaration</Link></p>
+          <Link css={iconStyles} to='/data-security'>Data Protection Declaration</Link></p>
 
         <div css={iconDisplayStyles}>
         <FacebookIcon css={iconStyles}/>
