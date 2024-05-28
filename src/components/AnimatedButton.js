@@ -6,8 +6,6 @@ import { css, keyframes } from '@emotion/react';
 
 
 function AnimatedButton(props) {
-
-    const text = "TEST"
     
     const containerStyles = css`
         span{

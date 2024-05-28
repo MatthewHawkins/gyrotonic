@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage';
 import ContactHours from './pages/ContactHours';
 import Footer from './components/Footer';
 import TopSection from './sections/TopSection';
+import DataSecurity from './pages/DataSecurity';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Routes>
         <Route path='/homepage' element={<Homepage />} />
         <Route path='/contact' element={<ContactHours />} />
+        <Route path='/data-security' element={<DataSecurity />} />
         <Route path='*' element={<Homepage />} />
         </Routes>
       </div>

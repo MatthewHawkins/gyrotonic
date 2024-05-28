@@ -7,6 +7,7 @@ import gyroLogo from '../assets/images/logo_small.png'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { Link } from 'react-router-dom';
 
 export default function () {
 
@@ -74,7 +75,9 @@ export default function () {
           <br></br><br></br>
           Icons from MaterialIcon and <a href='flaticon.com'>FlatIcon</a>
           <br></br><br></br>
-          Photos and videos by Colin Jacobs</p>
+          Photos and videos by Colin Jacobs
+          <br></br><br></br>
+          <Link to='/data-security'>Data Protection Declaration</Link></p>
 
         <div css={iconDisplayStyles}>
         <FacebookIcon css={iconStyles}/>
