@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gyrotonic/static/css/main.20aa9e8d.css",
-    "main.js": "/gyrotonic/static/js/main.3916e868.js",
+    "main.js": "/gyrotonic/static/js/main.fd01e7d2.js",
     "static/media/keep1.png": "/gyrotonic/static/media/keep1.0031b9dd2068dc375b3c.png",
     "static/media/smile.jpeg": "/gyrotonic/static/media/smile.fb3ebb65d2b6e39a4a2c.jpeg",
     "static/media/background1.jpeg": "/gyrotonic/static/media/background1.d4b422460d1642035a2b.jpeg",
@@ -24,10 +24,10 @@
     "static/media/logo_small.png": "/gyrotonic/static/media/logo_small.2bd5b68491d5203135d1.png",
     "index.html": "/gyrotonic/index.html",
     "main.20aa9e8d.css.map": "/gyrotonic/static/css/main.20aa9e8d.css.map",
-    "main.3916e868.js.map": "/gyrotonic/static/js/main.3916e868.js.map"
+    "main.fd01e7d2.js.map": "/gyrotonic/static/js/main.fd01e7d2.js.map"
   },
   "entrypoints": [
     "static/css/main.20aa9e8d.css",
-    "static/js/main.3916e868.js"
+    "static/js/main.fd01e7d2.js"
   ]
 }
