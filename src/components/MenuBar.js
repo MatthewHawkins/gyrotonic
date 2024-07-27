@@ -16,7 +16,7 @@ export default function MenuBar() {
 
 
   const [isAtTop, setIsAtTop] = useState(true);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
