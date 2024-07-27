@@ -66,9 +66,10 @@ const hoursText = css`
 
 const cards = [
   <LessonCard title="New Client Trial Lessons" photo={card1} cost='€50' description='Come in for an introductory lesson, and get to know us!'/>,
+  <LessonCard title="Duo Class (TBD)" photo={card4} cost='€450' description='Ten class package which can be schedules with us over times that work for you. Perfect for understanding the various movement sequences.'/>,
   <LessonCard title="Three Lesson Package" photo={card2} cost='€135' description='Three class package which can be scheduled with us over times that work for you.'/>,
   <LessonCard title="Six Lesson Package" photo={card3} cost='€270' description='Six class package, ideal for individuals or couples, which can be schedules with us over times that work for you.'/>,
-  <LessonCard title="Ten Lesson Package" photo={card4} cost='€450' description='Ten class package which can be schedules with us over times that work for you. Perfect for understanding the various movement sequences.'/>
+  <LessonCard title="Ten Lesson Package" photo={card4} cost='€450' description='Ten class package which can be schedules with us over times that work for you. Perfect for understanding the various movement sequences.'/>,
 ];
 
 

@@ -3,7 +3,7 @@ import { jsx, css } from '@emotion/react'
 
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import CookieConsent, { Cookies } from "react-cookie-consent";
+// import CookieConsent, { Cookies } from "react-cookie-consent";
 
 import Monotype from '../assets/fonts/MTCORSVA.TTF'
 
@@ -54,7 +54,7 @@ const artofStyles = css`
 
   return (
     <div css={bodyStyles}>
-      <CookieConsent enableDeclineButton >This website uses cookies to enhance the user experience.</CookieConsent>
+      {/* <CookieConsent enableDeclineButton >This website uses cookies to enhance the user experience.</CookieConsent> */}
       <OurStudio />
       <Methodology />
       <Equipment />

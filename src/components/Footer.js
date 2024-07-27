@@ -73,7 +73,7 @@ export default function () {
       <div css={col1Styles}>
         <img src={gyroLogo} css={logoStyles}></img>
         <p><b>GYROTONIC®, GYROTONIC® Logo, GYROTONIC EXPANSION SYSTEM®, and GYROKINESIS® 
-        <br></br><br></br>The Art of Exercising and Beyond&reg;</b> are registered trademarks and are trademarks of Gyrotonic Sales Corp.</p>
+        <br></br><br></br>The Art of Exercising and Beyond&reg;</b> are registered trademarks and are trademarks of Gyrotonic Sales Corp and are used with their permission.</p>
       </div>
         <p>
           <br></br><br></br>

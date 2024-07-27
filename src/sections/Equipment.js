@@ -13,9 +13,8 @@ export default function Equipment() {
     flex-direction: column;
     font-family: 'Cormorant Garamond', serif;
     padding: 10px 30px 10px 10px;
-    width: 60vw;
     @media (max-width: 768px){
-    width: 90%;
+    width: 100%;
   }
   `;
 const sectionThreeStyles = css`
@@ -29,6 +28,23 @@ const sectionThreeTitle = css`
       font-size: 3rem;
       margin-left: 5%;
       `
+
+const underlineStyles = css`
+
+::before{
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 110px;
+  background-color: #000000;
+  bottom: -2px;
+  /* margin-left: 20px; */
+}
+
+::before{
+  left: 0;
+}
+`
 
 const sectionThreeText = css`
     font-size: 1.25em;
@@ -46,16 +62,27 @@ const videoStyles = css`
 padding: 1em;
 `
 
+const videoSectionStyles = css`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`
+
   return (
-    <div css={sectionThreeStyles} id="equipment">
+    <div css={introStyles} id="equipment">
+      <h2 css={sectionThreeTitle}>Videos
+        <span css={underlineStyles} />
+      </h2>
         {/* <div css={introStyles}>
-          <h2 css={sectionThreeTitle}>Equipment</h2>
           <p css={sectionThreeText}>The Gyrotonic machine is an essential component of our Gyrotonic studio at Roots. This innovative piece of equipment is specifically designed to facilitate a fluid and dynamic movement practice that promotes strength, flexibility, and overall body conditioning.
             Our studio features the Gyrotonic Pulley Tower Combination Unit, a versatile and sophisticated machine that serves as the centerpiece of our training sessions. This machine combines elements of the pulley tower and rotational discs, providing a comprehensive and multidimensional workout experience.
           </p>
         </div>
         <img src={methodPicture} css={imageThreeStyles}></img> */}
-        <iframe css={videoStyles} width="854" height="480" src="https://www.youtube.com/embed/oE33mjnvRAc?si=GjE4nsgsxRy6bwBc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div css={videoSectionStyles}>
+          <iframe css={videoStyles} width="854" height="480" src="https://www.youtube.com/embed/oE33mjnvRAc?si=GjE4nsgsxRy6bwBc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe css={videoStyles} width="854" height="480" src="https://www.youtube.com/embed/wXYQIwas0GE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
 
       </div>
   )

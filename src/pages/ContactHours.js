@@ -213,13 +213,13 @@ const formData = useRef();
                             <div><LocalPhoneIcon css={contactIconStyles}/> +49 178 614 5467 </div>
                             <div><WhatsAppIcon css={contactIconStyles}/> +39 351 789 5709 </div>
                             <div><WhatsAppIcon css={contactIconStyles}/> +43 660 916 3118 </div>
-                            <div ><EmailIcon css={contactIconStyles}/> theroots.exercise@gmail.com</div>
+                            <div ><EmailIcon css={contactIconStyles}/> the.roots.exercise@gmail.com</div>
                         </div>
                     </div>
                 </div>
                 <div css={rightStyles}>
                     <p css={contactDescriptionStyles}>
-                    <b>We'd love to hear from you!</b> Please reach out with any inquiries or questions you might have about our studio, methods, or anything else.
+                    <b>We'd love to hear from you!</b> Please reach out with any inquiries or questions you might have about our studio, classes, methods, or anything else.
                     </p>
                     <form ref={formData} id="emailForm" onSubmit={handleSubmit}>
                         <input type='text' placeholder='Name' value={name} onChange={(event) => {setName(event.target.value)}} name='user_name'></input>

@@ -97,17 +97,17 @@ const sliderStyles = css`
         </h2>
         <p css={sectionOneText}>
 
-        <b>The Roots Studio</b> was born from the meeting of two dancers who discovered Gyrotonic, 
-        a transformative method that significantly impacted their lives. Gyrotonic, known 
-        for its circular and fluid movements, helped them alleviate back problems that had 
-        troubled them for years. Thus, the studio was founded with the aim of raising awareness 
-        about this revolutionary yet lesser-known method. 
+        <b>The Roots Studio</b> was born from the meeting of two dancers who discovered <b>Gyrotonic</b> and <b>Gyrokinesis</b>, 
+        two transformative methods that significantly impacted their lives. These methods, known 
+        for their circular and fluid movements, helped them alleviate back problems and decompress their spines. 
+        Thus, the studio was founded with the aim of raising awareness 
+        about these revolutionary yet lesser-known methods. 
         
         <br></br><br></br>The name "Roots" emphasizes the foundational nature of 
-        the Gyrotonic method, signifying a return to the core, both physically and metaphorically, 
+        these methods, signifying a return to the core, both physically and metaphorically, 
         fostering a sense of grounding, strength, and growth for those who engage in the practice.
-        By sharing their own experience, and the benefits they gained from Gyrotonic, the founders hope to 
-        introduce more people to this transformative practice and its potential to improve physical well-being.
+        By sharing their own experience, and the benefits they gained from Gyrotonic and Gyrokinesis, the founders hope to 
+        introduce more people to these transformative practices and their potential to improve physical well-being and promote a healthier lifestyle.
         </p>
       </div>
       <AutoplaySlider

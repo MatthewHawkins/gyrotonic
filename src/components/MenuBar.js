@@ -133,7 +133,7 @@ export default function MenuBar() {
           <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Home</Link></li>
           {/* <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Our Studio</Link></li> */}
           <li css={listItemStyles}><Link to="/homepage#methodology" css={linkStyles}> Methodology</Link></li>
-          <li css={listItemStyles}><Link to="/homepage#equipment" css={linkStyles}> Equipment</Link></li>
+          <li css={listItemStyles}><Link to="/homepage#equipment" css={linkStyles}> Videos</Link></li>
           <li css={listItemStyles}><Link to="/homepage#team" css={linkStyles}> Team</Link></li>
           {/* <li css={listItemStyles}><a to="#studio" css={linkStyles}>Studio</a></li> */}
           <li css={listItemStyles}><Link to="/contact#hours-and-prices" css={linkStyles}> Lessons and Prices</Link></li>

@@ -31,7 +31,7 @@ export default function IconDisplay() {
       <IconCard 
         imagePath={exercise}
         title='Health'
-        text='Trains strength, flexibility and stretching, mobilizes and strengthens the spine to prevent and rehabilitate injuries'
+        text='Trains strength, flexibility, mobility, and most of all the decompression of the spine to prevent and rehabilitate injuries'
       />
       <IconCard 
         imagePath={lotus}

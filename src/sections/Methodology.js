@@ -3,6 +3,7 @@ import { css } from '@emotion/react'
 import React, { useEffect, useState } from 'react';
 
 import Gyrotonic from '../components/Gyrotonic';
+import Gyrokinesis from '../components/Gyrokinesis';
 
 import IconDisplay from '../components/IconDisplay';
 
@@ -92,16 +93,16 @@ const sectionTwoText = css`
       <span css={underlineStyles}/>
       </h2>
       <div css={sectionTwoText}>
-        <Gyrotonic /> is a unique movement method that combines elements of yoga, dance, gymnastics,
-        tai chi, and swimming. It was created by Juliu Horvath, a former ballet dancer, in the 1980s.
+        <Gyrotonic /> and <Gyrokinesis /> are unique movement methods that combines elements of yoga, dance, gymnastics,
+        tai chi, and swimming. They were created by Juliu Horvath, a former ballet dancer, in the 1980s.
         Gyrotonic exercises are performed on specialized equipment, such as the Gyrotonic Expansion System,
         which consists of a pulley tower combination unit and rotational discs. These machines are designed to support
         and enhance the movement patterns of the human body.<br></br><br></br>
-        The Gyrotonic method emphasizes flowing, circular, and spiraling movements that aim to
+        These methods emphasizes flowing, circular, and spiraling movements that aim to
         increase strength, flexibility, and coordination. It focuses on the body's natural movement
         patterns and seeks to promote a sense of balance, freedom, and alignment.
-        Gyrotonic is suitable for people of various fitness levels, ages, and body types. It can be
-        used for general fitness, rehabilitation, and performance enhancement. The method is often practiced
+        Both methods are suitable for people of various fitness levels, ages, and body types. They can be
+        used for general fitness, rehabilitation, and performance enhancement, and are often practiced
         in specialized Gyrotonic studios under the guidance of certified instructors who provide individualized instruction and support.
     <br /><br />
         <br /><br />

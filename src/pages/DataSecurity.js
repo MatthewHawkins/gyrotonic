@@ -9,6 +9,8 @@ export default function DataSecurity() {
   flex-direction: column;
   font-family: 'Cormorant Garamond', serif;
   padding: 0 1em;
+  background-color: var(--background-color-primary);
+  font-size: 1.25em;
   `;
 
   return (
