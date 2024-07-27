@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gyrotonic/static/css/main.20aa9e8d.css",
-    "main.js": "/gyrotonic/static/js/main.8941134f.js",
+    "main.js": "/gyrotonic/static/js/main.c52f0d10.js",
     "static/media/keep1.png": "/gyrotonic/static/media/keep1.0031b9dd2068dc375b3c.png",
     "static/media/smile.jpeg": "/gyrotonic/static/media/smile.fb3ebb65d2b6e39a4a2c.jpeg",
     "static/media/background1.jpeg": "/gyrotonic/static/media/background1.d4b422460d1642035a2b.jpeg",
@@ -19,15 +19,15 @@
     "static/media/fede.png": "/gyrotonic/static/media/fede.04d5eb133b1857031490.png",
     "static/media/nico-modified.png": "/gyrotonic/static/media/nico-modified.c2bf8ae08845697a6159.png",
     "static/media/MTCORSVA.TTF": "/gyrotonic/static/media/MTCORSVA.f11c44269babbad8d69b.TTF",
-    "static/media/logo-new.png": "/gyrotonic/static/media/logo-new.a2994e88a9093bb7a03e.png",
+    "static/media/gyro-logo-redo.png": "/gyrotonic/static/media/gyro-logo-redo.a7fa7823655481b8b1cd.png",
     "static/media/2017-Logo-PNG-Transparent-Backround.png": "/gyrotonic/static/media/2017-Logo-PNG-Transparent-Backround.37c7720e5e4e86533ff5.png",
     "static/media/logo_small.png": "/gyrotonic/static/media/logo_small.2bd5b68491d5203135d1.png",
     "index.html": "/gyrotonic/index.html",
     "main.20aa9e8d.css.map": "/gyrotonic/static/css/main.20aa9e8d.css.map",
-    "main.8941134f.js.map": "/gyrotonic/static/js/main.8941134f.js.map"
+    "main.c52f0d10.js.map": "/gyrotonic/static/js/main.c52f0d10.js.map"
   },
   "entrypoints": [
     "static/css/main.20aa9e8d.css",
-    "static/js/main.8941134f.js"
+    "static/js/main.c52f0d10.js"
   ]
 }
