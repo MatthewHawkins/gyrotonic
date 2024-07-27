@@ -19,6 +19,9 @@ export default function IconDisplay() {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    @media (max-width: 768px){
+    justify-content: center;
+  }
   `
   
   return (
