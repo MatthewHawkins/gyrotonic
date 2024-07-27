@@ -14,7 +14,7 @@ export default function Equipment() {
     font-family: 'Cormorant Garamond', serif;
     padding: 10px 30px 10px 10px;
     @media (max-width: 768px){
-    width: 60vw;
+    width: 85vw;
   }
   `;
 const sectionThreeStyles = css`
@@ -60,12 +60,19 @@ const imageThreeStyles = css`
 
 const videoStyles = css`
 padding: 1em;
+width: 854px;
+@media (max-width: 768px){
+      width: 100%;
+  }
 `
 
 const videoSectionStyles = css`
   display: flex;
   justify-content: space-around;
   width: 100%;
+  @media (max-width: 768px){
+      flex-direction: column;
+  }
 `
 
   return (
