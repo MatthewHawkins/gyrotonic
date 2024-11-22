@@ -92,7 +92,7 @@ export default function Biography() {
             <p css={sectionThreeText}>
               Federico Moiana comes originally from Lugano, Switzerland. At an
               early age he began his training as a competitive gymnast , which
-              led him to dance, and eventually his GYROTONIC® training.
+              led him to dance, and eventually his Gyrotonic training.
               Federico’s love for dance was continued and refined at the ballet
               school of La Scala in Milan followed by the John Cranko School in
               Stuttgart from which he received his diploma . He danced as
@@ -101,7 +101,7 @@ export default function Biography() {
               Landestheater in Innsbruck, currently working at the
               Saarländisches Staatstheater in Saarbrücken. Since 2021 he is
               teaching ballet at Hermann Neuberger Sportschule for the female
-              artistic gymnastic team. Through teaching and studying GYROTONIC®
+              artistic gymnastic team. Through teaching and studying the Gyrotonic Method
               his understanding of the body was greatly deepened, and he finds
               joy in seeing how it helps his clients both physically and
               emotionally.

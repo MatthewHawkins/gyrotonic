@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { jsx, css } from '@emotion/react'
 
-export default function Gyrotonic( {size} ) {
+export default function Gyrotonic( {size, text} ) {
 
   const gyroStyles = css`
     font-family: 'Times New Roman', Times, serif;
@@ -10,7 +10,7 @@ export default function Gyrotonic( {size} ) {
   `
 
   return (
-    <span css={gyroStyles}>GYROTONIC&reg;</span>
+    <span css={gyroStyles}>{text || "GYROTONIC"}&reg;</span>
     // <span css={gyroStyles}>GYROTONIC®</span> 
   )
 }

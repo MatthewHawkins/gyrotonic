@@ -3,7 +3,6 @@ import { css } from '@emotion/react'
 import React, { useEffect, useState } from 'react';
 
 import Gyrotonic from '../components/Gyrotonic';
-import Gyrokinesis from '../components/Gyrokinesis';
 
 import IconDisplay from '../components/IconDisplay';
 
@@ -93,9 +92,9 @@ const sectionTwoText = css`
       <span css={underlineStyles}/>
       </h2>
       <div css={sectionTwoText}>
-        <Gyrotonic /> and <Gyrokinesis /> are unique movement methods that combines elements of yoga, dance, gymnastics,
+        <Gyrotonic /> and <Gyrotonic text="GYROKINESIS" /> are unique movement methods that combines elements of yoga, dance, gymnastics,
         tai chi, and swimming. They were created by Juliu Horvath, a former ballet dancer, in the 1980s.
-        Gyrotonic exercises are performed on specialized equipment, such as the Gyrotonic Expansion System,
+        Gyrotonic exercises are performed on specialized equipment, such as the <Gyrotonic text="GYROTONIC EXPANSION SYSTEM" />,
         which consists of a pulley tower combination unit and rotational discs. These machines are designed to support
         and enhance the movement patterns of the human body.<br></br><br></br>
         These methods emphasizes flowing, circular, and spiraling movements that aim to

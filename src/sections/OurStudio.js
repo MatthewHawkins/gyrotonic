@@ -12,6 +12,8 @@ import image4 from '../assets/images/caro_4.jpeg';
 import image5 from '../assets/images/caro_5.jpeg';
 import image6 from '../assets/images/caro_6.jpeg';
 
+import Gyrotonic from '../components/Gyrotonic';
+
 export default function OurStudio() {
 
   const AutoplaySlider = withAutoplay(AwesomeSlider);
@@ -97,8 +99,8 @@ const sliderStyles = css`
         </h2>
         <p css={sectionOneText}>
 
-        <b>The Roots Studio</b> was born from the meeting of two dancers who discovered <b>Gyrotonic</b> and <b>Gyrokinesis</b>, 
-        two transformative methods that significantly impacted their lives. These methods, known 
+        Our studio was born from the meeting of two dancers who discovered <Gyrotonic /> and <Gyrotonic text="GYROKINESIS" /> Methods, 
+        two transformative disciplines that significantly impacted their lives. These methods, known 
         for their circular and fluid movements, helped them alleviate back problems and decompress their spines. 
         Thus, the studio was founded with the aim of raising awareness 
         about these revolutionary yet lesser-known methods. 
@@ -106,7 +108,7 @@ const sliderStyles = css`
         <br></br><br></br>The name "Roots" emphasizes the foundational nature of 
         these methods, signifying a return to the core, both physically and metaphorically, 
         fostering a sense of grounding, strength, and growth for those who engage in the practice.
-        By sharing their own experience, and the benefits they gained from Gyrotonic and Gyrokinesis, the founders hope to 
+        By sharing their own experience, and the benefits they gained from Gyrotonic and Gyrokinesis movement, the founders hope to 
         introduce more people to these transformative practices and their potential to improve physical well-being and promote a healthier lifestyle.
         </p>
       </div>
