@@ -248,7 +248,7 @@ export function translatePrices() {
 export function translateContact() {
 
 // English
-i18n.addResource('en', 'translation', 'contactTitle', 'Contact');
+i18n.addResource('en', 'translation', 'contactTitle', 'Contacts');
 i18n.addResource('en', 'translation', 'contactIntro', 'We\'d love to hear from you!');
 i18n.addResource('en', 'translation', 'contactText', ' Please reach out with any inquiries or questions you might have about our studio, classes, methods, or anything else.');
 
@@ -258,7 +258,7 @@ i18n.addResource('de', 'translation', 'contactIntro', 'Wir würden uns freuen, v
 i18n.addResource('de', 'translation', 'contactText', ' Bitte wenden Sie sich mit Anfragen oder Fragen zu unserem Studio, unseren Kursen, Methoden oder anderen Themen an uns.');
 
 // Italian
-i18n.addResource('it', 'translation', 'contactTitle', 'Contatto');
+i18n.addResource('it', 'translation', 'contactTitle', 'Contatti');
 i18n.addResource('it', 'translation', 'contactIntro', 'Ci farebbe piacere sentirti!');
 i18n.addResource('it', 'translation', 'contactText', ' Non esitare a contattarci per qualsiasi domanda o richiesta sul nostro studio, corsi, metodi o altro.');
 
