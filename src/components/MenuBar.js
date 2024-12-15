@@ -126,9 +126,10 @@ export default function MenuBar() {
   return (
     <div css={menuBarStyles}>
       <nav>
-        <MenuIcon css={menuIconStyles} onClick={ e => {
-        setIsCollapsed(!isCollapsed)}
-        }/>
+        <MenuIcon css={menuIconStyles} onClick={e => {
+          setIsCollapsed(!isCollapsed)
+        }
+        } />
         <ul css={listStyles}>
           <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Home</Link></li>
           {/* <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Our Studio</Link></li> */}
@@ -141,9 +142,17 @@ export default function MenuBar() {
         </ul>
       </nav>
       <div css={iconDisplayStyles}>
-        <FacebookIcon css={iconStyles} />
-        <InstagramIcon css={iconStyles} />
-        <MailOutlineIcon css={iconStyles} />
+        <Link target='_blank' to={"https://www.facebook.com/people/The-Roots-Studio/61553981725684/"}><FacebookIcon css={iconStyles} /></Link>
+        <Link target='_blank' to={"https://www.instagram.com/the_roots_gyrotonic_training/"}><InstagramIcon css={iconStyles} /></Link>
+        <Link
+          to={'#'}
+          onClick={(e) => {
+            window.location.href = 'mailto:the.roots.exercise@gmail.com';
+            e.preventDefault();
+          }}
+        >
+          <MailOutlineIcon css={iconStyles} />
+        </Link>
       </div>
     </div>
   );

@@ -73,7 +73,7 @@ export default function () {
       <div css={col1Styles}>
         <img src={gyroLogo} css={logoStyles}></img>
         <p><b>GYROTONIC®, GYROTONIC® </b>Logo, <b>GYROTONIC EXPANSION SYSTEM®</b>, and <b>GYROKINESIS®</b> 
-        <br></br><br></br> are registered trademarks and are trademarks of Gyrotonic Sales Corp and are used with their permission.</p>
+        <br></br> are registered trademarks and are trademarks of Gyrotonic Sales Corp and are used with their permission.</p>
       </div>
         <p>
           <br></br><br></br>
@@ -84,9 +84,17 @@ export default function () {
           <Link css={iconStyles} to='/data-security'>Data Protection Declaration</Link></p>
 
         <div css={iconDisplayStyles}>
-        <FacebookIcon css={iconStyles}/>
-        <InstagramIcon css={iconStyles}/>
-        <MailOutlineIcon css={iconStyles}/>
+        <Link target='_blank' to={"https://www.facebook.com/people/The-Roots-Studio/61553981725684/"}><FacebookIcon css={iconStyles} /></Link>
+        <Link target='_blank' to={"https://www.instagram.com/the_roots_gyrotonic_training/"}><InstagramIcon css={iconStyles} /></Link>
+        <Link
+          to={'#'}
+          onClick={(e) => {
+            window.location.href = 'mailto:the.roots.exercise@gmail.com';
+            e.preventDefault();
+          }}
+        >
+          <MailOutlineIcon css={iconStyles} />
+        </Link>
       </div>
       </div>
       <div css={logoContainerStyles}>

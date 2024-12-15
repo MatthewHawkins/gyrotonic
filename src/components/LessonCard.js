@@ -13,7 +13,7 @@ export default function LessonCard({ title, cost, description, photo}) {
 
 
 min-height: 50vh;
-padding: 10px;
+padding: 10px 20px;
 gap: 20px;
 position: relative;
 display: flex;
@@ -30,7 +30,7 @@ background-repeat: no-repeat;
 background-position: center;
 transition: 0.5s ease-in-out background-image;
 
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px;
 
     @media (min-width: 576px){
       flex: 0 0 90%;

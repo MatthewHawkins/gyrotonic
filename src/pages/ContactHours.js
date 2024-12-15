@@ -6,11 +6,11 @@ import image from '../assets/images/background1.jpeg';
 import { ContactPage } from '@mui/icons-material';
 
 import AnimatedButton from '../components/AnimatedButton';
-import Gyrotonic from '../components/Gyrotonic';
 import Lessons from '../sections/Lessons';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
 
 export default function ContactHours() {
 
@@ -207,13 +207,15 @@ const formData = useRef();
             <div css={contactBackgroundStyles}></div>
             <div css={contactWrapperStyles}>
                 <div css={leftStyles}>
-                    <h1 css={contactTitleStyles}> Feel free to get in touch</h1>
+                    <h1 css={contactTitleStyles}> Contact</h1>
                     <div css={contactInfoStyles}>
                         <div css={contactItemStyles}>
+                            <div> Nicola Strada & Federico Moiana </div>
                             <div><LocalPhoneIcon css={contactIconStyles}/> +49 178 614 5467 </div>
                             <div><WhatsAppIcon css={contactIconStyles}/> +39 351 789 5709 </div>
                             <div><WhatsAppIcon css={contactIconStyles}/> +43 660 916 3118 </div>
                             <div ><EmailIcon css={contactIconStyles}/> the.roots.exercise@gmail.com</div>
+                            <div ><FmdGoodIcon css={contactIconStyles}/> Hindenburgstraße 65, 66119 Saarbrücken</div>
                         </div>
                     </div>
                 </div>

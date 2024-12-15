@@ -29,7 +29,7 @@ export default function Lessons() {
   min-height: 100vh;
   `;
 
-const infoStyles = css`
+  const infoStyles = css`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,17 +39,17 @@ const infoStyles = css`
   font-size: 1.15em;
 `;
 
-const hoursTitle = css`
+  const hoursTitle = css`
     font-size: 3rem;
     position: relative;
 `
 
-const underlineStyles = css`
+  const underlineStyles = css`
   ::before{
     content: '';
     position: absolute;
     height: 2px;
-    width: 80px;
+    width: 160px;
     background-color: #000000 !important;
     bottom: -2px;
 }
@@ -58,33 +58,84 @@ const underlineStyles = css`
   }
 `
 
-const hoursText = css`
+  const hoursText = css`
   font-size: 1.2em;
   font-weight: 500;
-  text-align: center;
+  text-align: left;
 `
 
-const cards = [
-  <LessonCard title="New Client Trial Lessons" photo={card1} cost='€50' description='Come in for an introductory lesson, and get to know us!'/>,
-  <LessonCard title="Duo Class (TBD)" photo={card4} cost='€450' description='Ten class package which can be schedules with us over times that work for you. Perfect for understanding the various movement sequences.'/>,
-  <LessonCard title="Three Lesson Package" photo={card2} cost='€135' description='Three class package which can be scheduled with us over times that work for you.'/>,
-  <LessonCard title="Six Lesson Package" photo={card3} cost='€270' description='Six class package, ideal for individuals or couples, which can be schedules with us over times that work for you.'/>,
-  <LessonCard title="Ten Lesson Package" photo={card4} cost='€450' description='Ten class package which can be schedules with us over times that work for you. Perfect for understanding the various movement sequences.'/>,
-];
+const cancelText = css`
+  font-size: 1em;
+  font-weight: 500;
+  text-align: left;
+  margin: 1em 5em;
+`
+
+  const sectionThreeTitle = css`
+  font-size: 2.25rem;
+  margin-left: 5%;
+  margin-top: 2.25em;
+  margin-bottom: -1em;
+`
+
+  const cardsSingle = [
+    <LessonCard title="One Person Session (60 min)" photo={card1} cost='€55' description='Experience personalized guidance in a private gyrotonic session, tailored to your individual needs for strength, flexibility, and overall well-being.' />,
+    <LessonCard title="Three Session Intro Package" photo={card4} cost='€130' description='Discover the fundamentals of the Gyrotonic Method with three private sessions. Explore its unique movement patterns, breathwork techniques, and holistic approach to building strength, improving flexibility, and enhancing mind-body connection.' />,
+    <LessonCard title="Ten Session Mastery Package " photo={card2} cost='€500' description='Immerse yourself in the transformative power of the Gyrotonic Method with a ten-session series. This package offers the consistency needed to master the method’s flowing movements, synchronized breathwork, and core-strengthening techniques.' />,
+  ];
+  const cardsTandem = [
+    <LessonCard title="Two Person Session (60 min)" photo={card3} cost='€35 p.p' description='Share the Gyrotonic Method with a friend or partner in a private tandem session.' />,
+    <LessonCard title="Three Session Intro Package" photo={card2} cost='€100 p.p' description='Explore the foundations of the Gyrotonic Method as a pair with three tandem sessions. Learn the basics of breathwork, flowing movements, and partner coordination, creating a shared path to strength and balance.' />,
+    <LessonCard title="Ten Session Flow Package " photo={card1} cost='€320 p.p' description='Embark on a shared journey with ten tandem sessions, immersing yourselves in the flowing movements and mindful techniques of the Gyrotonic Method. Build a deeper connection to the practice while fostering coordination, balance, and overall well-being together.' />
+  ];
+  const cardsGroup = [
+    <LessonCard title="Group Training Session (60 min)" photo={card4} cost='€18 p.p' description='Experience the fluid and holistic movements of Gyrokinesis training in a dynamic group setting. This class focuses on rhythmic sequences performed on a mat and chair, integrating breathwork and spiraling motions to improve spinal posture, mobility, and overall vitality. Perfect for all levels, this session encourages a mindful connection between body and mind.' />,
+    <LessonCard title="Ten Session Flow Package " photo={card3} cost='€160 p.p' description='Immerse yourself in the transformative practice of Gyrokinesis training with a ten-session package. In a supportive group environment, explore rhythmic sequences, breathwork, and flowing movements designed to enhance spinal posture, mobility, and energy. Build consistency in your practice and deepen your connection to this holistic method.' />
+  ];
 
 
   return (
     <div css={hoursStyles} id="hours-and-prices">
       <div css={infoStyles}>
-        <h2 css={hoursTitle}>Lessons
-          <span css={underlineStyles}/>
+        <h2 css={hoursTitle}>Gyrotonic Lessons
+          {/* <span css={underlineStyles} /> */}
         </h2>
         <div css={hoursText}>
-          Training dates can be chosen according to openings in the trainers' schedules. 
+          Training dates can be chosen according to openings in the trainers' schedules.
           <br></br>Registration is done by phone , e-mail or personally in the studio.
-          <br></br>There are four training options:
+          <br></br>We offer several packages for individuals and tandem training:
         </div>
-      <LessonDisplay cards={cards}/>
+
+        <h2 css={sectionThreeTitle}>Individial Sessions
+          {/* <span css={underlineStyles} /> */}
+        </h2>
+        <LessonDisplay cards={cardsSingle} />
+
+        <h2 css={sectionThreeTitle}>Tandem Sessions
+          {/* <span css={underlineStyles} /> */}
+        </h2>
+        <LessonDisplay cards={cardsTandem} />
+      </div>
+      
+      
+      <div css={infoStyles}>
+        <h2 css={hoursTitle}>Gyrokinesis Lessons
+          {/* <span css={underlineStyles} /> */}
+        </h2>
+        <div css={hoursText}>
+          Gyrokinesis groups can be done in our studio, or in other spaces used for fitness activities. <br />
+          If you're interested in booking workshops or other wellness events, please reach out via email.
+          <br></br>Gyrokinesis classes are offered in groups, with a minimum size of 3 people:
+        </div>
+
+        <h2 css={sectionThreeTitle}>Group Sessions
+          {/* <span css={underlineStyles} /> */}
+        </h2>
+        <LessonDisplay cards={cardsGroup} />
+      <div css={cancelText}>
+      *We kindly request at least 24 hours' notice for any cancellations or rescheduling. <br /> Sessions canceled with less than 24 hours' notice will be charged in full. <br /> Thank you for your understanding and cooperation 
+      <br /> - <b>The Roots Team</b>.
+      </div>
       </div>
     </div>
   )
