@@ -8,14 +8,20 @@ import IconDisplay from '../components/IconDisplay';
 
 import methodPicture from '../assets/images/method.jpeg'
 
+import { useTranslation } from 'react-i18next';
+import { translateMethodology } from '../utlities/translations';
+
 
 export default function Methodology() {
 
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
+    translateMethodology()
     setShowContent(true);
   }, []);
+
+  const { t } = useTranslation();
 
 
   const sectionTwoStyles = css`
@@ -88,21 +94,15 @@ const sectionTwoText = css`
     <div css={sectionTwoStyles} id="methodology">
     <img css={imageTwoStyles} src={methodPicture}></img>
     <div css={introStyles}>
-      <h2 css={sectionTwoTitle}>Methodology
+      <h2 css={sectionTwoTitle}>{t('methodTitle')}
       <span css={underlineStyles}/>
       </h2>
       <div css={sectionTwoText}>
-        <Gyrotonic /> and <Gyrotonic text="GYROKINESIS" /> are unique movement methods that combines elements of yoga, dance, gymnastics,
-        tai chi, and swimming. They were created by Juliu Horvath, a former ballet dancer, in the 1980s.
-        Gyrotonic exercises are performed on specialized equipment, such as the <Gyrotonic text="GYROTONIC EXPANSION SYSTEM" />,
-        which consists of a pulley tower combination unit and rotational discs. These machines are designed to support
-        and enhance the movement patterns of the human body.<br></br><br></br>
-        These methods emphasizes flowing, circular, and spiraling movements that aim to
-        increase strength, flexibility, and coordination. It focuses on the body's natural movement
-        patterns and seeks to promote a sense of balance, freedom, and alignment.
-        Both methods are suitable for people of various fitness levels, ages, and body types. They can be
-        used for general fitness, rehabilitation, and performance enhancement, and are often practiced
-        in specialized Gyrotonic studios under the guidance of certified instructors who provide individualized instruction and support.
+        <Gyrotonic /> 
+        {t('method1')}<Gyrotonic text="GYROKINESIS" /> 
+        {t('method2')} <Gyrotonic text="GYROTONIC EXPANSION SYSTEM" />,
+        {t('method3')} <br /><br />
+        {t('method4')} 
     <br /><br />
         <br /><br />
         {/* <ul>

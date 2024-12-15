@@ -12,35 +12,47 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 
+import { useTranslation } from 'react-i18next';
+import { translateContact } from '../utlities/translations';
+
 export default function ContactHours() {
 
     const location = useLocation();
 
-  useEffect(() => {
-    const { hash } = location;
-    if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }, [location]);
+    const [translationsLoaded, setTranslationsLoaded] = useState(false);
 
-  const pageStyles = css`
+    useEffect(() => {
+        translateContact()
+        setTranslationsLoaded(true); // Force re-render after adding translations
+    }, []);
+
+    const { t } = useTranslation();
+
+    useEffect(() => {
+        const { hash } = location;
+        if (hash) {
+            const element = document.querySelector(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [location]);
+
+    const pageStyles = css`
     display: flex;
     flex-direction: column;
     font-family: 'Cormorant Garamond', serif;
   `;
 
-const formData = useRef();
+    const formData = useRef();
     const [name, setName] = useState();
     const [subject, setSubject] = useState();
     const [formEmail, setFormEmail] = useState();
     const [message, setMessage] = useState();
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault();
         // emailjs
         //   .sendForm(
@@ -62,7 +74,7 @@ const formData = useRef();
         setFormEmail("")
         setMessage("")
         alert("Email sent - thank you!")
-      };
+    };
 
     const bodyStyles = css`
         /* background-color: #DFE0DE; */
@@ -200,40 +212,41 @@ const formData = useRef();
 
 
 
-  return (
-    <div css={pageStyles}>
-      <Lessons />
-      <div id='contact' css={bodyStyles}>
-            <div css={contactBackgroundStyles}></div>
-            <div css={contactWrapperStyles}>
-                <div css={leftStyles}>
-                    <h1 css={contactTitleStyles}> Contact</h1>
-                    <div css={contactInfoStyles}>
-                        <div css={contactItemStyles}>
-                            <div> Nicola Strada & Federico Moiana </div>
-                            <div><LocalPhoneIcon css={contactIconStyles}/> +49 178 614 5467 </div>
-                            <div><WhatsAppIcon css={contactIconStyles}/> +39 351 789 5709 </div>
-                            <div><WhatsAppIcon css={contactIconStyles}/> +43 660 916 3118 </div>
-                            <div ><EmailIcon css={contactIconStyles}/> the.roots.exercise@gmail.com</div>
-                            <div ><FmdGoodIcon css={contactIconStyles}/> Hindenburgstraße 65, 66119 Saarbrücken</div>
+    return (
+        <div css={pageStyles}>
+            <Lessons />
+            <div id='contact' css={bodyStyles}>
+                <div css={contactBackgroundStyles}></div>
+                <div css={contactWrapperStyles}>
+                    <div css={leftStyles}>
+                        <h1 css={contactTitleStyles}> {t('contactTitle')}</h1>
+                        <div css={contactInfoStyles}>
+                            <div css={contactItemStyles}>
+                                <div> Nicola Strada & Federico Moiana </div>
+                                <div><LocalPhoneIcon css={contactIconStyles} /> +49 178 614 5467 </div>
+                                <div><WhatsAppIcon css={contactIconStyles} /> +39 351 789 5709 </div>
+                                <div><WhatsAppIcon css={contactIconStyles} /> +43 660 916 3118 </div>
+                                <div ><EmailIcon css={contactIconStyles} /> the.roots.exercise@gmail.com</div>
+                                <div ><FmdGoodIcon css={contactIconStyles} /> Hindenburgstraße 65, 66119 Saarbrücken</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div css={rightStyles}>
-                    <p css={contactDescriptionStyles}>
-                    <b>We'd love to hear from you!</b> Please reach out with any inquiries or questions you might have about our studio, classes, methods, or anything else.
-                    </p>
-                    <form ref={formData} id="emailForm" onSubmit={handleSubmit}>
-                        <input type='text' placeholder='Name' value={name} onChange={(event) => {setName(event.target.value)}} name='user_name'></input>
-                        <input type='text' placeholder='Subject' value={subject} onChange={(event) => {setSubject(event.target.value)}} name='user_subject'></input>
-                        <input type='text' placeholder='Email' value={formEmail} onChange={(event) => {setFormEmail(event.target.value)}} name='user_email'></input>
-                        <textarea rows='5' placeholder='message' value={message} onChange={(event) => {setMessage(event.target.value)}} name='message'/>
-                        <button type='submit'><AnimatedButton text='SUBMIT'/></button>
-                    </form>
+                    <div css={rightStyles}>
+                        <p css={contactDescriptionStyles}>
+                            <b>{t('contactIntro')}</b>
+                            {t('contactText')}
+                        </p>
+                        <form ref={formData} id="emailForm" onSubmit={handleSubmit}>
+                            <input type='text' placeholder='Name' value={name} onChange={(event) => { setName(event.target.value) }} name='user_name'></input>
+                            <input type='text' placeholder='Subject' value={subject} onChange={(event) => { setSubject(event.target.value) }} name='user_subject'></input>
+                            <input type='text' placeholder='Email' value={formEmail} onChange={(event) => { setFormEmail(event.target.value) }} name='user_email'></input>
+                            <textarea rows='5' placeholder='message' value={message} onChange={(event) => { setMessage(event.target.value) }} name='message' />
+                            <button type='submit'><AnimatedButton text='SUBMIT' /></button>
+                        </form>
+                    </div>
                 </div>
             </div>
+            {/* <div><Gyrotonic /> is a registered trademark of Gyrotonic Sales Corp and is used with their permission.</div> */}
         </div>
-        {/* <div><Gyrotonic /> is a registered trademark of Gyrotonic Sales Corp and is used with their permission.</div> */}
-    </div>
-  )
+    )
 }

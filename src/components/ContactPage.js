@@ -1,8 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import { css, keyframes } from '@emotion/react';
+import { useTranslation } from 'react-i18next';
+import { translatePrices } from '../utlities/translations';
 
 export default function Contact(props) {
 
@@ -12,7 +14,8 @@ export default function Contact(props) {
     const [formEmail, setFormEmail] = useState();
     const [message, setMessage] = useState();
 
-    function handleSubmit(e){
+
+    function handleSubmit(e) {
         e.preventDefault();
         // emailjs
         //   .sendForm(
@@ -34,7 +37,7 @@ export default function Contact(props) {
         // setFormEmail("")
         // setMessage("")
         // alert("Email sent - thank you!")
-      };
+    };
 
     const bodyStyles = css`
         display: flex;
@@ -187,14 +190,14 @@ export default function Contact(props) {
                 </div>
                 <div css={rightStyles}>
                     <p css={contactDescriptionStyles}>
-                    <b>I'd love to hear from you!</b> Please reach out with any inquiries or questions you might have about web dev opportunities, Oregon State, or anything else.
+                        <b>I'd love to hear from you!</b> Please reach out with any inquiries or questions you might have about web dev opportunities, Oregon State, or anything else.
                     </p>
                     <form ref={formData} id="emailForm" onSubmit={handleSubmit}>
-                        <input type='text' placeholder='Name' value={name} onChange={(event) => {setName(event.target.value)}} name='user_name'></input>
-                        <input type='text' placeholder='Subject' value={subject} onChange={(event) => {setSubject(event.target.value)}} name='user_subject'></input>
-                        <input type='text' placeholder='Email' value={formEmail} onChange={(event) => {setFormEmail(event.target.value)}} name='user_email'></input>
-                        <textarea rows='5' placeholder='message' value={message} onChange={(event) => {setMessage(event.target.value)}} name='message'/>
-                        <button type='submit'><button text='SUBMIT'/></button>
+                        <input type='text' placeholder='Name' value={name} onChange={(event) => { setName(event.target.value) }} name='user_name'></input>
+                        <input type='text' placeholder='Subject' value={subject} onChange={(event) => { setSubject(event.target.value) }} name='user_subject'></input>
+                        <input type='text' placeholder='Email' value={formEmail} onChange={(event) => { setFormEmail(event.target.value) }} name='user_email'></input>
+                        <textarea rows='5' placeholder='message' value={message} onChange={(event) => { setMessage(event.target.value) }} name='message' />
+                        <button type='submit'><button text='SUBMIT' /></button>
                     </form>
                 </div>
             </div>

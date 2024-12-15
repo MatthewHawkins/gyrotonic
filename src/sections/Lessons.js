@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { css } from '@emotion/react'
 
 import image from '../assets/images/keep1.png';
@@ -11,8 +11,21 @@ import card2 from '../assets/images/tricep-man.jpeg'
 import card3 from '../assets/images/smile.jpeg'
 import card4 from '../assets/images/worth.jpeg'
 
+import { useTranslation } from 'react-i18next';
+import { translatePrices } from '../utlities/translations';
+
 
 export default function Lessons() {
+
+  const [translationsLoaded, setTranslationsLoaded] = useState(false);
+
+  useEffect(() => {
+    translatePrices()
+    setTranslationsLoaded(true); // Force re-render after adding translations
+
+  }, []);
+
+  const { t } = useTranslation();
 
   const hoursStyles = css`
   /* background-image: linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.6)), url(${image}); */
@@ -62,13 +75,34 @@ export default function Lessons() {
   font-size: 1.2em;
   font-weight: 500;
   text-align: left;
+  @media (min-width: 576px){
+      max-width: 100%;
+    }
+
+    @media (min-width: 768px){
+      max-width: 75%;
+    }
+    
+    @media (min-width: 1200px){
+      max-width: 65%;
+    }
 `
 
-const cancelText = css`
+  const cancelText = css`
   font-size: 1em;
   font-weight: 500;
   text-align: left;
-  margin: 1em 5em;
+  @media (min-width: 576px){
+      max-width: 100%;
+    }
+
+    @media (min-width: 768px){
+      max-width: 65%;
+    }
+    
+    @media (min-width: 1200px){
+      max-width: 40%;
+    }
 `
 
   const sectionThreeTitle = css`
@@ -79,63 +113,67 @@ const cancelText = css`
 `
 
   const cardsSingle = [
-    <LessonCard title="One Person Session (60 min)" photo={card1} cost='€55' description='Experience personalized guidance in a private gyrotonic session, tailored to your individual needs for strength, flexibility, and overall well-being.' />,
-    <LessonCard title="Three Session Intro Package" photo={card4} cost='€130' description='Discover the fundamentals of the Gyrotonic Method with three private sessions. Explore its unique movement patterns, breathwork techniques, and holistic approach to building strength, improving flexibility, and enhancing mind-body connection.' />,
-    <LessonCard title="Ten Session Mastery Package " photo={card2} cost='€500' description='Immerse yourself in the transformative power of the Gyrotonic Method with a ten-session series. This package offers the consistency needed to master the method’s flowing movements, synchronized breathwork, and core-strengthening techniques.' />,
+    <LessonCard title={t('title1_single')} photo={card1} cost='€55' description={t('description1_single')} />,
+    <LessonCard title={t('title2_single')} photo={card4} cost='€130' description={t('description2_single')} />,
+    <LessonCard title={t('title3_single')} photo={card2} cost='€500' description={t('description3_single')} />,
   ];
   const cardsTandem = [
-    <LessonCard title="Two Person Session (60 min)" photo={card3} cost='€35 p.p' description='Share the Gyrotonic Method with a friend or partner in a private tandem session.' />,
-    <LessonCard title="Three Session Intro Package" photo={card2} cost='€100 p.p' description='Explore the foundations of the Gyrotonic Method as a pair with three tandem sessions. Learn the basics of breathwork, flowing movements, and partner coordination, creating a shared path to strength and balance.' />,
-    <LessonCard title="Ten Session Flow Package " photo={card1} cost='€320 p.p' description='Embark on a shared journey with ten tandem sessions, immersing yourselves in the flowing movements and mindful techniques of the Gyrotonic Method. Build a deeper connection to the practice while fostering coordination, balance, and overall well-being together.' />
+    <LessonCard title={t('title1_tandem')} photo={card3} cost='€35 p.p' description={t('description1_tandem')} />,
+    <LessonCard title={t('title2_tandem')} photo={card2} cost='€100 p.p' description={t('description2_tandem')} />,
+    <LessonCard title={t('title3_tandem')} photo={card1} cost='€320 p.p' description={t('description3_tandem')} />
   ];
   const cardsGroup = [
-    <LessonCard title="Group Training Session (60 min)" photo={card4} cost='€18 p.p' description='Experience the fluid and holistic movements of Gyrokinesis training in a dynamic group setting. This class focuses on rhythmic sequences performed on a mat and chair, integrating breathwork and spiraling motions to improve spinal posture, mobility, and overall vitality. Perfect for all levels, this session encourages a mindful connection between body and mind.' />,
-    <LessonCard title="Ten Session Flow Package " photo={card3} cost='€160 p.p' description='Immerse yourself in the transformative practice of Gyrokinesis training with a ten-session package. In a supportive group environment, explore rhythmic sequences, breathwork, and flowing movements designed to enhance spinal posture, mobility, and energy. Build consistency in your practice and deepen your connection to this holistic method.' />
+    <LessonCard title={t('title1_group')} photo={card4} cost='€18 p.p' description={t('description1_group')} />,
+    <LessonCard title={t('title2_group')} photo={card3} cost='€160 p.p' description={t('description2_group')} />
   ];
 
 
   return (
     <div css={hoursStyles} id="hours-and-prices">
       <div css={infoStyles}>
-        <h2 css={hoursTitle}>Gyrotonic Lessons
+        <h2 css={hoursTitle}>
+          {t('gyrotonicLessons')}
           {/* <span css={underlineStyles} /> */}
         </h2>
         <div css={hoursText}>
-          Training dates can be chosen according to openings in the trainers' schedules.
+          {/* Training dates can be chosen according to openings in the trainers' schedules.
           <br></br>Registration is done by phone , e-mail or personally in the studio.
-          <br></br>We offer several packages for individuals and tandem training:
+          <br></br>We offer several packages for individuals and tandem training: */}
+          {t('gyrotonicDescription')}
         </div>
 
-        <h2 css={sectionThreeTitle}>Individial Sessions
+        <h2 css={sectionThreeTitle}>
+        {t('individualSessions')}
           {/* <span css={underlineStyles} /> */}
         </h2>
         <LessonDisplay cards={cardsSingle} />
 
-        <h2 css={sectionThreeTitle}>Tandem Sessions
+        <h2 css={sectionThreeTitle}>
+        {t('tandemSessions')}
           {/* <span css={underlineStyles} /> */}
         </h2>
         <LessonDisplay cards={cardsTandem} />
       </div>
-      
-      
+
+
       <div css={infoStyles}>
-        <h2 css={hoursTitle}>Gyrokinesis Lessons
+        <h2 css={hoursTitle}>
+        {t('gyrokinesisLessons')}
           {/* <span css={underlineStyles} /> */}
         </h2>
         <div css={hoursText}>
-          Gyrokinesis groups can be done in our studio, or in other spaces used for fitness activities. <br />
-          If you're interested in booking workshops or other wellness events, please reach out via email.
-          <br></br>Gyrokinesis classes are offered in groups, with a minimum size of 3 people:
+        {t('gyrokinesisDescription')}
         </div>
 
-        <h2 css={sectionThreeTitle}>Group Sessions
+        <h2 css={sectionThreeTitle}>
+        {t('groupSessions')}
           {/* <span css={underlineStyles} /> */}
         </h2>
         <LessonDisplay cards={cardsGroup} />
-      <div css={cancelText}>
-      *We kindly request at least 24 hours' notice for any cancellations or rescheduling. <br /> Sessions canceled with less than 24 hours' notice will be charged in full. <br /> Thank you for your understanding and cooperation 
-      <br /> - <b>The Roots Team</b>.
-      </div>
+        <div css={cancelText}>
+        {t('cancellationPolicy')}
+          <br /> - <b>The Roots Team</b>.
+        </div>
       </div>
     </div>
   )

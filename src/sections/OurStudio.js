@@ -14,6 +14,9 @@ import image6 from '../assets/images/caro_6.jpeg';
 
 import Gyrotonic from '../components/Gyrotonic';
 
+import { useTranslation } from 'react-i18next';
+import { translateOurStudio } from '../utlities/translations';
+
 export default function OurStudio() {
 
   const AutoplaySlider = withAutoplay(AwesomeSlider);
@@ -21,7 +24,10 @@ export default function OurStudio() {
 
   useEffect(() => {
     setShowContent(true);
+    translateOurStudio();
   }, []);
+
+const { t } = useTranslation();
 
 const sectionOneStyles = css`
   background-color: var(--background-color-primary);
@@ -94,22 +100,15 @@ const sliderStyles = css`
   return (
     <div css={sectionOneStyles}>
       <div css={sectionOneLayout}>
-        <h2 css={sectionOneTitle}>Our Studio
+        <h2 css={sectionOneTitle}>{t('studioTitle')}
         <span css={underlineStyles}/>
         </h2>
         <p css={sectionOneText}>
 
-        Our studio was born from the meeting of two dancers who discovered <Gyrotonic /> and <Gyrotonic text="GYROKINESIS" /> Methods, 
-        two transformative disciplines that significantly impacted their lives. These methods, known 
-        for their circular and fluid movements, helped them alleviate back problems and decompress their spines. 
-        Thus, the studio was founded with the aim of raising awareness 
-        about these revolutionary yet lesser-known methods. 
-        
-        <br></br><br></br>The name "Roots" emphasizes the foundational nature of 
-        these methods, signifying a return to the core, both physically and metaphorically, 
-        fostering a sense of grounding, strength, and growth for those who engage in the practice.
-        By sharing their own experience, and the benefits they gained from Gyrotonic and Gyrokinesis movement, the founders hope to 
-        introduce more people to these transformative practices and their potential to improve physical well-being and promote a healthier lifestyle.
+        {t('studio1')} <Gyrotonic /> 
+        {t('studio2')} <Gyrotonic text="GYROKINESIS" /> 
+        {t('studio3')} <br /><br />
+        {t('studio4')}
         </p>
       </div>
       <AutoplaySlider

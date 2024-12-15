@@ -8,17 +8,33 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import logo2 from '../assets/images/2017-Logo-PNG-Transparent-Backround.png';
-import { AppBar } from '@mui/material';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
+import i18n from '../i18n/i18n'; // Import the initialized i18n instance
+import { useTranslation } from 'react-i18next';
+import { translateMenu } from '../utlities/translations';
 
 export default function MenuBar() {
-
-
+  
+  
   const [isAtTop, setIsAtTop] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(true);
+  
+  const [language, setLanguage] = React.useState('English');
+  
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  
+  const handleChange = (event) => {
+    setLanguage(event.target.value);
+  };
+
+  const { t } = useTranslation();
 
   useEffect(() => {
+    translateMenu();
     const handleScroll = () => {
       const scrollValue = window.scrollY;
       const scrollThreshold = 0.3 * window.innerHeight; // Adjust as needed
@@ -46,7 +62,7 @@ export default function MenuBar() {
     font-size: 1.4em;
     background-color: transparent;
     transition: top 0.3s;
-    z-index: 9999;
+    z-index: 10;
     padding: ${isAtTop ? '45px 0' : '30px 0'}; 
     box-shadow: ${isAtTop ? 'none' : '0 0 30px -5px rgba(0, 0, 0, 0.1)'};
     ${isAtTop ? 'background-color: transparent' : 'background-color: var(--background-color-secondary)'};
@@ -123,6 +139,19 @@ export default function MenuBar() {
   }
   `;
 
+  const languageMenu = css`
+  z-index: 99;
+  ${isAtTop ? 'color: white' : 'color: black'};
+  
+  & > fieldset{
+    border-color: gray !important;
+  }
+  `
+
+  const languageMenuItem = css`
+  z-index: 99;
+  `
+
   return (
     <div css={menuBarStyles}>
       <nav>
@@ -131,14 +160,14 @@ export default function MenuBar() {
         }
         } />
         <ul css={listStyles}>
-          <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Home</Link></li>
+          <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> {t('home')}</Link></li>
           {/* <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Our Studio</Link></li> */}
-          <li css={listItemStyles}><Link to="/homepage#methodology" css={linkStyles}> Methodology</Link></li>
-          <li css={listItemStyles}><Link to="/homepage#equipment" css={linkStyles}> Videos</Link></li>
-          <li css={listItemStyles}><Link to="/homepage#team" css={linkStyles}> Team</Link></li>
+          <li css={listItemStyles}><Link to="/homepage#methodology" css={linkStyles}> {t('methodology')}</Link></li>
+          <li css={listItemStyles}><Link to="/homepage#equipment" css={linkStyles}> {t('videos')}</Link></li>
+          <li css={listItemStyles}><Link to="/homepage#team" css={linkStyles}> {t('team')}</Link></li>
           {/* <li css={listItemStyles}><a to="#studio" css={linkStyles}>Studio</a></li> */}
-          <li css={listItemStyles}><Link to="/contact#hours-and-prices" css={linkStyles}> Lessons and Prices</Link></li>
-          <li css={listItemStyles}><Link to="/contact#contact" css={linkStyles}> Contact</Link></li>
+          <li css={listItemStyles}><Link to="/contact#hours-and-prices" css={linkStyles}> {t('prices')}</Link></li>
+          <li css={listItemStyles}><Link to="/contact#contact" css={linkStyles}> {t('contact')}</Link></li>
         </ul>
       </nav>
       <div css={iconDisplayStyles}>
@@ -154,6 +183,18 @@ export default function MenuBar() {
           <MailOutlineIcon css={iconStyles} />
         </Link>
       </div>
+      <Select
+          labelId="language-select"
+          id="language-select"
+          value={language}
+          label="Language"
+          onChange={handleChange}
+          css={languageMenu}
+        >
+          <MenuItem css={languageMenuItem} value={'English'} onClick={() => changeLanguage('en')}>EN</MenuItem>
+          <MenuItem css={languageMenuItem} value={'Deutsche'} onClick={() => changeLanguage('de')}>DE</MenuItem>
+          <MenuItem css={languageMenuItem} value={'Italiano'} onClick={() => changeLanguage('it')}>IT</MenuItem>
+        </Select>
     </div>
   );
 };

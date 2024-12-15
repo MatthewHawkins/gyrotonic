@@ -1,16 +1,24 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import React from 'react'
+import { useEffect } from 'react';
 
 import IconCard from './IconCard'
 
 import stones from '../assets/icons/stones.png'
 import exercise from '../assets/icons/exercise.png'
-import strength from '../assets/icons/strength.png'
 import lotus from '../assets/icons/lotus.png'
 
+import { useTranslation } from 'react-i18next';
+import { translateIconSection } from '../utlities/translations';
 
 export default function IconDisplay() {
+
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    translateIconSection()
+  }, []);
   
   const displayStyles = css`
     display: flex;
@@ -28,18 +36,18 @@ export default function IconDisplay() {
     <div css={displayStyles}>
       <IconCard 
         imagePath={stones}
-        title='Balance'
-        text='Balances the mind, body and emotions, activates the center of the body and allows a free flow of energy'
+        title={t('title1')}
+        text={t('desc1')}
       />
       <IconCard 
         imagePath={exercise}
-        title='Health'
-        text='Trains strength, flexibility, mobility, and most of all the decompression of the spine to prevent and rehabilitate injuries'
+        title={t('title2')}
+        text={t('desc2')}
       />
       <IconCard 
         imagePath={lotus}
-        title='Well-being'
-        text='Releases stress and enhances regeneration, and improves overall well-being'
+        title={t('title3')}
+        text={t('desc3')}
       />
     </div>
   )
