@@ -72,7 +72,7 @@ export default function () {
       <div css={infoStyles}>
       <div css={col1Styles}>
         <img src={gyroLogo} css={logoStyles}></img>
-        <p><b>GYROTONIC®, GYROTONIC® </b>Logo, <b>GYROTONIC EXPANSION SYSTEM®</b>, and <b>GYROKINESIS®</b> 
+        <p><b>GYROTONIC®, GYROTONIC® Logo</b>, <b>GYROTONIC EXPANSION SYSTEM®</b>, and <b>GYROKINESIS®</b> 
         <br></br> are registered trademarks and are trademarks of Gyrotonic Sales Corp and are used with their permission.</p>
       </div>
         <p>
