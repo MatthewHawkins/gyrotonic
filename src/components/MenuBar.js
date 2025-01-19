@@ -33,8 +33,13 @@ export default function MenuBar() {
 
   const { t } = useTranslation();
 
+  const [translationsLoaded, setTranslationsLoaded] = useState(false);
+
+  
+  
   useEffect(() => {
     translateMenu();
+    setTranslationsLoaded(true); // Force re-render after adding translations
     const handleScroll = () => {
       const scrollValue = window.scrollY;
       const scrollThreshold = 0.3 * window.innerHeight; // Adjust as needed

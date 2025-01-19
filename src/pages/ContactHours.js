@@ -222,6 +222,7 @@ export default function ContactHours() {
                         <h1 css={contactTitleStyles}> {t('contactTitle')}</h1>
                         <div css={contactInfoStyles}>
                             <div css={contactItemStyles}>
+                                <div css={css`font-size: 1.5em;`}> The Roots Studio </div>
                                 <div> Nicola Strada & Federico Moiana </div>
                                 <div><LocalPhoneIcon css={contactIconStyles} /> +49 178 614 5467 </div>
                                 <div><WhatsAppIcon css={contactIconStyles} /> +39 351 789 5709 </div>
