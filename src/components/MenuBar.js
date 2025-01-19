@@ -63,13 +63,13 @@ export default function MenuBar() {
     background-color: transparent;
     transition: top 0.3s;
     z-index: 10;
-    padding: ${isAtTop ? '45px 0' : '30px 0'}; 
+    padding: ${isAtTop ? '45px 0' : '30px 0 15px 0'}; 
     box-shadow: ${isAtTop ? 'none' : '0 0 30px -5px rgba(0, 0, 0, 0.1)'};
     ${isAtTop ? 'background-color: transparent' : 'background-color: var(--background-color-secondary)'};
     transition: background-color 0.3s, padding 0.3s;
   
     @media (max-width: 768px){
-      justify-content: flex-start;
+      justify-content: space-between;
       padding: 1em 0 1em 1em;
     }
     `;
@@ -130,7 +130,7 @@ export default function MenuBar() {
   }
   `
 
-  const iconStyles = css`
+const iconStyles = css`
   ${isAtTop ? 'color: rgba(208, 208, 209, 0.65)' : 'color: #333'};
   transition: color 0.5s;
   
@@ -139,16 +139,21 @@ export default function MenuBar() {
   }
   `;
 
-  const languageMenu = css`
+const languageMenu = css`
   z-index: 99;
   ${isAtTop ? 'color: white' : 'color: black'};
   
   & > fieldset{
     border-color: gray !important;
   }
+  @media (max-width: 768px){
+    max-height: 56px;
+    margin-right: 2.5em
+  }
   `
 
   const languageMenuItem = css`
+  top: -10px
   z-index: 99;
   `
 
