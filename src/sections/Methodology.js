@@ -102,7 +102,8 @@ const sectionTwoText = css`
         {t('method1')}<Gyrotonic text="GYROKINESIS" /> 
         {t('method2')} <Gyrotonic text="GYROTONIC EXPANSION SYSTEM" />,
         {t('method3')} <br /><br />
-        {t('method4')} 
+        {t('method4')} <br /><br /> 
+        {t('method5')}
     <br /><br />
         <br /><br />
         {/* <ul>

@@ -91,6 +91,7 @@ export default function Biography() {
     font-size: 2em;
     font-family: "Cormorant Garamond", serif;
     font-weight: bold;
+    margin-bottom: 1em;
   `;
 
   return (
@@ -115,7 +116,7 @@ export default function Biography() {
           </div>
         </div>
       </div>
-      <div css={quoteStyles}>"Redefine the way you move"</div>
+      <div css={quoteStyles}>"YOUR BODY IS CAPABLE OF AMAZING THINGS"</div>
     </div>
   );
 }
