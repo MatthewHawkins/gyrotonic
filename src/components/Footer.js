@@ -20,6 +20,7 @@ export default function () {
   background-color: var(--background-color-secondary);
   min-height: 30vh;
   padding: 0 1em;
+
   `;
 
   const logoContainerStyles = css`
@@ -47,6 +48,9 @@ export default function () {
     display: flex;
     justify-content: space-around;
     align-items: center;
+      @media (max-width: 768px){
+    flex-direction: column;
+  }
   `;
 
   const iconDisplayStyles = css`

@@ -33,6 +33,13 @@ const contentStyles = css`
   height: 100%;
   padding: 20px;
   z-index: 1;
+
+`;
+  
+const imgStyles = css`
+  @media (max-width: 768px){
+    width: 100%;
+  }
 `;
 
 
@@ -65,7 +72,7 @@ export default function TopSection() {
         className="background-image"
       ></div>
       <div css={contentStyles} className="content">
-        <img src={logo}></img>
+        <img css={imgStyles} src={logo}></img>
       </div>
     </div>
   );
