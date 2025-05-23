@@ -1,25 +1,22 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 import fede from "../assets/images/fede.png";
 import nico from "../assets/images/nico-modified.png";
 
-import { useTranslation } from 'react-i18next';
-import { translateBiography } from '../utlities/translations';
-
+import { useTranslation } from "react-i18next";
+import { translateBiography } from "../utlities/translations";
 
 export default function Biography() {
-  
   const { t } = useTranslation();
   const [translationsLoaded, setTranslationsLoaded] = useState(false);
-  
+
   useEffect(() => {
-    translateBiography()
+    translateBiography();
     setTranslationsLoaded(true); // Force re-render after adding translations
   }, []);
-
 
   const introStyles = css`
     display: flex;
@@ -39,7 +36,7 @@ export default function Biography() {
 
   const sectionThreeTitle = css`
     position: relative;
-    font-size: 3rem;
+    font-size: var(--font-size-title);
     margin-left: 5%;
   `;
   const underlineStyles = css`
@@ -59,7 +56,7 @@ export default function Biography() {
   `;
 
   const sectionThreeText = css`
-    font-size: 1.45em;
+    font-size: var(--font-size-regular);
     margin-left: 5%;
   `;
 
@@ -91,28 +88,24 @@ export default function Biography() {
     font-size: 2em;
     font-family: "Cormorant Garamond", serif;
     font-weight: bold;
-    margin-bottom: 1em;
+    margin: 1em;
   `;
 
   return (
     <div css={sectionFourStyles} id="team">
       <div css={introStyles}>
         <h2 css={sectionThreeTitle}>
-        {t('bioTitle')}
+          {t("bioTitle")}
           <span css={underlineStyles} />
         </h2>
         <div css={bioStyles}>
           <div>
             <img src={fede} css={headshotStyles}></img>
-            <p css={sectionThreeText}>
-            {t('fede')}
-            </p>
+            <p css={sectionThreeText}>{t("fede")}</p>
           </div>
           <div>
             <img src={nico} css={headshotStyles}></img>
-            <p css={sectionThreeText}>
-            {t('nico')}
-            </p>
+            <p css={sectionThreeText}>{t("nico")}</p>
           </div>
         </div>
       </div>

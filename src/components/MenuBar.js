@@ -170,14 +170,14 @@ const languageMenu = css`
         }
         } />
         <ul css={listStyles}>
-          <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> {t('home')}</Link></li>
+          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/homepage#home" css={linkStyles}> {t('home')}</Link></li>
           {/* <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Our Studio</Link></li> */}
-          <li css={listItemStyles}><Link to="/homepage#methodology" css={linkStyles}> {t('methodology')}</Link></li>
-          <li css={listItemStyles}><Link to="/homepage#equipment" css={linkStyles}> {t('videos')}</Link></li>
-          <li css={listItemStyles}><Link to="/homepage#team" css={linkStyles}> {t('team')}</Link></li>
-          {/* <li css={listItemStyles}><a to="#studio" css={linkStyles}>Studio</a></li> */}
-          <li css={listItemStyles}><Link to="/contact#hours-and-prices" css={linkStyles}> {t('prices')}</Link></li>
-          <li css={listItemStyles}><Link to="/contact#contact" css={linkStyles}> {t('contact')}</Link></li>
+          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/homepage#methodology" css={linkStyles}> {t('methodology')}</Link></li>
+          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/homepage#equipment" css={linkStyles}> {t('videos')}</Link></li>
+          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/homepage#team" css={linkStyles}> {t('team')}</Link></li>
+          {/* <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><a to="#studio" css={linkStyles}>Studio</a></li> */}
+          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/contact#hours-and-prices" css={linkStyles}> {t('prices')}</Link></li>
+          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/contact#contact" css={linkStyles}> {t('contact')}</Link></li>
         </ul>
       </nav>
       <div css={iconDisplayStyles}>
