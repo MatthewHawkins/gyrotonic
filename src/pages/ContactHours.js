@@ -246,6 +246,7 @@ export default function ContactHours() {
                   <FmdGoodIcon css={contactIconStyles} /> Hindenburgstraße 65,
                   66119 Saarbrücken
                 </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.6900712374945!2d7.00117597686255!3d49.225404574808096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795b4183e4f3337%3A0xa056c9a7ccdf65bc!2sHindenburgstra%C3%9Fe%2065%2C%2066119%20Saarbr%C3%BCcken!5e0!3m2!1sen!2sde!4v1748015836316!5m2!1sen!2sde" width="450" height="300" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
           </div>
