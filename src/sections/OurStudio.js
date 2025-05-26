@@ -36,6 +36,9 @@ export default function OurStudio() {
     justify-content: center;
     opacity: ${showContent ? "1" : "0"};
     transition: opacity 2s ease;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   `;
 
   const sectionOneLayout = css`
@@ -45,7 +48,7 @@ export default function OurStudio() {
     font-family: "Cormorant Garamond", serif;
     padding: 0 2em 0 2em;
     @media (max-width: 768px) {
-      width: 90%;
+      width: 80%;
     }
   `;
 
@@ -90,7 +93,7 @@ export default function OurStudio() {
     }
 
     @media (max-width: 768px) {
-      display: none;
+      width: 100% !important;
     }
   `;
 

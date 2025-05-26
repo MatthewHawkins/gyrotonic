@@ -20,6 +20,7 @@ export default function MenuBar() {
   
   const [isAtTop, setIsAtTop] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   
   const [language, setLanguage] = React.useState('English');
   
@@ -34,6 +35,12 @@ export default function MenuBar() {
   const { t } = useTranslation();
 
   const [translationsLoaded, setTranslationsLoaded] = useState(false);
+  
+  const handleNavClick = () => {
+    if (isMobile) {
+      setIsCollapsed(true);
+    }
+  };
 
   
   
@@ -51,8 +58,16 @@ export default function MenuBar() {
       }
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const menuBarStyles = css`
@@ -170,14 +185,14 @@ const languageMenu = css`
         }
         } />
         <ul css={listStyles}>
-          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/homepage#home" css={linkStyles}> {t('home')}</Link></li>
+          <li css={listItemStyles} onClick={handleNavClick}><Link to="/homepage#home" css={linkStyles}> {t('home')}</Link></li>
           {/* <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Our Studio</Link></li> */}
-          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/homepage#methodology" css={linkStyles}> {t('methodology')}</Link></li>
-          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/homepage#equipment" css={linkStyles}> {t('videos')}</Link></li>
-          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/homepage#team" css={linkStyles}> {t('team')}</Link></li>
-          {/* <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><a to="#studio" css={linkStyles}>Studio</a></li> */}
-          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/contact#hours-and-prices" css={linkStyles}> {t('prices')}</Link></li>
-          <li css={listItemStyles} onClick={e => {setIsCollapsed(true)}}><Link to="/contact#contact" css={linkStyles}> {t('contact')}</Link></li>
+          <li css={listItemStyles} onClick={handleNavClick}><Link to="/homepage#methodology" css={linkStyles}> {t('methodology')}</Link></li>
+          <li css={listItemStyles} onClick={handleNavClick}><Link to="/homepage#equipment" css={linkStyles}> {t('videos')}</Link></li>
+          <li css={listItemStyles} onClick={handleNavClick}><Link to="/homepage#team" css={linkStyles}> {t('team')}</Link></li>
+          {/* <li css={listItemStyles} onClick={handleNavClick}><a to="#studio" css={linkStyles}>Studio</a></li> */}
+          <li css={listItemStyles} onClick={handleNavClick}><Link to="/contact#hours-and-prices" css={linkStyles}> {t('prices')}</Link></li>
+          <li css={listItemStyles} onClick={handleNavClick}><Link to="/contact#contact" css={linkStyles}> {t('contact')}</Link></li>
         </ul>
       </nav>
       <div css={iconDisplayStyles}>

@@ -88,7 +88,7 @@ export default function Methodology() {
   `;
   return (
     <div css={sectionTwoStyles} id="methodology">
-      <img css={imageTwoStyles} src={methodPicture}></img>
+      <img css={imageTwoStyles} src={methodPicture} alt="Gyrotonic methodology demonstration - movement therapy in action" />
       <div css={introStyles}>
         <h2 css={sectionTwoTitle}>
           {t("methodTitle")}

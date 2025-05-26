@@ -72,7 +72,7 @@ export default function TopSection() {
         className="background-image"
       ></div>
       <div css={contentStyles} className="content">
-        <img css={imgStyles} src={logo}></img>
+        <img css={imgStyles} src={logo} alt="The Roots Studio - Gyrotonic and Gyrokinesis Training" />
       </div>
     </div>
   );

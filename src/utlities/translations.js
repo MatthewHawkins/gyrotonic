@@ -120,7 +120,7 @@ export function translatePrices() {
   i18n.addResource('en', 'translation', 'title2_single', 'Three Session Intro Package');
   i18n.addResource('en', 'translation', 'description2_single', 'Discover the fundamentals of the Gyrotonic Method with three private sessions. Explore its unique movement patterns, breathwork techniques, and holistic approach to building strength, improving flexibility, and enhancing mind-body connection.');
 
-  i18n.addResource('en', 'translation', 'title3_single', 'Ten Session Mastery Package');
+  i18n.addResource('en', 'translation', 'title3_single', 'Ten Session Package');
   i18n.addResource('en', 'translation', 'description3_single', 'Immerse yourself in the transformative power of the Gyrotonic Method with a ten-session series. This package offers the consistency needed to master the method’s flowing movements, synchronized breathwork, and core-strengthening techniques.');
 
   // German
@@ -130,7 +130,7 @@ export function translatePrices() {
   i18n.addResource('de', 'translation', 'title2_single', 'Drei-Sitzungen-Intro-Paket');
   i18n.addResource('de', 'translation', 'description2_single', 'Entdecken Sie die Grundlagen der Gyrotonic-Methode mit drei privaten Sitzungen. Erforschen Sie die einzigartigen Bewegungsmuster, Atemtechniken und den ganzheitlichen Ansatz zur Stärkung, Verbesserung der Flexibilität und Förderung der Verbindung zwischen Körper und Geist.');
 
-  i18n.addResource('de', 'translation', 'title3_single', 'Zehn-Sitzungen-Meisterschaftspaket');
+  i18n.addResource('de', 'translation', 'title3_single', 'Zehn-Sitzungen Paket');
   i18n.addResource('de', 'translation', 'description3_single', 'Tauchen Sie ein in die transformative Kraft der Gyrotonic-Methode mit einer Serie von zehn Sitzungen. Dieses Paket bietet die Konsistenz, die erforderlich ist, um die fließenden Bewegungen, synchronisierten Atemtechniken und kernstärkenden Übungen der Methode zu meistern.');
 
   // Italian
@@ -140,7 +140,7 @@ export function translatePrices() {
   i18n.addResource('it', 'translation', 'title2_single', 'Pacchetto Intro di Tre Sessioni');
   i18n.addResource('it', 'translation', 'description2_single', 'Scopri i fondamenti del metodo Gyrotonic con tre sessioni private. Esplora i suoi movimenti unici, le tecniche di respirazione e l’approccio olistico per sviluppare forza, migliorare la flessibilità e favorire la connessione tra mente e corpo.');
 
-  i18n.addResource('it', 'translation', 'title3_single', 'Pacchetto di Dieci Sessioni');
+  i18n.addResource('it', 'translation', 'title3_single', 'Pacchetto da Dieci Sessioni');
   i18n.addResource('it', 'translation', 'description3_single', 'Immergiti nel potere trasformativo del metodo Gyrotonic con una serie di dieci sessioni. Questo pacchetto offre la coerenza necessaria per padroneggiare i movimenti fluidi, le tecniche di respirazione sincronizzata e gli esercizi di rafforzamento del core.');
 
   // Tandem

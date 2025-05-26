@@ -43,7 +43,7 @@ export default function Contact(props) {
     position: relative;
     align-items: center;
     font-family: "Titillium Web", sans-serif;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       margin-top: 400px;
     }
   `;
@@ -59,7 +59,7 @@ export default function Contact(props) {
     padding: 50px;
     display: flex;
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       flex-direction: column;
       padding: 0px 50px;
     }
@@ -73,7 +73,7 @@ export default function Contact(props) {
     font-size: var(--font-size-title);
     width: 60%;
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       font-size: 30px;
     }
   `;
@@ -86,7 +86,7 @@ export default function Contact(props) {
     margin: 50px 0px;
     font-weight: 300px;
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       margin: 20px 0px;
       width: 100%;
     }
@@ -130,7 +130,7 @@ export default function Contact(props) {
       background-color: white;
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       form {
         margin-top: 0px;
         display: flex;
@@ -138,10 +138,14 @@ export default function Contact(props) {
       }
 
       input {
-        width: 40%;
-        height: 40px;
-        margin: 10px;
-        margin-left: 0;
+        width: 100%;
+        height: 45px;
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      textarea {
+        font-size: 16px;
       }
 
       button {
@@ -154,7 +158,7 @@ export default function Contact(props) {
     font-size: var(--font-size-regular);
     font-weight: 200px;
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       display: none;
     }
   `;

@@ -33,6 +33,7 @@ export default function () {
   const logoStyles = css`
     height: 130px;
     width: 130px;
+    margin-top: 1rem;
   ` ;
 
   const col1Styles = css`
@@ -75,7 +76,7 @@ export default function () {
   return (
     <div css={mainStyles}>
       <div css={infoStyles}>
-        <img src={gyroLogo2} css={logoStyles}></img>
+        <img src={gyroLogo2} css={logoStyles} alt="The Roots Studio logo" />
       <div css={col1Styles}>
         <p><b>GYROTONIC®, GYROTONIC® Logo</b>, <b>GYROTONIC EXPANSION SYSTEM®</b>, and <b>GYROKINESIS®</b> 
         <br></br> are registered trademarks and are trademarks of Gyrotonic Sales Corp and are used with their permission.</p>

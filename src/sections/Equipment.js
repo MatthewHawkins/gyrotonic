@@ -91,20 +91,20 @@ export default function Equipment() {
           width="854"
           height="480"
           src="https://www.youtube.com/embed/oE33mjnvRAc?si=GjE4nsgsxRy6bwBc"
-          title="YouTube video player"
-          frameborder="0"
+          title="Gyrotonic equipment demonstration - specialized movement therapy machines"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
         <iframe
           css={videoStyles}
           width="854"
           height="480"
           src="https://www.youtube.com/embed/wXYQIwas0GE"
-          title="YouTube video player"
-          frameborder="0"
+          title="Gyrotonic exercise demonstration - movement therapy techniques"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </div>

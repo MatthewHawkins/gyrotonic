@@ -80,8 +80,15 @@ export default function Biography() {
   `;
   const headshotStyles = css`
     border-radius: 50%;
-    height: 320px;
-    width: 315px;
+    width: 100%;
+    max-width: 315px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    
+    @media (max-width: 768px) {
+      max-width: 250px;
+    }
   `;
 
   const quoteStyles = css`
@@ -100,11 +107,11 @@ export default function Biography() {
         </h2>
         <div css={bioStyles}>
           <div>
-            <img src={fede} css={headshotStyles}></img>
+            <img src={fede} css={headshotStyles} alt="Federico - Gyrotonic instructor and co-founder of The Roots Studio" />
             <p css={sectionThreeText}>{t("fede")}</p>
           </div>
           <div>
-            <img src={nico} css={headshotStyles}></img>
+            <img src={nico} css={headshotStyles} alt="Nico - Gyrotonic instructor and co-founder of The Roots Studio" />
             <p css={sectionThreeText}>{t("nico")}</p>
           </div>
         </div>

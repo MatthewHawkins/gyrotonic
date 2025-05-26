@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 
 import React from 'react'
 
-export default function IconCard( {imagePath, title, text} ) {
+export default function IconCard( {imagePath, title, text, imageAlt} ) {
 
   const cardStyles = css`
   @media (min-width: 992px) {
@@ -53,7 +53,7 @@ export default function IconCard( {imagePath, title, text} ) {
   return (
     <div css={cardStyles}>
       <div css={imageContainerStyles}>
-        <img src={imagePath} css={imageStyles}></img>
+        <img src={imagePath} css={imageStyles} alt={imageAlt || title} />
       </div>
       <div css={titleStyles}>
         {title}
