@@ -201,13 +201,14 @@ export default function Contact(props) {
               name="user_subject"
             ></input>
             <input
-              type="text"
+              type="email"
               placeholder="Email"
               value={formEmail}
               onChange={(event) => {
                 setFormEmail(event.target.value);
               }}
               name="user_email"
+              required
             ></input>
             <textarea
               rows="5"
