@@ -1,125 +1,127 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import Gyrotonic from "../components/Gyrotonic";
-
 import IconDisplay from "../components/IconDisplay";
+import useReveal from "../hooks/useReveal";
 
 import methodPicture from "../assets/images/method.jpeg";
 
 import { useTranslation } from "react-i18next";
 import { translateMethodology } from "../utlities/translations";
 
+const sectionStyles = css`
+  background-color: var(--color-bg-alt);
+  padding: var(--space-section-y) var(--space-section-x);
+`;
+
+const innerStyles = css`
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: start;
+  gap: var(--space-8);
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+`;
+
+const imageWrapStyles = css`
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4 / 5;
+
+  @media (max-width: 900px) {
+    aspect-ratio: 16 / 10;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+`;
+
+const imageStyles = css`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+`;
+
+const contentColStyles = css`
+  display: flex;
+  flex-direction: column;
+`;
+
+const titleStyles = css`
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--space-5);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 2px;
+    background: var(--color-accent);
+    margin-top: var(--space-4);
+  }
+`;
+
+const bodyStyles = css`
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  line-height: var(--leading-relaxed);
+  color: var(--color-ink-muted);
+
+  & + & {
+    margin-top: var(--space-4);
+  }
+`;
+
+const iconWrapStyles = css`
+  grid-column: 1 / -1;
+  margin-top: var(--space-5);
+`;
+
 export default function Methodology() {
-  const [showContent, setShowContent] = useState(false);
+  const ref = useReveal();
 
   useEffect(() => {
     translateMethodology();
-    setShowContent(true);
   }, []);
 
   const { t } = useTranslation();
 
-  const sectionTwoStyles = css`
-    background-color: var(--background-color-secondary);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow: scroll;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-    ::-webkit-scrollbar {
-      /* Chrome and Safari */
-      display: none;
-    }
-    min-height: 90vh;
-    opacity: ${showContent ? "1" : "0"};
-    transition: opacity 2s ease;
-  `;
-
-  const introStyles = css`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Cormorant Garamond", serif;
-    padding: 1em 3em 1em 3em;
-    width: 70vw;
-    @media (max-width: 768px) {
-      width: 90%;
-    }
-  `;
-
-  const sectionTwoTitle = css`
-    position: relative;
-    font-size: var(--font-size-title);
-  `;
-
-  const underlineStyles = css`
-    ::before {
-      content: "";
-      position: absolute;
-      height: 2px;
-      width: 110px;
-      background-color: #000000;
-      bottom: -2px;
-      margin-left: 25%;
-    }
-
-    ::before {
-      left: 0;
-    }
-  `;
-
-  const imageTwoStyles = css`
-    padding-right: 30px;
-    height: 70%;
-    max-width: 45%;
-    width: 450px;
-    padding-left: 100px;
-    @media (max-width: 768px) {
-      display: none;
-    }
-  `;
-
-  const sectionTwoText = css`
-    font-size: var(--font-size-regular);
-    padding: 0 5%;
-  `;
   return (
-    <div css={sectionTwoStyles} id="methodology">
-      <img css={imageTwoStyles} src={methodPicture} alt="Gyrotonic methodology demonstration - movement therapy in action" />
-      <div css={introStyles}>
-        <h2 css={sectionTwoTitle}>
-          {t("methodTitle")}
-          <span css={underlineStyles} />
-        </h2>
-        <div css={sectionTwoText}>
-          <Gyrotonic />
-          {t("method1")}
-          <Gyrotonic text="GYROKINESIS" />
-          {t("method2")} <Gyrotonic text="GYROTONIC EXPANSION SYSTEM" />,
-          {t("method3")} <br />
-          <br />
-          {t("method4")} <br />
-          <br />
-          {t("method5")}
-          <br />
-          <br />
-          <br />
-          <br />
-          {/* <ul>
-          <li>Balances the mind, body and emotions</li>
-          <li>Activates the center of the body and vitality</li>
-          <li>Trains strength, flexibility and stretching at the same time</li>
-          <li>Removes blockages and allows a free flow of energy</li>
-          <li>Prevents injuries by balancing the body posture, rehabilitates injuries</li>
-          <li>Releases stress and enhances regeneration</li>
-          <li>Mobilizes and strengthens the spine </li>
-        </ul> */}
+    <section css={sectionStyles} id="methodology" ref={ref}>
+      <div css={innerStyles}>
+        <div css={imageWrapStyles}>
+          <img
+            css={imageStyles}
+            src={methodPicture}
+            alt="Gyrotonic methodology demonstration - movement therapy in action"
+          />
+        </div>
+        <div css={contentColStyles}>
+          <span className="eyebrow">The Method</span>
+          <h2 css={titleStyles}>{t("methodTitle")}</h2>
+          <p css={bodyStyles}>
+            <Gyrotonic />
+            {t("method1")}
+            <Gyrotonic text="GYROKINESIS" />
+            {t("method2")} <Gyrotonic text="GYROTONIC EXPANSION SYSTEM" />,
+            {t("method3")}
+          </p>
+          <p css={bodyStyles}>{t("method4")}</p>
+          <p css={bodyStyles}>{t("method5")}</p>
+        </div>
+        <div css={iconWrapStyles}>
           <IconDisplay />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

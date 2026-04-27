@@ -1,28 +1,34 @@
-/** @jsxImportSource @emotion/react */
-import { jsx, css } from '@emotion/react'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+import "./i18n/i18n";
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n/i18n";
+import {
+  translateMenu,
+  translateOurStudio,
+  translateMethodology,
+  translateIconSection,
+  translateBiography,
+  translatePrices,
+  translateContact,
+} from "./utlities/translations";
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css';
-import './i18n/i18n'; // Import the i18n configuration
-import { I18nextProvider } from 'react-i18next'; // Import I18nextProvider
-import i18n from './i18n/i18n'; // Import the initialized i18n instance
+translateMenu();
+translateOurStudio();
+translateMethodology();
+translateIconSection();
+translateBiography();
+translatePrices();
+translateContact();
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-const appStyles = css`
-:root{
-  margin: 0px;
-  padding: 0px;
-}
-`
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
-      <App css={appStyles} />
+      <App />
     </I18nextProvider>
   </React.StrictMode>
 );

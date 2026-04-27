@@ -1,225 +1,376 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, css } from '@emotion/react'
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { css } from "@emotion/react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import MenuIcon from '@mui/icons-material/Menu';
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
-import i18n from '../i18n/i18n'; // Import the initialized i18n instance
-import { useTranslation } from 'react-i18next';
-import { translateMenu } from '../utlities/translations';
+import i18n from "../i18n/i18n";
+import { useTranslation } from "react-i18next";
 
 export default function MenuBar() {
-  
-  
   const [isAtTop, setIsAtTop] = useState(true);
-  const [isCollapsed, setIsCollapsed] = useState(true);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  
-  const [language, setLanguage] = React.useState('English');
-  
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false
+  );
+  const [language, setLanguage] = useState("English");
+
+  const { t } = useTranslation();
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
-  
+
   const handleChange = (event) => {
     setLanguage(event.target.value);
   };
 
-  const { t } = useTranslation();
+  const closeMenu = () => setIsOpen(false);
 
-  const [translationsLoaded, setTranslationsLoaded] = useState(false);
-  
-  const handleNavClick = () => {
-    if (isMobile) {
-      setIsCollapsed(true);
-    }
-  };
-
-  
-  
   useEffect(() => {
-    translateMenu();
-    setTranslationsLoaded(true); // Force re-render after adding translations
     const handleScroll = () => {
-      const scrollValue = window.scrollY;
-      const scrollThreshold = 0.3 * window.innerHeight; // Adjust as needed
-
-      if (scrollValue <= scrollThreshold) {
-        setIsAtTop(true);
-      } else {
-        setIsAtTop(false);
-      }
+      setIsAtTop(window.scrollY <= 0.3 * window.innerHeight);
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      if (!mobile) setIsOpen(false);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  const menuBarStyles = css`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      const previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = previousOverflow;
+      };
+    }
+  }, [isOpen]);
+
+  const navItems = [
+    { to: "/homepage#home", label: t("home") },
+    { to: "/homepage#methodology", label: t("methodology") },
+    { to: "/homepage#equipment", label: t("videos") },
+    { to: "/homepage#team", label: t("team") },
+    { to: "/contact#hours-and-prices", label: t("prices") },
+    { to: "/contact#contact", label: t("contact") },
+  ];
+
+  const headerStyles = css`
     position: fixed;
-    width: calc(100%);
     top: 0;
     left: 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4em;
-    background-color: transparent;
-    transition: top 0.3s;
-    z-index: 10;
-    padding: ${isAtTop ? '45px 0' : '30px 0 15px 0'}; 
-    box-shadow: ${isAtTop ? 'none' : '0 0 30px -5px rgba(0, 0, 0, 0.1)'};
-    ${isAtTop ? 'background-color: transparent' : 'background-color: var(--background-color-secondary)'};
-    transition: background-color 0.3s, padding 0.3s;
-  
-    @media (max-width: 768px){
-      justify-content: space-between;
-      padding: 1em 0 1em 1em;
-    }
-    `;
+    right: 0;
+    z-index: 100;
+    transition: background-color var(--transition),
+      backdrop-filter var(--transition), padding var(--transition),
+      box-shadow var(--transition);
+    padding: ${isAtTop ? "1.5rem 2rem" : "0.875rem 2rem"};
+    background-color: ${isAtTop ? "transparent" : "rgba(241, 238, 228, 0.85)"};
+    backdrop-filter: ${isAtTop ? "none" : "saturate(180%) blur(12px)"};
+    -webkit-backdrop-filter: ${isAtTop
+      ? "none"
+      : "saturate(180%) blur(12px)"};
+    box-shadow: ${isAtTop ? "none" : "0 1px 0 var(--color-line-soft)"};
 
-  const menuIconStyles = css`
-    font-size: 1.4em;
-    ${isAtTop ? 'color: rgba(308, 308, 309, 0.65)' : 'color: #333'};
-    &:hover {
-      ${isAtTop ? 'color: white' : 'color: #333'};
+    @media (max-width: 768px) {
+      padding: ${isAtTop ? "1rem 1.25rem" : "0.75rem 1.25rem"};
     }
-    
-    @media (min-width: 768px){
+  `;
+
+  const innerStyles = css`
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+  `;
+
+  const desktopNavStyles = css`
+    flex: 1;
+
+    @media (max-width: 768px) {
       display: none;
     }
-    `
-
-  const listStyles = css`
-  display: ${isCollapsed ? 'none' : 'flex'};
-  /* height: ${isCollapsed ? '0px' : 'auto'};
-  overflow: hidden;
-  transition: height .5s ease; */
-  flex-direction: row;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 10px;
-  
-  @media (max-width: 768px){
-    flex-direction: column;
-  }
-  @media (min-width: 768px){
-    display: flex !important;
-  }
   `;
 
-  const listItemStyles = css`
-  margin-right: 20px;
+  const desktopListStyles = css`
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-6);
+    list-style: none;
+    margin: 0;
+    padding: 0;
   `;
 
-  const linkStyles = css`
-  transition: color 0.5s;
-  ${isAtTop ? 'color: rgba(308, 308, 309, 0.65)' : 'color: #333'};
-  text-decoration: none;
-  font-weight: bold;
-  &:hover {
-    ${isAtTop ? 'color: white' : 'color: #333'};
-  }
-  display: flex;
-  gap: 5px;
+  const desktopLinkStyles = css`
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: ${isAtTop ? "rgba(255, 255, 255, 0.92)" : "var(--color-ink)"};
+    text-decoration: none;
+    padding: var(--space-2) 0;
+    position: relative;
+    transition: color var(--transition-fast);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width var(--transition);
+    }
+
+    &:hover {
+      color: ${isAtTop ? "#fff" : "var(--color-accent)"};
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
   `;
 
-  const iconDisplayStyles = css`
-  display: flex;
-  gap: 25px;
-  
-  @media (max-width: 768px){
+  const menuToggleStyles = css`
     display: none;
-  }
-  `
+    background: transparent;
+    border: 0;
+    padding: var(--space-2);
+    color: ${isAtTop && !isOpen
+      ? "rgba(255, 255, 255, 0.92)"
+      : "var(--color-ink)"};
+    cursor: pointer;
+    transition: color var(--transition-fast);
 
-const iconStyles = css`
-  ${isAtTop ? 'color: rgba(208, 208, 209, 0.65)' : 'color: #333'};
-  transition: color 0.5s;
-  
-  :hover{
-    ${isAtTop ? 'color: white' : 'color: #999'};
-  }
+    @media (max-width: 768px) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
   `;
 
-const languageMenu = css`
-  z-index: 99;
-  ${isAtTop ? 'color: white' : 'color: black'};
-  
-  & > fieldset{
-    border-color: gray !important;
-  }
-  @media (max-width: 768px){
-    max-height: 56px;
-    margin-right: 2.5em
-  }
-  `
+  const iconRowStyles = css`
+    display: flex;
+    gap: var(--space-5);
 
-  const languageMenuItem = css`
-  top: -10px
-  z-index: 99;
-  `
+    @media (max-width: 768px) {
+      display: none;
+    }
+  `;
+
+  const socialIconStyles = css`
+    color: ${isAtTop ? "rgba(255, 255, 255, 0.85)" : "var(--color-ink-muted)"};
+    transition: color var(--transition-fast),
+      transform var(--transition-fast);
+
+    &:hover {
+      color: ${isAtTop ? "#fff" : "var(--color-accent)"};
+      transform: translateY(-1px);
+    }
+  `;
+
+  const languageMenuStyles = css`
+    color: ${isAtTop ? "rgba(255, 255, 255, 0.92)" : "var(--color-ink)"};
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-sm) !important;
+    min-width: 64px;
+
+    & .MuiSelect-select {
+      padding: 6px 24px 6px 12px !important;
+    }
+    & fieldset {
+      border-color: ${isAtTop
+        ? "rgba(255, 255, 255, 0.4)"
+        : "var(--color-line)"} !important;
+      transition: border-color var(--transition);
+    }
+    & svg {
+      color: inherit;
+    }
+    &:hover fieldset {
+      border-color: ${isAtTop
+        ? "rgba(255, 255, 255, 0.7)"
+        : "var(--color-accent)"} !important;
+    }
+  `;
+
+  /* Mobile slide-out (rendered outside the header) */
+  const mobileMenuStyles = css`
+    display: none;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 80vw);
+      padding: calc(var(--header-height) + var(--space-5)) var(--space-6)
+        var(--space-6);
+      background-color: var(--color-bg);
+      box-shadow: -8px 0 32px rgba(31, 28, 23, 0.12);
+      transform: translateX(${isOpen ? "0" : "100%"});
+      transition: transform var(--transition);
+      z-index: 90;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  `;
+
+  const mobileListStyles = css`
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  `;
+
+  const mobileLinkStyles = css`
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-ink);
+    text-decoration: none;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-line-soft);
+    transition: color var(--transition-fast);
+
+    &:hover,
+    &:active {
+      color: var(--color-accent);
+    }
+  `;
+
+  const overlayStyles = css`
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(31, 28, 23, 0.4);
+      opacity: ${isOpen ? 1 : 0};
+      pointer-events: ${isOpen ? "auto" : "none"};
+      transition: opacity var(--transition);
+      z-index: 80;
+    }
+  `;
 
   return (
-    <div css={menuBarStyles}>
-      <nav>
-        <MenuIcon css={menuIconStyles} onClick={e => {
-          setIsCollapsed(!isCollapsed)
-        }
-        } />
-        <ul css={listStyles}>
-          <li css={listItemStyles} onClick={handleNavClick}><Link to="/homepage#home" css={linkStyles}> {t('home')}</Link></li>
-          {/* <li css={listItemStyles}><Link to="/homepage#home" css={linkStyles}> Our Studio</Link></li> */}
-          <li css={listItemStyles} onClick={handleNavClick}><Link to="/homepage#methodology" css={linkStyles}> {t('methodology')}</Link></li>
-          <li css={listItemStyles} onClick={handleNavClick}><Link to="/homepage#equipment" css={linkStyles}> {t('videos')}</Link></li>
-          <li css={listItemStyles} onClick={handleNavClick}><Link to="/homepage#team" css={linkStyles}> {t('team')}</Link></li>
-          {/* <li css={listItemStyles} onClick={handleNavClick}><a to="#studio" css={linkStyles}>Studio</a></li> */}
-          <li css={listItemStyles} onClick={handleNavClick}><Link to="/contact#hours-and-prices" css={linkStyles}> {t('prices')}</Link></li>
-          <li css={listItemStyles} onClick={handleNavClick}><Link to="/contact#contact" css={linkStyles}> {t('contact')}</Link></li>
+    <>
+      <header css={headerStyles}>
+        <div css={innerStyles}>
+          <nav css={desktopNavStyles}>
+            <ul css={desktopListStyles}>
+              {navItems.map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} css={desktopLinkStyles}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div css={iconRowStyles}>
+            <Link
+              target="_blank"
+              to="https://www.facebook.com/people/The-Roots-Studio/61553981725684/"
+              aria-label="Facebook"
+            >
+              <FacebookIcon css={socialIconStyles} />
+            </Link>
+            <Link
+              target="_blank"
+              to="https://www.instagram.com/the_roots_gyrotonic_training/"
+              aria-label="Instagram"
+            >
+              <InstagramIcon css={socialIconStyles} />
+            </Link>
+            <Link
+              to="#"
+              onClick={(e) => {
+                window.location.href = "mailto:the.roots.exercise@gmail.com";
+                e.preventDefault();
+              }}
+              aria-label="Email"
+            >
+              <MailOutlineIcon css={socialIconStyles} />
+            </Link>
+          </div>
+
+          <Select
+            id="language-select"
+            value={language}
+            onChange={handleChange}
+            css={languageMenuStyles}
+            variant="outlined"
+            size="small"
+          >
+            <MenuItem value="English" onClick={() => changeLanguage("en")}>
+              EN
+            </MenuItem>
+            <MenuItem value="Deutsche" onClick={() => changeLanguage("de")}>
+              DE
+            </MenuItem>
+            <MenuItem value="Italiano" onClick={() => changeLanguage("it")}>
+              IT
+            </MenuItem>
+          </Select>
+
+          <button
+            css={menuToggleStyles}
+            onClick={() => setIsOpen((v) => !v)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
+        </div>
+      </header>
+
+      <nav css={mobileMenuStyles} aria-hidden={!isOpen}>
+        <ul css={mobileListStyles}>
+          {navItems.map((item) => (
+            <li key={item.to}>
+              <Link to={item.to} css={mobileLinkStyles} onClick={closeMenu}>
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
-      <div css={iconDisplayStyles}>
-        <Link target='_blank' to={"https://www.facebook.com/people/The-Roots-Studio/61553981725684/"}><FacebookIcon css={iconStyles} /></Link>
-        <Link target='_blank' to={"https://www.instagram.com/the_roots_gyrotonic_training/"}><InstagramIcon css={iconStyles} /></Link>
-        <Link
-          to={'#'}
-          onClick={(e) => {
-            window.location.href = 'mailto:the.roots.exercise@gmail.com';
-            e.preventDefault();
-          }}
-        >
-          <MailOutlineIcon css={iconStyles} />
-        </Link>
-      </div>
-      <Select
-          labelId="language-select"
-          id="language-select"
-          value={language}
-          label="Language"
-          onChange={handleChange}
-          css={languageMenu}
-        >
-          <MenuItem css={languageMenuItem} value={'English'} onClick={() => changeLanguage('en')}>EN</MenuItem>
-          <MenuItem css={languageMenuItem} value={'Deutsche'} onClick={() => changeLanguage('de')}>DE</MenuItem>
-          <MenuItem css={languageMenuItem} value={'Italiano'} onClick={() => changeLanguage('it')}>IT</MenuItem>
-        </Select>
-    </div>
+
+      <div css={overlayStyles} onClick={closeMenu} aria-hidden="true" />
+    </>
   );
-};
+}

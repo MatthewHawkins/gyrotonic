@@ -1,66 +1,48 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import { css } from "@emotion/react";
+import React from "react";
 
-import React from 'react'
-
-export default function IconCard( {imagePath, title, text, imageAlt} ) {
-
+export default function IconCard({ imagePath, title, text, imageAlt }) {
   const cardStyles = css`
-  @media (min-width: 992px) {
     display: flex;
     flex-direction: column;
-    flex: 0 0 25%;
-    max-width: 25%;
-    padding: 0 15px 0 15px;
-  }
-  @media (max-width: 768px){
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-  }
-  @media (max-width: 576px){
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  `
-
-  const imageContainerStyles = css`
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-5) var(--space-4);
+    flex: 1 1 220px;
+    max-width: 280px;
   `;
 
   const imageStyles = css`
-    width: 4.5rem;
-    margin-bottom: 1rem!important;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    margin-bottom: var(--space-4);
+    opacity: 0.85;
   `;
 
   const titleStyles = css`
-    font-size: 1.5em;
-    font-weight: 500;
-    line-height: 1.2;
-    text-align: center!important;
-  `
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    font-weight: var(--weight-medium);
+    line-height: var(--leading-snug);
+    color: var(--color-ink);
+    margin-bottom: var(--space-2);
+  `;
 
-  const textStyles = css`    
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  text-align: center!important;
-  color: rgba(0, 0, 0, 0.5);
-  `
+  const textStyles = css`
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--color-ink-muted);
+    margin: 0;
+  `;
 
   return (
     <div css={cardStyles}>
-      <div css={imageContainerStyles}>
-        <img src={imagePath} css={imageStyles} alt={imageAlt || title} />
-      </div>
-      <div css={titleStyles}>
-        {title}
-      </div>
-      <div css={textStyles}>
-        {text}
-      </div>
+      <img src={imagePath} css={imageStyles} alt={imageAlt || title} />
+      <div css={titleStyles}>{title}</div>
+      <p css={textStyles}>{text}</p>
     </div>
-  )
+  );
 }
