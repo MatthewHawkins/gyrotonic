@@ -1,13 +1,14 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, css } from "@emotion/react";
+import { css } from "@emotion/react";
 import React, { useRef, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import image from "../assets/images/background1.jpeg";
-import { ContactPage } from "@mui/icons-material";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
+import image from "../assets/images/background1.jpeg";
 import AnimatedButton from "../components/AnimatedButton";
 import Lessons from "../sections/Lessons";
+import useReveal from "../hooks/useReveal";
+
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -18,12 +19,12 @@ import { translateContact } from "../utlities/translations";
 
 export default function ContactHours() {
   const location = useLocation();
-
-  const [translationsLoaded, setTranslationsLoaded] = useState(false);
+  const [, setTranslationsLoaded] = useState(false);
+  const contactRef = useReveal();
 
   useEffect(() => {
     translateContact();
-    setTranslationsLoaded(true); // Force re-render after adding translations
+    setTranslationsLoaded(true);
   }, []);
 
   const { t } = useTranslation();
@@ -40,12 +41,6 @@ export default function ContactHours() {
     }
   }, [location]);
 
-  const pageStyles = css`
-    display: flex;
-    flex-direction: column;
-    font-family: "Cormorant Garamond", serif;
-  `;
-
   const formData = useRef();
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
@@ -57,63 +52,41 @@ export default function ContactHours() {
 
   const validateForm = () => {
     const newErrors = {};
-    
     if (!name.trim()) {
       newErrors.name = t("nameRequired") || "Name is required";
     }
-    
     if (!formEmail.trim()) {
       newErrors.email = t("emailRequired") || "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formEmail)) {
       newErrors.email = t("emailInvalid") || "Please enter a valid email address";
     }
-    
     if (!subject.trim()) {
       newErrors.subject = t("subjectRequired") || "Subject is required";
     }
-    
     if (!message.trim()) {
       newErrors.message = t("messageRequired") || "Message is required";
     }
-    
     return newErrors;
   };
 
   function handleSubmit(e) {
     e.preventDefault();
     const validationErrors = validateForm();
-    
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-    
     setIsSubmitting(true);
     setErrors({});
-    
-    // Log form data for debugging
-    console.log("Sending email with:", {
-      service: "service_5cx67k6",
-      template: "template_xe2xyt2",
-      form: formData.current,
-      fields: {
-        user_name: name,
-        user_subject: subject,
-        user_email: formEmail,
-        message: message
-      }
-    });
-    
     emailjs
       .sendForm(
-        "service_5cx67k6", // Your service ID
-        "template_xe2xyt2", // Your template ID
+        "service_5cx67k6",
+        "template_xe2xyt2",
         formData.current,
-        "8D1H1HpW1LYZpGiGJ" // Your public key
+        "8D1H1HpW1LYZpGiGJ"
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
           setSubmitStatus("success");
           setName("");
           setSubject("");
@@ -121,10 +94,7 @@ export default function ContactHours() {
           setMessage("");
           setTimeout(() => setSubmitStatus(null), 5000);
         },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          console.error("Error text:", error.text);
-          console.error("Error status:", error.status);
+        () => {
           setSubmitStatus("error");
           setTimeout(() => setSubmitStatus(null), 5000);
         }
@@ -134,288 +104,284 @@ export default function ContactHours() {
       });
   }
 
-  const bodyStyles = css`
-    /* background-color: #DFE0DE; */
+  const pageStyles = css`
+    display: flex;
+    flex-direction: column;
+  `;
 
+  const contactSectionStyles = css`
+    position: relative;
     background-image: linear-gradient(
-        rgba(255, 255, 255, 0.6),
-        rgba(255, 255, 255, 0.6)
+        rgba(241, 238, 228, 0.9),
+        rgba(241, 238, 228, 0.92)
       ),
       url(${image});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    padding: var(--space-section-y) var(--space-section-x);
 
-    display: flex;
-    min-height: 100vh;
-    position: relative;
-    align-items: center;
+    @media (max-width: 768px) {
+      background-attachment: scroll;
+    }
   `;
 
-  const contactBackgroundStyles = css`
-    width: 20px;
-    height: 100%;
-    position: absolute;
-  `;
-
-  const contactWrapperStyles = css`
-    padding: 50px;
-    display: flex;
-    max-width: 1200px;
+  const contactInnerStyles = css`
+    max-width: var(--container);
     margin: 0 auto;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
 
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-      padding: 20px;
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: var(--space-7);
     }
   `;
 
-  const leftStyles = css`
-    margin-left: 3em;
-    flex: 1;
-    
-    @media screen and (max-width: 768px) {
-      margin-left: 0;
-      padding: 0 10px;
+  const contactColStyles = css`
+    display: flex;
+    flex-direction: column;
+  `;
+
+  const titleStyles = css`
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--space-3);
+
+    &::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 2px;
+      background: var(--color-accent);
+      margin-top: var(--space-4);
     }
   `;
 
-  const contactTitleStyles = css`
-    font-size: var(--font-size-title);
-    width: 60%;
-
-    @media screen and (max-width: 768px) {
-      font-size: 30px;
-    }
+  const studioNameStyles = css`
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--weight-medium);
+    color: var(--color-ink);
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-1);
   `;
 
-  const contactInfoStyles = css``;
+  const tagStyles = css`
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    color: var(--color-ink-soft);
+    margin-bottom: var(--space-5);
+  `;
+
+  const contactListStyles = css`
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+  `;
 
   const contactItemStyles = css`
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    /* align-items: center; */
-    margin: 50px 0px;
-    font-weight: bold;
-    font-size: var(--font-size-regular);
-
-    @media screen and (max-width: 768px) {
-      margin: 20px 0px;
-      width: 100%;
-    }
-  `;
-  const contactIconStyles = css`
-    /* height: 30px; */
-    /* margin-right: 2px; */
-    margin-bottom: -8px;
-  `;
-
-  const rightStyles = css`
-    flex: 1;
-    display: flex;
     align-items: center;
-    justify-content: space;
-    flex-direction: column;
-    padding: 0 20px;
+    gap: var(--space-3);
+    font-family: var(--font-body);
+    font-size: var(--font-size-md);
+    color: var(--color-ink);
+  `;
 
-    * {
-      font-family: "Cormorant Garamond", serif;
+  const contactIconStyles = css`
+    color: var(--color-accent);
+    flex-shrink: 0;
+  `;
+
+  const mapStyles = css`
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    margin-top: var(--space-3);
+  `;
+
+  const formIntroStyles = css`
+    font-family: var(--font-body);
+    font-size: var(--font-size-md);
+    color: var(--color-ink-muted);
+    line-height: var(--leading-relaxed);
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-6);
+    max-width: 52ch;
+  `;
+
+  const formStyles = css`
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
     }
-    form {
-      margin-top: 20px;
-      outline: none;
-      width: 100%;
-      max-width: 500px;
-      
-      & > div {
-        width: 100%;
-      }
-    }
-    input {
-      width: 100%;
-      max-width: 400px;
-      height: 50px;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      margin: 10px 0px;
-      font-size: 1em;
-      padding-left: 15px;
-      outline: none;
-      transition: border-color 0.3s;
-      
-      &:focus {
-        border-color: var(--color-primary);
-      }
-    }
+
+    input,
     textarea {
       width: 100%;
-      margin: 20px 0px;
-      font-size: 1em;
-      padding: 15px;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
-      min-height: 120px;
-      resize: vertical;
-      transition: border-color 0.3s;
-      
+      font-family: var(--font-body);
+      font-size: var(--font-size-base);
+      color: var(--color-ink);
+      background: var(--color-surface);
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius);
+      padding: var(--space-3) var(--space-4);
+      transition: border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+      outline: none;
+
+      &::placeholder {
+        color: var(--color-ink-soft);
+      }
+
       &:focus {
-        border-color: var(--color-primary);
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px var(--color-accent-soft);
       }
     }
+
+    input {
+      height: 48px;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
     button {
-      border: hidden;
-      background-color: transparent;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      align-self: flex-start;
+      margin-top: var(--space-3);
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
     }
 
-    @media screen and (max-width: 768px) {
-      padding: 0 10px;
-      
-      form {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      input {
-        width: 100%;
-        height: 45px;
-        margin: 10px 0;
-        font-size: 16px; /* Prevents zoom on iOS */
-        max-width: 100%;
-      }
-
+    @media (max-width: 768px) {
+      input,
       textarea {
-        font-size: 16px; /* Prevents zoom on iOS */
-        width: 100%;
+        font-size: 16px;
       }
-
       button {
-        margin-top: 20px;
-        width: 100%;
-        position: relative;
-        z-index: 1;
+        align-self: stretch;
       }
     }
   `;
 
-  const contactDescriptionStyles = css`
-    font-size: var(--font-size-regular);
-    font-weight: 200px;
-
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-  `;
-  
   const errorStyles = css`
-    color: #d32f2f;
-    font-size: 0.875rem;
-    margin-top: -5px;
-    margin-bottom: 10px;
+    color: #b3261e;
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-1);
   `;
-  
-  const statusMessageStyles = css`
-    padding: 12px 16px;
-    border-radius: 4px;
-    margin-bottom: 20px;
+
+  const statusStyles = css`
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-4);
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
     text-align: center;
-    font-weight: 500;
-    
+
     &.success {
-      background-color: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
+      background: #e7f4e7;
+      color: #1d5b1d;
+      border: 1px solid #b8dcb8;
     }
-    
     &.error {
-      background-color: #f8d7da;
-      color: #721c24;
-      border: 1px solid #f5c6cb;
-    }
-  `;
-
-  const googleMapStyles = css`
-    width: 100%;
-    max-width: 450px;
-    height: 300px;
-    border: 0;
-    margin-top: 20px;
-    aspect-ratio: 3/2;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
-    @media screen and (max-width: 768px) {
-      height: 250px;
-      margin-top: 15px;
-      max-width: 100%;
+      background: #fbecec;
+      color: #6b1f1b;
+      border: 1px solid #e8b8b6;
     }
   `;
 
   return (
     <div css={pageStyles}>
       <Lessons />
-      <div id="contact" css={bodyStyles}>
-        <div css={contactBackgroundStyles}></div>
-        <div css={contactWrapperStyles}>
-          <div css={leftStyles}>
-            <h1 css={contactTitleStyles}> {t("contactTitle")}</h1>
-            <div css={contactInfoStyles}>
+      <section id="contact" css={contactSectionStyles} ref={contactRef}>
+        <div css={contactInnerStyles}>
+          <div css={contactColStyles}>
+            <span className="eyebrow">Get In Touch</span>
+            <h2 css={titleStyles}>{t("contactTitle")}</h2>
+
+            <div css={studioNameStyles}>The Roots Studio</div>
+            <div css={tagStyles}>Nicola Strada & Federico Moiana</div>
+
+            <div css={contactListStyles}>
               <div css={contactItemStyles}>
-                <div
-                  css={css`
-                    font-size: 1.5em;
-                  `}
-                >
-                  {" "}
-                  The Roots Studio{" "}
-                </div>
-                <div> Nicola Strada & Federico Moiana </div>
-                <div>
-                  <LocalPhoneIcon css={contactIconStyles} /> +49 178 614 5467{" "}
-                </div>
-                <div>
-                  <WhatsAppIcon css={contactIconStyles} /> +39 351 789 5709{" "}
-                </div>
-                <div>
-                  <WhatsAppIcon css={contactIconStyles} /> +43 660 916 3118{" "}
-                </div>
-                <div>
-                  <EmailIcon css={contactIconStyles} />{" "}
-                  the.roots.exercise@gmail.com
-                </div>
-                <div>
-                  <FmdGoodIcon css={contactIconStyles} /> Deutschherrnpfad 14-20, 66117 Saarbrücken, Germany
-                </div>
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.3868963780806!2d6.975365076862796!3d49.23115347440124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795b3fecd9b4591%3A0x681b2aa254046a4a!2sDeutschherrnpfad%2014-20%2C%2066117%20Saarbr%C3%BCcken%2C%20Germany!5e0!3m2!1sen!2sus!4v1777303283670!5m2!1sen!2sus"
-                  css={googleMapStyles} 
-                  title="The Roots Studio location map - Deutschherrnpfad 14-20, 66117 Saarbrücken, Germany"
-                  allowFullScreen="" 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                <LocalPhoneIcon css={contactIconStyles} fontSize="small" />
+                +49 178 614 5467
+              </div>
+              <div css={contactItemStyles}>
+                <WhatsAppIcon css={contactIconStyles} fontSize="small" />
+                +39 351 789 5709
+              </div>
+              <div css={contactItemStyles}>
+                <WhatsAppIcon css={contactIconStyles} fontSize="small" />
+                +43 660 916 3118
+              </div>
+              <div css={contactItemStyles}>
+                <EmailIcon css={contactIconStyles} fontSize="small" />
+                the.roots.exercise@gmail.com
+              </div>
+              <div css={contactItemStyles}>
+                <FmdGoodIcon css={contactIconStyles} fontSize="small" />
+                Deutschherrnpfad 14-20, 66117 Saarbrücken, Germany
               </div>
             </div>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.3868963780806!2d6.975365076862796!3d49.23115347440124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795b3fecd9b4591%3A0x681b2aa254046a4a!2sDeutschherrnpfad%2014-20%2C%2066117%20Saarbr%C3%BCcken%2C%20Germany!5e0!3m2!1sen!2sus!4v1777303283670!5m2!1sen!2sus"
+              css={mapStyles}
+              title="The Roots Studio location map - Deutschherrnpfad 14-20, 66117 Saarbrücken, Germany"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
-          <div css={rightStyles}>
-            <p css={contactDescriptionStyles}>
+
+          <div css={contactColStyles}>
+            <p css={formIntroStyles}>
               <b>{t("contactIntro")}</b>
               {t("contactText")}
             </p>
+
             {submitStatus && (
-              <div css={statusMessageStyles} className={submitStatus}>
-                {submitStatus === "success" 
-                  ? t("emailSuccess") || "Thank you! Your message has been sent successfully."
-                  : t("emailError") || "Sorry, there was an error sending your message. Please try again."}
+              <div css={statusStyles} className={submitStatus}>
+                {submitStatus === "success"
+                  ? t("emailSuccess") ||
+                    "Thank you! Your message has been sent successfully."
+                  : t("emailError") ||
+                    "Sorry, there was an error sending your message. Please try again."}
               </div>
             )}
-            <form ref={formData} id="emailForm" onSubmit={handleSubmit}>
+
+            <form
+              ref={formData}
+              id="emailForm"
+              onSubmit={handleSubmit}
+              css={formStyles}
+            >
               <div>
-                <label htmlFor="name" className="visually-hidden">Name</label>
+                <label htmlFor="name" className="visually-hidden">
+                  Name
+                </label>
                 <input
                   id="name"
                   type="text"
@@ -423,18 +389,20 @@ export default function ContactHours() {
                   value={name}
                   onChange={(event) => {
                     setName(event.target.value);
-                    if (errors.name) setErrors({...errors, name: ""});
+                    if (errors.name) setErrors({ ...errors, name: "" });
                   }}
                   name="user_name"
                   aria-required="true"
                   aria-invalid={!!errors.name}
-                  style={errors.name ? {borderColor: "#d32f2f"} : {}}
+                  style={errors.name ? { borderColor: "#b3261e" } : {}}
                 />
                 {errors.name && <div css={errorStyles}>{errors.name}</div>}
               </div>
-              
+
               <div>
-                <label htmlFor="subject" className="visually-hidden">Subject</label>
+                <label htmlFor="subject" className="visually-hidden">
+                  Subject
+                </label>
                 <input
                   id="subject"
                   type="text"
@@ -442,18 +410,22 @@ export default function ContactHours() {
                   value={subject}
                   onChange={(event) => {
                     setSubject(event.target.value);
-                    if (errors.subject) setErrors({...errors, subject: ""});
+                    if (errors.subject) setErrors({ ...errors, subject: "" });
                   }}
                   name="user_subject"
                   aria-required="true"
                   aria-invalid={!!errors.subject}
-                  style={errors.subject ? {borderColor: "#d32f2f"} : {}}
+                  style={errors.subject ? { borderColor: "#b3261e" } : {}}
                 />
-                {errors.subject && <div css={errorStyles}>{errors.subject}</div>}
+                {errors.subject && (
+                  <div css={errorStyles}>{errors.subject}</div>
+                )}
               </div>
-              
+
               <div>
-                <label htmlFor="email" className="visually-hidden">Email</label>
+                <label htmlFor="email" className="visually-hidden">
+                  Email
+                </label>
                 <input
                   id="email"
                   type="email"
@@ -461,18 +433,20 @@ export default function ContactHours() {
                   value={formEmail}
                   onChange={(event) => {
                     setFormEmail(event.target.value);
-                    if (errors.email) setErrors({...errors, email: ""});
+                    if (errors.email) setErrors({ ...errors, email: "" });
                   }}
                   name="user_email"
                   aria-required="true"
                   aria-invalid={!!errors.email}
-                  style={errors.email ? {borderColor: "#d32f2f"} : {}}
+                  style={errors.email ? { borderColor: "#b3261e" } : {}}
                 />
                 {errors.email && <div css={errorStyles}>{errors.email}</div>}
               </div>
-              
+
               <div>
-                <label htmlFor="message" className="visually-hidden">Message</label>
+                <label htmlFor="message" className="visually-hidden">
+                  Message
+                </label>
                 <textarea
                   id="message"
                   rows="5"
@@ -480,24 +454,25 @@ export default function ContactHours() {
                   value={message}
                   onChange={(event) => {
                     setMessage(event.target.value);
-                    if (errors.message) setErrors({...errors, message: ""});
+                    if (errors.message) setErrors({ ...errors, message: "" });
                   }}
                   name="message"
                   aria-required="true"
                   aria-invalid={!!errors.message}
-                  style={errors.message ? {borderColor: "#d32f2f"} : {}}
+                  style={errors.message ? { borderColor: "#b3261e" } : {}}
                 />
-                {errors.message && <div css={errorStyles}>{errors.message}</div>}
+                {errors.message && (
+                  <div css={errorStyles}>{errors.message}</div>
+                )}
               </div>
-              
+
               <button type="submit" disabled={isSubmitting}>
                 <AnimatedButton text={isSubmitting ? "SENDING..." : "SUBMIT"} />
               </button>
             </form>
           </div>
         </div>
-      </div>
-      {/* <div><Gyrotonic /> is a registered trademark of Gyrotonic Sales Corp and is used with their permission.</div> */}
+      </section>
     </div>
   );
 }

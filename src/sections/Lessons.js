@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 
-import image from "../assets/images/keep1.png";
 import LessonCard from "../components/LessonCard";
 import LessonDisplay from "../components/LessonDisplay";
+import useReveal from "../hooks/useReveal";
 
 import card1 from "../assets/images/hallowin.jpeg";
 import card2 from "../assets/images/tricep-man.jpeg";
@@ -14,100 +14,98 @@ import card4 from "../assets/images/worth.jpeg";
 import { useTranslation } from "react-i18next";
 import { translatePrices } from "../utlities/translations";
 
+const sectionStyles = css`
+  background-color: var(--color-bg);
+  padding: var(--space-section-y) var(--space-section-x);
+`;
+
+const innerStyles = css`
+  max-width: var(--container-wide);
+  margin: 0 auto;
+`;
+
+const categoryStyles = css`
+  & + & {
+    margin-top: var(--space-9);
+    padding-top: var(--space-9);
+    border-top: 1px solid var(--color-line);
+  }
+`;
+
+const categoryHeaderStyles = css`
+  text-align: center;
+  margin-bottom: var(--space-7);
+  max-width: 64ch;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const categoryTitleStyles = css`
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--space-3);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 2px;
+    background: var(--color-accent);
+    margin: var(--space-4) auto 0;
+  }
+`;
+
+const categoryDescStyles = css`
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  line-height: var(--leading-relaxed);
+  color: var(--color-ink-muted);
+`;
+
+const groupStyles = css`
+  margin-top: var(--space-7);
+`;
+
+const groupTitleStyles = css`
+  font-size: var(--font-size-h3);
+  font-weight: var(--weight-medium);
+  text-align: center;
+  margin-bottom: var(--space-5);
+  color: var(--color-ink);
+`;
+
+const cancelStyles = css`
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-line-soft);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-ink-muted);
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const cancelSignStyles = css`
+  display: block;
+  margin-top: var(--space-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+`;
+
 export default function Lessons() {
-  const [translationsLoaded, setTranslationsLoaded] = useState(false);
+  const [, setTranslationsLoaded] = useState(false);
+  const ref = useReveal();
 
   useEffect(() => {
     translatePrices();
-    setTranslationsLoaded(true); // Force re-render after adding translations
+    setTranslationsLoaded(true);
   }, []);
 
   const { t } = useTranslation();
-
-  const hoursStyles = css`
-    /* background-image: linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.6)), url(${image}); */
-    background-color: var(--background-color-primary);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 1.15em;
-    min-height: 100vh;
-  `;
-
-  const infoStyles = css`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Cormorant Garamond", serif;
-    padding: 10px 30px 10px 10px;
-    width: 100%;
-    font-size: 1.15em;
-  `;
-
-  const hoursTitle = css`
-    font-size: var(--font-size-title);
-    position: relative;
-  `;
-
-  const underlineStyles = css`
-    ::before {
-      content: "";
-      position: absolute;
-      height: 2px;
-      width: 160px;
-      background-color: #000000 !important;
-      bottom: -2px;
-    }
-    ::before {
-      left: 0;
-    }
-  `;
-
-  const hoursText = css`
-    font-size: var(--font-size-regular);
-    font-weight: 500;
-    text-align: left;
-    @media (min-width: 576px) {
-      max-width: 100%;
-    }
-
-    @media (min-width: 768px) {
-      max-width: 75%;
-    }
-
-    @media (min-width: 1200px) {
-      max-width: 65%;
-    }
-  `;
-
-  const cancelText = css`
-    font-size: var(--font-size-regular);
-    font-weight: 500;
-    text-align: left;
-    @media (min-width: 576px) {
-      max-width: 100%;
-    }
-
-    @media (min-width: 768px) {
-      max-width: 65%;
-    }
-
-    @media (min-width: 1200px) {
-      max-width: 40%;
-    }
-  `;
-
-  const sectionThreeTitle = css`
-    font-size: 2.25rem;
-    margin-left: 5%;
-    margin-top: 2.25em;
-    margin-bottom: -1em;
-  `;
 
   const cardsTrial = [
     <LessonCard
@@ -179,55 +177,49 @@ export default function Lessons() {
   ];
 
   return (
-    <div css={hoursStyles} id="hours-and-prices">
-      <div css={infoStyles}>
-        <h2 css={hoursTitle}>
-          {t("gyrotonicLessons")}
-          {/* <span css={underlineStyles} /> */}
-        </h2>
-        <div css={hoursText}>
-          {/* Training dates can be chosen according to openings in the trainers' schedules.
-          <br></br>Registration is done by phone , e-mail or personally in the studio.
-          <br></br>We offer several packages for individuals and tandem training: */}
-          {t("gyrotonicDescription")}
+    <section css={sectionStyles} id="hours-and-prices" ref={ref}>
+      <div css={innerStyles}>
+        <div css={categoryStyles}>
+          <header css={categoryHeaderStyles}>
+            <span className="eyebrow">Sessions</span>
+            <h2 css={categoryTitleStyles}>{t("gyrotonicLessons")}</h2>
+            <p css={categoryDescStyles}>{t("gyrotonicDescription")}</p>
+          </header>
+
+          <div css={groupStyles}>
+            <h3 css={groupTitleStyles}>{t("trialSessions")}</h3>
+            <LessonDisplay cards={cardsTrial} />
+          </div>
+
+          <div css={groupStyles}>
+            <h3 css={groupTitleStyles}>{t("individualSessions")}</h3>
+            <LessonDisplay cards={cardsSingle} />
+          </div>
+
+          <div css={groupStyles}>
+            <h3 css={groupTitleStyles}>{t("tandemSessions")}</h3>
+            <LessonDisplay cards={cardsTandem} />
+          </div>
         </div>
 
-        <h2 css={sectionThreeTitle}>
-          {t("trialSessions")}
-          {/* <span css={underlineStyles} /> */}
-        </h2>
-        <LessonDisplay cards={cardsTrial} />
+        <div css={categoryStyles}>
+          <header css={categoryHeaderStyles}>
+            <span className="eyebrow">Sessions</span>
+            <h2 css={categoryTitleStyles}>{t("gyrokinesisLessons")}</h2>
+            <p css={categoryDescStyles}>{t("gyrokinesisDescription")}</p>
+          </header>
 
-        <h2 css={sectionThreeTitle}>
-          {t("individualSessions")}
-          {/* <span css={underlineStyles} /> */}
-        </h2>
-        <LessonDisplay cards={cardsSingle} />
+          <div css={groupStyles}>
+            <h3 css={groupTitleStyles}>{t("groupSessions")}</h3>
+            <LessonDisplay cards={cardsGroup} />
+          </div>
 
-        <h2 css={sectionThreeTitle}>
-          {t("tandemSessions")}
-          {/* <span css={underlineStyles} /> */}
-        </h2>
-        <LessonDisplay cards={cardsTandem} />
-      </div>
-
-      <div css={infoStyles}>
-        <h2 css={hoursTitle}>
-          {t("gyrokinesisLessons")}
-          {/* <span css={underlineStyles} /> */}
-        </h2>
-        <div css={hoursText}>{t("gyrokinesisDescription")}</div>
-
-        <h2 css={sectionThreeTitle}>
-          {t("groupSessions")}
-          {/* <span css={underlineStyles} /> */}
-        </h2>
-        <LessonDisplay cards={cardsGroup} />
-        <div css={cancelText}>
-          {t("cancellationPolicy")}
-          <br /> - <b>The Roots Team</b>.
+          <div css={cancelStyles}>
+            {t("cancellationPolicy")}
+            <span css={cancelSignStyles}>— The Roots Team</span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
