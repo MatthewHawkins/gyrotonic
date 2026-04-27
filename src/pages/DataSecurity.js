@@ -24,9 +24,9 @@ export default function DataSecurity() {
       <br />
       <span id="s3-t-ansprechpartner">Federico Moiana</span>
       <br />
-      <span id="s3-t-strasse">Hindenburgstrasse 65</span>
+      <span id="s3-t-strasse">Deutschherrnpfad 14-20</span>
       <br />
-      <span id="s3-t-plz">66119</span> <span id="s3-t-ort">Saarbrücken</span>
+      <span id="s3-t-plz">66117</span> <span id="s3-t-ort">Saarbrücken</span>
     </p>
     <p>
       The responsible body decides alone or jointly with others on the purposes

@@ -109,6 +109,20 @@ export default function Lessons() {
     margin-bottom: -1em;
   `;
 
+  const cardsTrial = [
+    <LessonCard
+      title={t("title1_trial")}
+      photo={card3}
+      cost="€25"
+      description={t("description1_trial")}
+    />,
+    <LessonCard
+      title={t("title2_trial")}
+      photo={card1}
+      cost="€15 p.p"
+      description={t("description2_trial")}
+    />,
+  ];
   const cardsSingle = [
     <LessonCard
       title={t("title1_single")}
@@ -119,7 +133,7 @@ export default function Lessons() {
     <LessonCard
       title={t("title2_single")}
       photo={card4}
-      cost="€130"
+      cost="€145"
       description={t("description2_single")}
     />,
     <LessonCard
@@ -133,7 +147,7 @@ export default function Lessons() {
     <LessonCard
       title={t("title1_tandem")}
       photo={card3}
-      cost="€35 p.p"
+      cost="€37 p.p"
       description={t("description1_tandem")}
     />,
     <LessonCard
@@ -145,7 +159,7 @@ export default function Lessons() {
     <LessonCard
       title={t("title3_tandem")}
       photo={card1}
-      cost="€320 p.p"
+      cost="€350 p.p"
       description={t("description3_tandem")}
     />,
   ];
@@ -177,6 +191,12 @@ export default function Lessons() {
           <br></br>We offer several packages for individuals and tandem training: */}
           {t("gyrotonicDescription")}
         </div>
+
+        <h2 css={sectionThreeTitle}>
+          {t("trialSessions")}
+          {/* <span css={underlineStyles} /> */}
+        </h2>
+        <LessonDisplay cards={cardsTrial} />
 
         <h2 css={sectionThreeTitle}>
           {t("individualSessions")}

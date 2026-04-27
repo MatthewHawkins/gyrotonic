@@ -196,6 +196,28 @@ export function translatePrices() {
   i18n.addResource('it', 'translation', 'title2_group', 'Pacchetto di Dieci Sessioni');
   i18n.addResource('it', 'translation', 'description2_group', 'Immergiti nella pratica trasformativa dell’allenamento Gyrokinesis con un pacchetto di dieci sessioni. In un ambiente di gruppo solidale, esplora sequenze ritmiche, tecniche di respirazione e movimenti fluidi progettati per migliorare la postura spinale, la mobilità e l’energia. Costruisci coerenza nella tua pratica e approfondisci la connessione con questo metodo olistico.');
 
+  // Trial
+  // English
+  i18n.addResource('en', 'translation', 'title1_trial', 'One Person Trial (45 min)');
+  i18n.addResource('en', 'translation', 'description1_trial', 'A 45-minute introductory private session — the perfect way to experience the Gyrotonic Method one-on-one and discover how it can support your body.');
+
+  i18n.addResource('en', 'translation', 'title2_trial', 'Two Person Trial (45 min)');
+  i18n.addResource('en', 'translation', 'description2_trial', 'A 45-minute trial for two — explore the Gyrotonic Method alongside a friend or partner and feel the benefits together.');
+
+  // German
+  i18n.addResource('de', 'translation', 'title1_trial', 'Einzelne Probestunde (45 Min.)');
+  i18n.addResource('de', 'translation', 'description1_trial', 'Eine 45-minütige Einführungssitzung – der perfekte Einstieg, um die Gyrotonic-Methode in einem privaten Rahmen zu erleben und zu entdecken, wie sie Ihren Körper unterstützen kann.');
+
+  i18n.addResource('de', 'translation', 'title2_trial', 'Probestunde zu Zweit (45 Min.)');
+  i18n.addResource('de', 'translation', 'description2_trial', 'Eine 45-minütige Probestunde zu zweit – erkunden Sie die Gyrotonic-Methode gemeinsam mit einem Freund oder Partner und erleben Sie die Vorteile zusammen.');
+
+  // Italian
+  i18n.addResource('it', 'translation', 'title1_trial', 'Sessione di Prova Individuale (45 min)');
+  i18n.addResource('it', 'translation', 'description1_trial', 'Una sessione introduttiva privata di 45 minuti – il modo ideale per provare il metodo Gyrotonic uno a uno e scoprire come può sostenere il tuo corpo.');
+
+  i18n.addResource('it', 'translation', 'title2_trial', 'Sessione di Prova a Due (45 min)');
+  i18n.addResource('it', 'translation', 'description2_trial', 'Una sessione di prova di 45 minuti in coppia – esplora il metodo Gyrotonic insieme a un amico o partner e scoprite i benefici insieme.');
+
   // Lessons Gyro
   // English
   i18n.addResource('en', 'translation', 'gyrotonicLessons', 'Gyrotonic Lessons');
@@ -236,16 +258,19 @@ export function translatePrices() {
   i18n.addResource('en', 'translation', 'individualSessions', 'Individual Sessions');
   i18n.addResource('en', 'translation', 'tandemSessions', 'Tandem Sessions');
   i18n.addResource('en', 'translation', 'groupSessions', 'Group Sessions');
+  i18n.addResource('en', 'translation', 'trialSessions', 'Trial Sessions');
 
   // German
   i18n.addResource('de', 'translation', 'individualSessions', 'Einzel Sitzungen');
   i18n.addResource('de', 'translation', 'tandemSessions', 'Tandem Sitzungen');
   i18n.addResource('de', 'translation', 'groupSessions', 'Gruppen Sitzungen');
+  i18n.addResource('de', 'translation', 'trialSessions', 'Probestunden');
 
   // Italian
   i18n.addResource('it', 'translation', 'individualSessions', 'Sessioni Individuali');
   i18n.addResource('it', 'translation', 'tandemSessions', 'Sessioni Tandem');
   i18n.addResource('it', 'translation', 'groupSessions', 'Sessioni di Gruppo');
+  i18n.addResource('it', 'translation', 'trialSessions', 'Sessioni di Prova');
 }
 
 export function translateContact() {

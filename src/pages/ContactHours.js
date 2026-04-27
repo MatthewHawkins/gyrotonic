@@ -388,13 +388,12 @@ export default function ContactHours() {
                   the.roots.exercise@gmail.com
                 </div>
                 <div>
-                  <FmdGoodIcon css={contactIconStyles} /> Hindenburgstraße 65,
-                  66119 Saarbrücken
+                  <FmdGoodIcon css={contactIconStyles} /> Deutschherrnpfad 14-20, 66117 Saarbrücken, Germany
                 </div>
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.6900712374945!2d7.00117597686255!3d49.225404574808096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795b4183e4f3337%3A0xa056c9a7ccdf65bc!2sHindenburgstra%C3%9Fe%2065%2C%2066119%20Saarbr%C3%BCcken!5e0!3m2!1sen!2sde!4v1748015836316!5m2!1sen!2sde" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.3868963780806!2d6.975365076862796!3d49.23115347440124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4795b3fecd9b4591%3A0x681b2aa254046a4a!2sDeutschherrnpfad%2014-20%2C%2066117%20Saarbr%C3%BCcken%2C%20Germany!5e0!3m2!1sen!2sus!4v1777303283670!5m2!1sen!2sus"
                   css={googleMapStyles} 
-                  title="The Roots Studio location map - Hindenburgstraße 65, 66119 Saarbrücken"
+                  title="The Roots Studio location map - Deutschherrnpfad 14-20, 66117 Saarbrücken, Germany"
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
