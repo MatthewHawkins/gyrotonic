@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import image from "../assets/images/background1.jpeg";
 import AnimatedButton from "../components/AnimatedButton";
 import Lessons from "../sections/Lessons";
+import Schedule from "../sections/Schedule";
 import useReveal from "../hooks/useReveal";
 
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -314,6 +315,7 @@ export default function ContactHours() {
   return (
     <div css={pageStyles}>
       <Lessons />
+      <Schedule />
       <section id="contact" css={contactSectionStyles} ref={contactRef}>
         <div css={contactInnerStyles}>
           <div css={contactColStyles}>

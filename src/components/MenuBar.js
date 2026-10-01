@@ -72,6 +72,7 @@ export default function MenuBar() {
     { to: "/homepage#equipment", label: t("videos") },
     { to: "/homepage#team", label: t("team") },
     { to: "/contact#hours-and-prices", label: t("prices") },
+    { to: "/contact#schedule", label: t("schedule") },
     { to: "/contact#contact", label: t("contact") },
   ];
 

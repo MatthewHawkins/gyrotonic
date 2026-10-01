@@ -7,6 +7,7 @@ export function translateMenu() {
   i18n.addResource('en', 'translation', 'videos', 'Videos');
   i18n.addResource('en', 'translation', 'team', 'Team');
   i18n.addResource('en', 'translation', 'prices', 'Lessons and Prices');
+  i18n.addResource('en', 'translation', 'schedule', 'Book Online');
   i18n.addResource('en', 'translation', 'contact', 'Contact');
 
   i18n.addResource('de', 'translation', 'home', 'Startseite');
@@ -14,6 +15,7 @@ export function translateMenu() {
   i18n.addResource('de', 'translation', 'videos', 'Videos');
   i18n.addResource('de', 'translation', 'team', 'Team');
   i18n.addResource('de', 'translation', 'prices', 'Unterricht und Preise');
+  i18n.addResource('de', 'translation', 'schedule', 'Online buchen');
   i18n.addResource('de', 'translation', 'contact', 'Kontakt');
 
   i18n.addResource('it', 'translation', 'home', 'Home');
@@ -21,7 +23,36 @@ export function translateMenu() {
   i18n.addResource('it', 'translation', 'videos', 'Videos');
   i18n.addResource('it', 'translation', 'team', 'Team');
   i18n.addResource('it', 'translation', 'prices', 'Lezioni e Prezzi');
+  i18n.addResource('it', 'translation', 'schedule', 'Prenota Online');
   i18n.addResource('it', 'translation', 'contact', 'Contatto');
+
+}
+
+export function translateSchedule() {
+
+  // English
+  i18n.addResource('en', 'translation', 'scheduleEyebrow', 'Book a Session');
+  i18n.addResource('en', 'translation', 'scheduleTitle', 'Book Online');
+  i18n.addResource('en', 'translation', 'scheduleIntro', 'Choose an available time below and reserve your session. You\'ll receive a confirmation email with all the details.');
+  i18n.addResource('en', 'translation', 'scheduleFallback', 'Trouble seeing the calendar?');
+  i18n.addResource('en', 'translation', 'scheduleOpenInNewTab', 'Open the booking page in a new tab');
+  i18n.addResource('en', 'translation', 'schedulePaymentNote', 'Payment is handled in person at the studio. For package purchases, please get in touch and we\'ll arrange it directly.');
+
+  // German
+  i18n.addResource('de', 'translation', 'scheduleEyebrow', 'Stunde Buchen');
+  i18n.addResource('de', 'translation', 'scheduleTitle', 'Online Buchen');
+  i18n.addResource('de', 'translation', 'scheduleIntro', 'Wählen Sie unten einen verfügbaren Termin und reservieren Sie Ihre Stunde. Sie erhalten eine Bestätigungs-E-Mail mit allen Details sowie eine Erinnerung vor Ihrem Termin.');
+  i18n.addResource('de', 'translation', 'scheduleFallback', 'Kalender wird nicht angezeigt?');
+  i18n.addResource('de', 'translation', 'scheduleOpenInNewTab', 'Buchungsseite in neuem Tab öffnen');
+  i18n.addResource('de', 'translation', 'schedulePaymentNote', 'Die Bezahlung erfolgt persönlich im Studio. Für den Kauf von Paketen kontaktieren Sie uns bitte direkt.');
+
+  // Italian
+  i18n.addResource('it', 'translation', 'scheduleEyebrow', 'Prenota una Sessione');
+  i18n.addResource('it', 'translation', 'scheduleTitle', 'Prenota Online');
+  i18n.addResource('it', 'translation', 'scheduleIntro', 'Scegli un orario disponibile qui sotto e prenota la tua sessione. Riceverai un\'e-mail di conferma con tutti i dettagli, oltre a un promemoria prima del tuo appuntamento.');
+  i18n.addResource('it', 'translation', 'scheduleFallback', 'Non riesci a vedere il calendario?');
+  i18n.addResource('it', 'translation', 'scheduleOpenInNewTab', 'Apri la pagina di prenotazione in una nuova scheda');
+  i18n.addResource('it', 'translation', 'schedulePaymentNote', 'Il pagamento viene effettuato di persona presso lo studio. Per l\'acquisto di pacchetti, ti preghiamo di contattarci direttamente.');
 
 }
 
